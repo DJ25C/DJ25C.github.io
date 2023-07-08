@@ -1,0 +1,554 @@
+
+li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+ul {
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+ol {
+    margin: 0;
+    padding: 0;
+    display: block;
+    list-style-type: decimal;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    transition: 0s;
+}
+figure {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 40px;
+    margin-inline-end: 40px;
+}
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-size: inherit;
+    line-height: inherit;
+    margin: 0;
+}
+h3 {
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+a:hover {
+    text-decoration: none;
+}
+
+
+
+/* SECTION_1 */
+.section-1 {
+    grid-template-columns: [viewport-start] 1fr [content-start] minmax(0,1248px) [content-end] 1fr [viewport-end];
+    grid-template-rows: [row] 1fr;
+    grid-gap: 24px;
+    display: grid;
+}
+.section-1-div-general {
+    grid-column: content-start/content-end;
+    grid-template: [row] 1fr/repeat(12,[col] minmax(0,82px));
+    grid-gap: 24px;
+    display: grid;
+    margin: 40px 0px;
+}
+
+@media (min-width: 1024px) {
+    .section-1,.section-1-div-general {
+        gap: 24px;
+    }
+}
+@media (min-width: 1024px) {
+    @supports (display:grid) {
+        .section-1-news-div-general {
+            grid-column: span 8;
+            width: auto;
+        }
+        .section-1-news-a {
+            grid-column: span 6;
+        }
+        .section-1-scores-and-toNFL-div-general{
+            grid-column: span 4;
+            width: auto;
+        }
+        .section-1-scores-div-fulltable {
+            grid-column: span 12;
+            width: auto;
+        }
+        .section-1-toNFL-div-fulltable {
+            grid-column: span 12;
+            width: auto;
+        }
+        .section-3-highlights {
+            grid-column: span 12;
+        }
+        .section-3-standings {
+            grid-column: span 12;
+        }
+        .section-3-highlights-div-content {
+            grid-column: span 3;
+        }
+        .section-3-standings-iframe {
+            grid-column: span 6;
+        }
+        .section-1-scores-ul-content {
+        max-height: 459px;
+        }
+    }
+}
+
+@media (max-width: 1023px) {
+    .section-1-div-general {
+        gap: 18px;
+    }
+}
+@media (max-width: 1023px) {
+    @supports (display:grid) {
+        .section-1-news-div-general {
+            grid-column: span 7;
+        }
+        .section-1-news-a {
+            grid-column: span 6;
+        }
+        .section-1-scores-and-toNFL-div-general{
+            grid-column: span 5;
+        }
+        .section-1-scores-div-fulltable {
+            grid-column: span 12;
+        }
+        .section-1-toNFL-div-fulltable {
+            grid-column: span 12;
+        }
+        .section-3-highlights-div-content {
+            grid-column: span 3;
+        }
+        .section-3-highlights {
+            grid-column: span 12;
+        }
+        .section-3-standings {
+            grid-column: span 12;
+        }
+        .section-3-highlights-div-content {
+            grid-column: span 3;
+        }
+        .section-3-standings-iframe {
+            grid-column: span 6;
+        }
+        .section-1-scores-ul-content {
+            max-height: 435px;
+        }
+        .section-1-publicity-div-fulltable {
+            display: none;
+        }
+    }
+}
+@media (max-width: 767px) {
+    @supports (display:grid) {
+        .section-3-scores-h2-heading {
+            margin-top: 12px !important;
+        }
+
+        .section-1-news-div-general {
+            grid-column: span 12;
+        }
+        .section-1-news-a {
+            grid-column: span 12;
+        }
+        .section-1-scores-and-toNFL-div-general {
+            grid-column: span 12;
+        }
+        .section-1-toNFL-div-fulltable {
+            grid-column: span 12;
+        }
+        .section-1-scores-div-fulltable {
+            grid-column: span 12;
+        }
+        .section-3-highlights {
+            grid-column: span 12;
+        }
+        .section-3-standings {
+            grid-column: span 12;
+        }
+        .section-3-standings-div-general {
+            grid-gap: 12px !important;
+        }
+        .section-3-standings-div-heading-fulltable {
+            margin-bottom: 12px;
+        }
+        .section-3-highlights-div-content {
+            grid-column: span 12;
+        }
+        .section-3-standings-iframe {
+            grid-column: span 12;
+        }
+        .section-1-publicity-div-fulltable {
+            display: none;
+        }
+    }
+}
+
+
+
+/* NEWS */
+.section-1-news-div-general {
+    width: auto;
+}
+.section-1-news-div-fulltable {
+    display: grid;
+    grid-column: content-start/content-end;
+    grid-template: [row] 1fr/repeat(12,[col] minmax(0,82px));
+    grid-gap: 24px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+.section-1-news-a {
+    display: block;
+    height: 100%;
+}
+.section-1-news-a:hover {
+    border-bottom: 2px solid #013369;
+}
+.section-1-news-div-image {
+    background-color: #fff;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    display: flex;
+    position: relative;
+    height: inherit;
+}
+.section-1-news-figure-image {
+    min-height: unset;
+    margin: 0!important;
+    display: inline-block;
+    min-height: 1px;
+    position: relative;
+    padding: 0;
+}
+.section-1-news-img-image {
+    display: block;
+    width: 100%;
+    border: 0;
+    height: auto;
+    max-width: 100%;
+}
+.section-1-news-div-footer {
+    word-wrap: break-word;
+    padding: 15px;
+}
+.section-1-news-div-content-footer-heading {
+    color: #757575;
+    text-transform: uppercase;
+    margin: 0!important;
+    font-weight: 700;
+    padding-bottom: 3px;
+}
+.section-1-news-h3-footer-heading {
+    color: #151515;
+    font-size: 18px;
+    line-height: 1.1;
+    padding-bottom: 8px;
+    margin: 0!important;
+    font-weight: 700;
+}
+.section-1-news-div-footer-description {
+    padding-bottom: 8px;
+    color: #757575;
+    font-weight: 400;
+    font-size: 15px;
+    margin: 0!important;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+/* SCORES AND TONFL */
+.section-1-scores-and-toNFL-div-general {
+    display: grid;
+    grid-template: [row] 1fr/repeat(12,[col] minmax(0,82px));
+    grid-gap: 24px;
+}
+.section-1-scores-div-fulltable {
+    box-shadow: 0 2px 10px 0 rgba(0,0,0,.16);
+    -webkit-box-flex: unset;
+    -ms-flex-positive: unset;
+    border-radius: 4px;
+    flex-grow: unset;
+    background-color: #fafafa;
+    flex-grow: 1;
+}
+.section-1-scores-ul-heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    border-bottom: 2px solid #013369;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    color: #151515;
+    font-weight: 600;
+}
+.section-1-scores-ul-heading>li {
+    color: #013369;
+}
+.section-1-scores-ul-content {
+    padding: 24px;
+    margin-top: 0;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: center;
+    overflow-y: auto;
+}
+.section-1-scores-ol-content-list {
+    font-family: All-ProSans,Helvetica,Arial,sans-serif;
+    font-size: 13px;
+    margin: 0;
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+.section-1-scores-li-content-list-item {
+    margin-bottom: 16px;
+    font-family: All-ProSans,Helvetica,Arial,sans-serif;
+    font-size: 13px;
+}
+.section-1-scores-div-content-list-item {
+    justify-content: flex-start;
+}
+.section-1-scores-span-content-list-item-text {
+    margin-left: 0px;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #013369;
+}
+.section-1-toNFL-div-fulltable {
+    box-shadow: 0 2px 10px 0 rgba(0,0,0,.16);
+    -webkit-box-flex: unset;
+    -ms-flex-positive: unset;
+    border-radius: 4px;
+    flex-grow: unset;
+    background-color: #013369;
+    flex-grow: 1;
+    height: fit-content;
+}
+.section-1-toNFL-ul-heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    border-bottom: 2px solid #fafafa;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    color: #fafafa;
+    font-weight: 600;
+}
+.section-1-toNFL-ul-content {
+    padding: 24px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.section-1-toNFL-ol-content-list {
+    font-family: All-ProSans,Helvetica,Arial,sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    margin: 0;
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.section-1-toNFL-li-content-list-item {
+    margin-bottom: 16px;
+    font-family: All-ProSans,Helvetica,Arial,sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+}
+.section-1-toNFL-div-content-list-item {
+    display: flex;
+    justify-content: flex-start;
+}
+.section-1-toNFL-div-content-list-item>a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 13px;
+    color: #fafafa;
+    cursor: pointer;
+    font-size: 14px;
+    letter-spacing: .2px;
+    line-height: 18px;
+    text-decoration: none;
+}
+.section-1-toNFL-div-content-list-item>a:hover {
+    border-bottom: 2px solid #fafafa;
+}
+.section-1-toNFL-span-content-list-item-text {
+    margin-left: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.section-1-publicity-div-fulltable {
+    margin-top: 20px;
+    -webkit-box-flex: unset;
+    -ms-flex-positive: unset;
+    border-radius: 4px;
+    flex-grow: unset;
+    flex-grow: 1;
+}
+.section-1-publicity-img-image {
+    border: 0;
+    height: auto;
+    max-width: 100%;
+    overflow-clip-margin: content-box;
+    overflow: clip;
+}
+
+
+
+/* HIGHLIGHTS */
+.section-3-highlights-and-standings {
+    grid-template-columns: [viewport-start] 1fr [content-start] minmax(0,1248px) [content-end] 1fr [viewport-end];
+    grid-template-rows: [row] 1fr;
+    grid-gap: 24px;
+    display: grid;
+}
+.section-3-highlights-and-standings-div-general {
+    display: grid;
+    grid-column: content-start/content-end;
+    grid-template: [row] 1fr/repeat(12,[col] minmax(0,82px));
+    grid-gap: 24px;
+}
+.section-3-highlights-div-general {
+    display: grid;
+    grid-column: content-start/content-end;
+    grid-template: [row] 1fr/repeat(12,[col] minmax(0,82px));
+    grid-gap: 24px;
+}
+.section-3-highlights-div-heading-fulltable {
+    grid-column: span 12;
+    width: auto;
+    display: flex;
+}
+.section-3-highlights-div-heading {
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    min-height: 28px;
+    position: relative;
+}
+.section-3-highlights-h2-heading {
+    border-bottom: 1px solid #013369;
+    min-height: 35px;
+    font-size: 20px;
+    line-height: inherit;
+    margin: 0;
+    display: block;
+    font-weight: bold;
+    text-align: left;
+}
+.section-3-highlights-h2-heading>span {
+    border-bottom: 2px solid #013369;
+    display: inline-block;
+    height: inherit;
+    padding-bottom: 3px;
+    color: #013369;
+}
+.section-3-highlights-div-content {
+    width: auto;
+    align-items: stretch;
+    display: flex;
+}
+.section-3-highlights-div-content:hover {
+    border-bottom: 2px solid #013369;
+}
+.section-3-highlights-div-content-2 {
+    -webkit-box-flex: 1;
+    background-color: #fff;
+    flex-grow: 1;
+    max-width: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    display: flex;
+    position: relative;
+}
+.section-3-highlights-img-content {
+    display: block;
+    width: 100%;
+    border: 0;
+    height: auto;
+    max-width: 100%;
+}
+.section-3-highlights-div-content-footer {
+    word-wrap: break-word;
+    padding: 15px;
+}
+.section-3-highlights-div-content-footer-heading {
+    color: #757575;
+    text-transform: uppercase;
+    margin: 0!important;
+    font-weight: 700;
+    padding-bottom: 3px;
+}
+.section-3-highlights-h3-content-footer-heading {
+    color: #151515;
+    font-size: 18px;
+    line-height: 1.1;
+    padding-bottom: 8px;
+    margin: 0!important;
+    font-weight: 700;
+}
+.section-3-highlights-div-content-footer-description {
+    padding-bottom: 2px;
+    color: #757575;
+    font-weight: 400;
+    font-size: 15px;
+    margin: 0!important;
+    font-family: 'Times New Roman', Times, serif;
+}
+.section-3-standings-div-general {
+    display: grid;
+    grid-column: content-start/content-end;
+    grid-template: [row] 1fr/repeat(12,[col] minmax(0,82px));
+    grid-gap: 24px;
+}
+.section-3-standings-div-heading-fulltable {
+    grid-column: span 12;
+    width: auto;
+    display: flex;
+}
+.section-3-standings-div-blank {
+    display: none;
+}

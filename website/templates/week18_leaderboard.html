@@ -1,0 +1,160 @@
+{% extends "base.html" %}
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" type="text/css" href="/static/weekly_leaderboard.css">
+    <script src="/static/weekly_leaderboard.js"></script>
+{% endblock %}
+{% block title %}Tabla de la Semana 1{% endblock %}
+
+{% block content %}
+<section class="title-team-leaderboard-section">
+    <div class="title-team-leaderboard-div-1">
+        <div class="title-team-leaderboard-div-2">
+            <div class="title-team-leaderboard-div-3">
+                <h2 class="title-team-leaderboard-h2-header">
+                    <span>Tabla Semanal</span>
+                </h2>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="dropdown title-team-leaderboard-section">
+  <div>
+    <button class="dropdown-toggle title-team-leaderboard-div-1" type="button" id="coolDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Semana 18
+    </button>
+    <div class="dropdown-menu" aria-labelledby="coolDropdown">
+      <a class="dropdown-item" href="/week1-leaderboard">Semana 1</a>
+      <a class="dropdown-item" href="/week2-leaderboard">Semana 2</a>
+      <a class="dropdown-item" href="/week3-leaderboard">Semana 3</a>
+      <a class="dropdown-item" href="/week4-leaderboard">Semana 4</a>
+      <a class="dropdown-item" href="/week5-leaderboard">Semana 5</a>
+      <a class="dropdown-item" href="/week6-leaderboard">Semana 6</a>
+      <a class="dropdown-item" href="/week7-leaderboard">Semana 7</a>
+      <a class="dropdown-item" href="/week8-leaderboard">Semana 8</a>
+      <a class="dropdown-item" href="/week9-leaderboard">Semana 9</a>
+      <a class="dropdown-item" href="/week10-leaderboard">Semana 10</a>
+      <a class="dropdown-item" href="/week11-leaderboard">Semana 11</a>
+      <a class="dropdown-item" href="/week12-leaderboard">Semana 12</a>
+      <a class="dropdown-item" href="/week13-leaderboard">Semana 13</a>
+      <a class="dropdown-item" href="/week14-leaderboard">Semana 14</a>
+      <a class="dropdown-item" href="/week15-leaderboard">Semana 15</a>
+      <a class="dropdown-item" href="/week16-leaderboard">Semana 16</a>
+      <a class="dropdown-item" href="/week17-leaderboard">Semana 17</a>
+      <a class="dropdown-item" href="/week18-leaderboard">Semana 18</a>
+    </div>
+  </div>
+</div>
+<section class="team-leaderboard-section">
+    <div class="team-leaderboard-div-1">
+        <div class="team-leaderboard-div-2">
+            <div class="team-leaderboard-div-3">
+                <div class="team-leaderboard-div-fulltable">
+                    <div class="team-leaderboard-div-content">
+                        <table id="team-leaderboard-table" class="team-leaderboard-table" role="table">
+                            <thead>
+                              <tr>
+                                <th onclick="sortTablePos(0)" class="team-leaderboard-th border-4-px font-weight-bold border-4-px-bottom table-heading cursor-pointer" scope="col" aria-sort="none">&nbsp;POS&nbsp;</th>
+                                <th onclick="sortTableAlphabetically(1)" class="team-leaderboard-th border-4-px font-weight-bold border-4-px-bottom table-heading cursor-pointer postion-sticky" scope="col" aria-sort="none">NOMBRE</th>
+                                <th colspan="16" class="team-leaderboard-th team-leaderboard-th-puntos border-4-px font-weight-bold border-4-px-bottom table-heading" scope="col" aria-sort="none">PICKS</th>
+                                <th colspan="1" class="team-leaderboard-th team-leaderboard-th-puntos font-weight-bold border-4-px-bottom table-heading" scope="col" aria-sort="none">PTS</th>
+                              </tr>
+                              <tr>
+                                <th class="team-leaderboard-th border-4-px border-2-px-bottom" scope="col" aria-sort="none"></th>
+                                <th class="team-leaderboard-th border-4-px border-2-px-bottom" scope="col" aria-sort="none"></th>
+                                {% for result in week_results %}
+                                  {% set home_team = teams | selectattr('team_name', 'equalto', result.home_team_name) | first %}
+                                  {% set away_team = teams | selectattr('team_name', 'equalto', result.away_team_name) | first %}
+                                  <th onclick="sortTableResult({{ loop.index0 + 2 }})" class="team-leaderboard-th border-1-px text-align-center border-2-px-bottom cursor-pointer" scope="col" aria-sort="none">
+                                    <img class="logos_game_heading" src="{{ away_team.team_logo }}" alt="{{ away_team.team_name }}" width="20px" height="42px">
+                                    @
+                                    <img class="logos_game_heading" src="{{ home_team.team_logo }}" alt="{{ home_team.team_name }}" width="20px" height="42px">
+                                  </th>
+                                {% endfor %}
+                                <th onclick="sortTable(18)" class="team-leaderboard-th text-align-center font-weight-bold border-2-px-bottom border-4-px-left cursor-pointer postion-sticky" scope="col" aria-sort="none">&nbsp;&nbsp;TOTAL&nbsp;&nbsp;</th>
+                              </tr>
+                            </thead>                              
+                            <tbody>
+                              {% set unique_user_ids = [] %}
+                              {% for data in leaderboard_data %}
+                                {% if data.user_id not in unique_user_ids %}
+                                  {% set _ = unique_user_ids.append(data.user_id) %}
+                                  <tr>
+                                    <td class="border-4-px" scope="row">
+                                      <div class="team-leaderboard-div-team-name team-leaderboard-div-position">
+                                        {{ loop.index }}
+                                      </div>
+                                    </td>
+                                    <td class="border-4-px table-user-name-td" scope="row">
+                                      <div class="team-leaderboard-div-user-name">
+                                        {{ data.user_name }}
+                                      </div>
+                                    </td>
+                                    {% set user_picks = week_picks | selectattr('user_id', 'equalto', data.user_id) %}
+                                    {% set picked_teams = [] %}
+                                    {% for pick in user_picks %}
+                                      {% for result in week_results %}
+                                        {% if result.game_number == pick.game_number %}
+                                          {% set team_name = result.home_team_name if pick.selected_winner == 'home' else result.away_team_name if pick.selected_winner == 'away' %}
+                                          {% if team_name not in picked_teams %}
+                                            {% set picked_teams = picked_teams + [team_name] %}
+                                            {% set team = teams | selectattr('team_name', 'equalto', team_name) | first %}
+                                            {% if team %}
+                                              {% if pick.selected_winner == result.winner_homecourt and pick.selected_difference == result.points_difference %}
+                                                <td class="border-1-px bg-light-green">
+                                                  <img class="logo_result_td" src="{{ team.team_logo }}" alt="{{ team.team_name }}" width="25px" height="42px">
+                                                  &nbsp;&nbsp;&nbsp;{{ pick.selected_difference }}
+                                                </td>
+                                              {% elif pick.selected_winner == result.winner_homecourt %}
+                                                <td class="border-1-px bg-light-yellow">
+                                                  <img class="logo_result_td" src="{{ team.team_logo }}" alt="{{ team.team_name }}" width="25px" height="42px">
+                                                  &nbsp;&nbsp;&nbsp;{{ pick.selected_difference }}
+                                                </td>
+                                              {% elif result.winner_homecourt == 'tie' and pick.selected_difference == result.points_difference %}
+                                                <td class="border-1-px bg-light-orange">
+                                                  <img class="logo_result_td" src="{{ team.team_logo }}" alt="{{ team.team_name }}" width="25px" height="42px">
+                                                  &nbsp;&nbsp;&nbsp;{{ pick.selected_difference }}
+                                                </td>
+                                              {% elif result.winner_homecourt == '' %}
+                                                <td class="border-1-px">
+                                                  <img class="logo_result_td" src="{{ team.team_logo }}" alt="{{ team.team_name }}" width="25px" height="42px">
+                                                  &nbsp;&nbsp;&nbsp;{{ pick.selected_difference }}
+                                                </td>
+                                              {% else %}
+                                                <td class="border-1-px bg-light-red">
+                                                  <img class="logo_result_td" src="{{ team.team_logo }}" alt="{{ team.team_name }}" width="25px" height="42px">
+                                                  &nbsp;&nbsp;&nbsp;{{ pick.selected_difference }}
+                                                </td>
+                                              {% endif %}
+                                            {% else %}
+                                              <td class="border-1-px bg-light-red">
+                                                No Pick
+                                              </td>
+                                            {% endif %}
+                                          {% endif %}
+                                        {% endif %}
+                                      {% endfor %}
+                                    {% endfor %}
+                                    {% for result in week_results %}
+                                      {% if data.user_id not in week_picks|map(attribute='user_id')|list %}
+                                        <td class="border-1-px bg-light-red">
+                                          No Pick
+                                        </td>
+                                      {% endif %}
+                                    {% endfor %}
+                                    <td class="border-4-px-left font-weight-bold">{{ data.week18_points }}</td>
+                                  </tr>
+                                {% endif %}
+                              {% endfor %}
+                            </tbody>                                                                                                                                                          
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+  setHighestValueBackgroundColorTotal(18,1);
+</script>
+{% endblock %}

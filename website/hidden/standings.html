@@ -1,0 +1,1269 @@
+{% extends "base.html" %}
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" type="text/css" href="/static/Standings.css">
+{% endblock %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<section class="title-team-standings-section">
+    <div class="title-team-standings-div-1">
+        <div class="title-team-standings-div-2">
+            <div class="title-team-standings-div-3">
+                <h2 class="title-team-standings-h2-header">
+                    <span> NFL Standings </span>
+                </h2>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="team-standings-section">
+    <div class="team-standings-div-1">
+        <div class="team-standings-div-2">
+            <div class="team-standings-div-3">
+                <div class="team-standings-div-fulltable">
+                    <div class="team-standings-div-header">
+                        <div>
+                            <span>CONFERENCIA AMERICANA</span>
+                        </div>
+                    </div>
+                    <div class="team-standings-div-content">
+                        <table class="team-standings-table" role="table">
+                            <thead>
+                                <tr>
+                                  <th class="team-standings-th border-4-px" scope="col" aria-sort="none">AFC EAST</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">W</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">L</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">T</th>
+                                  <th class="team-standings-th border-1-px" scope="col" aria-sort="none">PCT</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">PF</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">PA</th>
+                                  <th class="team-standings-th border-1-px" scope="col" aria-sort="none">Pts Diff</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">Local</th>
+                                  <th class="team-standings-th border-1-px" scope="col" aria-sort="none">Visitante</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">Div</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">Conf</th>
+                                  <th class="team-standings-th border-1-px" scope="col" aria-sort="none">Non-Conf</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">Strk</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">Últimos 5</th>
+                                </tr>
+                              </thead>                              
+                            <tbody>
+                                <tr>
+                                    <td class="border-4-px" scope="row">
+                                        <a class="team-standings-div-team-info" href="https://www.buffalobills.com/" target="_blank">
+                                            <div class="team-standings-div-team-logo">
+                                                <img class="team-standings-img-team-logo" src="https://static.www.nfl.com/league/api/clubs/logos/BUF.svg" alt="BUF">
+                                            </div>
+                                            <div class="team-standings-div-team-name">
+                                                Buffalo Bills
+                                            </div>
+                                        </a>
+                                    </td>
+                                    <td>13</td>
+                                    <td>3</td>
+                                    <td>0</td>
+                                    <td class="border-1-px">0.813</td>
+                                    <td>455</td>
+                                    <td>286</td>
+                                    <td class="border-1-px">169</td>
+                                    <td class="team-standings-td-record">7 - 1 - 0</td>
+                                    <td class="team-standings-td-record border-1-px">6 - 2 - 0</td>
+                                    <td class="team-standings-td-record">4 - 2 - 0</td>
+                                    <td class="team-standings-td-record">9 - 2 - 0</td>
+                                    <td class="team-standings-td-record border-1-px">4 - 1 - 0</td>
+                                    <td class="team-standings-td-streak">7W</td>
+                                    <td class="team-standings-td-record">5 - 0 - 0</td>
+                                </tr>
+                                <tr>
+                                    <td class="border-4-px" scope="row">
+                                        <a class="team-standings-div-team-info" href="https://www.miamidolphins.com/" target="_blank">
+                                            <div class="team-standings-div-team-logo">
+                                                <img class="team-standings-img-team-logo" src="https://static.www.nfl.com/league/api/clubs/logos/MIA.svg" alt="BUF">
+                                            </div>
+                                            <div class="team-standings-div-team-name">
+                                                Buffalo Bills
+                                            </div>
+                                        </a>
+                                    </td>
+                                    <td>13</td>
+                                    <td>3</td>
+                                    <td>0</td>
+                                    <td class="border-1-px">0.813</td>
+                                    <td>455</td>
+                                    <td>286</td>
+                                    <td class="border-1-px">169</td>
+                                    <td class="team-standings-td-record">7 - 1 - 0</td>
+                                    <td class="team-standings-td-record border-1-px">6 - 2 - 0</td>
+                                    <td class="team-standings-td-record">4 - 2 - 0</td>
+                                    <td class="team-standings-td-record">9 - 2 - 0</td>
+                                    <td class="team-standings-td-record border-1-px">4 - 1 - 0</td>
+                                    <td class="team-standings-td-streak">7W</td>
+                                    <td class="team-standings-td-record">5 - 0 - 0</td>
+                                </tr>
+                                <tr>
+                                    <td class="border-4-px" scope="row">
+                                        <a class="team-standings-div-team-info" href="https://www.patriots.com/" target="_blank">
+                                            <div class="team-standings-div-team-logo">
+                                                <img class="team-standings-img-team-logo" src="https://static.www.nfl.com/league/api/clubs/logos/NE.svg" alt="BUF">
+                                            </div>
+                                            <div class="team-standings-div-team-name">
+                                                Buffalo Bills
+                                            </div>
+                                        </a>
+                                    </td>
+                                    <td>13</td>
+                                    <td>3</td>
+                                    <td>0</td>
+                                    <td class="border-1-px">0.813</td>
+                                    <td>455</td>
+                                    <td>286</td>
+                                    <td class="border-1-px">169</td>
+                                    <td class="team-standings-td-record">7 - 1 - 0</td>
+                                    <td class="team-standings-td-record border-1-px">6 - 2 - 0</td>
+                                    <td class="team-standings-td-record">4 - 2 - 0</td>
+                                    <td class="team-standings-td-record">9 - 2 - 0</td>
+                                    <td class="team-standings-td-record border-1-px">4 - 1 - 0</td>
+                                    <td class="team-standings-td-streak">7W</td>
+                                    <td class="team-standings-td-record">5 - 0 - 0</td>
+                                </tr>
+                                <tr>
+                                    <td class="border-4-px" scope="row">
+                                        <a class="team-standings-div-team-info" href="https://www.newyorkjets.com/" target="_blank">
+                                            <div class="team-standings-div-team-logo">
+                                                <img class="team-standings-img-team-logo" src="https://static.www.nfl.com/league/api/clubs/logos/NYJ.svg" alt="BUF">
+                                            </div>
+                                            <div class="team-standings-div-team-name">
+                                                Buffalo Bills
+                                            </div>
+                                        </a>
+                                    </td>
+                                    <td>13</td>
+                                    <td>3</td>
+                                    <td>0</td>
+                                    <td class="border-1-px">0.813</td>
+                                    <td>455</td>
+                                    <td>286</td>
+                                    <td class="border-1-px">169</td>
+                                    <td class="team-standings-td-record">7 - 1 - 0</td>
+                                    <td class="team-standings-td-record border-1-px">6 - 2 - 0</td>
+                                    <td class="team-standings-td-record">4 - 2 - 0</td>
+                                    <td class="team-standings-td-record">9 - 2 - 0</td>
+                                    <td class="team-standings-td-record border-1-px">4 - 1 - 0</td>
+                                    <td class="team-standings-td-streak">7W</td>
+                                    <td class="team-standings-td-record">5 - 0 - 0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br>
+                    <div class="team-standings-div-content">
+                        <table class="team-standings-table" role="table">
+                            <thead>
+                                <tr>
+                                  <th class="team-standings-th border-4-px" scope="col" aria-sort="none">AFC EAST</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">W</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">L</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">T</th>
+                                  <th class="team-standings-th border-1-px" scope="col" aria-sort="none">PCT</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">PF</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">PA</th>
+                                  <th class="team-standings-th border-1-px" scope="col" aria-sort="none">Pts Diff</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">Local</th>
+                                  <th class="team-standings-th border-1-px" scope="col" aria-sort="none">Visitante</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">Div</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">Conf</th>
+                                  <th class="team-standings-th border-1-px" scope="col" aria-sort="none">Non-Conf</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">Strk</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">Últimos 5</th>
+                                </tr>
+                              </thead>                              
+                            <tbody>
+                                <tr>
+                                    <td class="border-4-px" scope="row">
+                                        <a class="team-standings-div-team-info" href="https://www.buffalobills.com/" target="_blank">
+                                            <div class="team-standings-div-team-logo">
+                                                <img class="team-standings-img-team-logo" src="https://static.www.nfl.com/league/api/clubs/logos/BUF.svg" alt="BUF">
+                                            </div>
+                                            <div class="team-standings-div-team-name">
+                                                Buffalo Bills
+                                            </div>
+                                        </a>
+                                    </td>
+                                    <td>13</td>
+                                    <td>3</td>
+                                    <td>0</td>
+                                    <td class="border-1-px">0.813</td>
+                                    <td>455</td>
+                                    <td>286</td>
+                                    <td class="border-1-px">169</td>
+                                    <td class="team-standings-td-record">7 - 1 - 0</td>
+                                    <td class="team-standings-td-record border-1-px">6 - 2 - 0</td>
+                                    <td class="team-standings-td-record">4 - 2 - 0</td>
+                                    <td class="team-standings-td-record">9 - 2 - 0</td>
+                                    <td class="team-standings-td-record border-1-px">4 - 1 - 0</td>
+                                    <td class="team-standings-td-streak">7W</td>
+                                    <td class="team-standings-td-record">5 - 0 - 0</td>
+                                </tr>
+                                <tr>
+                                    <td class="border-4-px" scope="row">
+                                        <a class="team-standings-div-team-info" href="https://www.miamidolphins.com/" target="_blank">
+                                            <div class="team-standings-div-team-logo">
+                                                <img class="team-standings-img-team-logo" src="https://static.www.nfl.com/league/api/clubs/logos/MIA.svg" alt="BUF">
+                                            </div>
+                                            <div class="team-standings-div-team-name">
+                                                Buffalo Bills
+                                            </div>
+                                        </a>
+                                    </td>
+                                    <td>13</td>
+                                    <td>3</td>
+                                    <td>0</td>
+                                    <td class="border-1-px">0.813</td>
+                                    <td>455</td>
+                                    <td>286</td>
+                                    <td class="border-1-px">169</td>
+                                    <td class="team-standings-td-record">7 - 1 - 0</td>
+                                    <td class="team-standings-td-record border-1-px">6 - 2 - 0</td>
+                                    <td class="team-standings-td-record">4 - 2 - 0</td>
+                                    <td class="team-standings-td-record">9 - 2 - 0</td>
+                                    <td class="team-standings-td-record border-1-px">4 - 1 - 0</td>
+                                    <td class="team-standings-td-streak">7W</td>
+                                    <td class="team-standings-td-record">5 - 0 - 0</td>
+                                </tr>
+                                <tr>
+                                    <td class="border-4-px" scope="row">
+                                        <a class="team-standings-div-team-info" href="https://www.patriots.com/" target="_blank">
+                                            <div class="team-standings-div-team-logo">
+                                                <img class="team-standings-img-team-logo" src="https://static.www.nfl.com/league/api/clubs/logos/NE.svg" alt="BUF">
+                                            </div>
+                                            <div class="team-standings-div-team-name">
+                                                Buffalo Bills
+                                            </div>
+                                        </a>
+                                    </td>
+                                    <td>13</td>
+                                    <td>3</td>
+                                    <td>0</td>
+                                    <td class="border-1-px">0.813</td>
+                                    <td>455</td>
+                                    <td>286</td>
+                                    <td class="border-1-px">169</td>
+                                    <td class="team-standings-td-record">7 - 1 - 0</td>
+                                    <td class="team-standings-td-record border-1-px">6 - 2 - 0</td>
+                                    <td class="team-standings-td-record">4 - 2 - 0</td>
+                                    <td class="team-standings-td-record">9 - 2 - 0</td>
+                                    <td class="team-standings-td-record border-1-px">4 - 1 - 0</td>
+                                    <td class="team-standings-td-streak">7W</td>
+                                    <td class="team-standings-td-record">5 - 0 - 0</td>
+                                </tr>
+                                <tr>
+                                    <td class="border-4-px" scope="row">
+                                        <a class="team-standings-div-team-info" href="https://www.newyorkjets.com/" target="_blank">
+                                            <div class="team-standings-div-team-logo">
+                                                <img class="team-standings-img-team-logo" src="https://static.www.nfl.com/league/api/clubs/logos/NYJ.svg" alt="BUF">
+                                            </div>
+                                            <div class="team-standings-div-team-name">
+                                                Buffalo Bills
+                                            </div>
+                                        </a>
+                                    </td>
+                                    <td>13</td>
+                                    <td>3</td>
+                                    <td>0</td>
+                                    <td class="border-1-px">0.813</td>
+                                    <td>455</td>
+                                    <td>286</td>
+                                    <td class="border-1-px">169</td>
+                                    <td class="team-standings-td-record">7 - 1 - 0</td>
+                                    <td class="team-standings-td-record border-1-px">6 - 2 - 0</td>
+                                    <td class="team-standings-td-record">4 - 2 - 0</td>
+                                    <td class="team-standings-td-record">9 - 2 - 0</td>
+                                    <td class="team-standings-td-record border-1-px">4 - 1 - 0</td>
+                                    <td class="team-standings-td-streak">7W</td>
+                                    <td class="team-standings-td-record">5 - 0 - 0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br>
+                    <div class="team-standings-div-content">
+                        <table class="team-standings-table" role="table">
+                            <thead>
+                                <tr>
+                                  <th class="team-standings-th border-4-px" scope="col" aria-sort="none">AFC EAST</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">W</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">L</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">T</th>
+                                  <th class="team-standings-th border-1-px" scope="col" aria-sort="none">PCT</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">PF</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">PA</th>
+                                  <th class="team-standings-th border-1-px" scope="col" aria-sort="none">Pts Diff</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">Local</th>
+                                  <th class="team-standings-th border-1-px" scope="col" aria-sort="none">Visitante</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">Div</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">Conf</th>
+                                  <th class="team-standings-th border-1-px" scope="col" aria-sort="none">Non-Conf</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">Strk</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">Últimos 5</th>
+                                </tr>
+                              </thead>                              
+                            <tbody>
+                                <tr>
+                                    <td class="border-4-px" scope="row">
+                                        <a class="team-standings-div-team-info" href="https://www.buffalobills.com/" target="_blank">
+                                            <div class="team-standings-div-team-logo">
+                                                <img class="team-standings-img-team-logo" src="https://static.www.nfl.com/league/api/clubs/logos/BUF.svg" alt="BUF">
+                                            </div>
+                                            <div class="team-standings-div-team-name">
+                                                Buffalo Bills
+                                            </div>
+                                        </a>
+                                    </td>
+                                    <td>13</td>
+                                    <td>3</td>
+                                    <td>0</td>
+                                    <td class="border-1-px">0.813</td>
+                                    <td>455</td>
+                                    <td>286</td>
+                                    <td class="border-1-px">169</td>
+                                    <td class="team-standings-td-record">7 - 1 - 0</td>
+                                    <td class="team-standings-td-record border-1-px">6 - 2 - 0</td>
+                                    <td class="team-standings-td-record">4 - 2 - 0</td>
+                                    <td class="team-standings-td-record">9 - 2 - 0</td>
+                                    <td class="team-standings-td-record border-1-px">4 - 1 - 0</td>
+                                    <td class="team-standings-td-streak">7W</td>
+                                    <td class="team-standings-td-record">5 - 0 - 0</td>
+                                </tr>
+                                <tr>
+                                    <td class="border-4-px" scope="row">
+                                        <a class="team-standings-div-team-info" href="https://www.miamidolphins.com/" target="_blank">
+                                            <div class="team-standings-div-team-logo">
+                                                <img class="team-standings-img-team-logo" src="https://static.www.nfl.com/league/api/clubs/logos/MIA.svg" alt="BUF">
+                                            </div>
+                                            <div class="team-standings-div-team-name">
+                                                Buffalo Bills
+                                            </div>
+                                        </a>
+                                    </td>
+                                    <td>13</td>
+                                    <td>3</td>
+                                    <td>0</td>
+                                    <td class="border-1-px">0.813</td>
+                                    <td>455</td>
+                                    <td>286</td>
+                                    <td class="border-1-px">169</td>
+                                    <td class="team-standings-td-record">7 - 1 - 0</td>
+                                    <td class="team-standings-td-record border-1-px">6 - 2 - 0</td>
+                                    <td class="team-standings-td-record">4 - 2 - 0</td>
+                                    <td class="team-standings-td-record">9 - 2 - 0</td>
+                                    <td class="team-standings-td-record border-1-px">4 - 1 - 0</td>
+                                    <td class="team-standings-td-streak">7W</td>
+                                    <td class="team-standings-td-record">5 - 0 - 0</td>
+                                </tr>
+                                <tr>
+                                    <td class="border-4-px" scope="row">
+                                        <a class="team-standings-div-team-info" href="https://www.patriots.com/" target="_blank">
+                                            <div class="team-standings-div-team-logo">
+                                                <img class="team-standings-img-team-logo" src="https://static.www.nfl.com/league/api/clubs/logos/NE.svg" alt="BUF">
+                                            </div>
+                                            <div class="team-standings-div-team-name">
+                                                Buffalo Bills
+                                            </div>
+                                        </a>
+                                    </td>
+                                    <td>13</td>
+                                    <td>3</td>
+                                    <td>0</td>
+                                    <td class="border-1-px">0.813</td>
+                                    <td>455</td>
+                                    <td>286</td>
+                                    <td class="border-1-px">169</td>
+                                    <td class="team-standings-td-record">7 - 1 - 0</td>
+                                    <td class="team-standings-td-record border-1-px">6 - 2 - 0</td>
+                                    <td class="team-standings-td-record">4 - 2 - 0</td>
+                                    <td class="team-standings-td-record">9 - 2 - 0</td>
+                                    <td class="team-standings-td-record border-1-px">4 - 1 - 0</td>
+                                    <td class="team-standings-td-streak">7W</td>
+                                    <td class="team-standings-td-record">5 - 0 - 0</td>
+                                </tr>
+                                <tr>
+                                    <td class="border-4-px" scope="row">
+                                        <a class="team-standings-div-team-info" href="https://www.newyorkjets.com/" target="_blank">
+                                            <div class="team-standings-div-team-logo">
+                                                <img class="team-standings-img-team-logo" src="https://static.www.nfl.com/league/api/clubs/logos/NYJ.svg" alt="BUF">
+                                            </div>
+                                            <div class="team-standings-div-team-name">
+                                                Buffalo Bills
+                                            </div>
+                                        </a>
+                                    </td>
+                                    <td>13</td>
+                                    <td>3</td>
+                                    <td>0</td>
+                                    <td class="border-1-px">0.813</td>
+                                    <td>455</td>
+                                    <td>286</td>
+                                    <td class="border-1-px">169</td>
+                                    <td class="team-standings-td-record">7 - 1 - 0</td>
+                                    <td class="team-standings-td-record border-1-px">6 - 2 - 0</td>
+                                    <td class="team-standings-td-record">4 - 2 - 0</td>
+                                    <td class="team-standings-td-record">9 - 2 - 0</td>
+                                    <td class="team-standings-td-record border-1-px">4 - 1 - 0</td>
+                                    <td class="team-standings-td-streak">7W</td>
+                                    <td class="team-standings-td-record">5 - 0 - 0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br>
+                    <div class="team-standings-div-content">
+                        <table class="team-standings-table" role="table">
+                            <thead>
+                                <tr>
+                                  <th class="team-standings-th border-4-px" scope="col" aria-sort="none">AFC EAST</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">W</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">L</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">T</th>
+                                  <th class="team-standings-th border-1-px" scope="col" aria-sort="none">PCT</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">PF</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">PA</th>
+                                  <th class="team-standings-th border-1-px" scope="col" aria-sort="none">Pts Diff</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">Local</th>
+                                  <th class="team-standings-th border-1-px" scope="col" aria-sort="none">Visitante</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">Div</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">Conf</th>
+                                  <th class="team-standings-th border-1-px" scope="col" aria-sort="none">Non-Conf</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">Strk</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">Últimos 5</th>
+                                </tr>
+                              </thead>                              
+                            <tbody>
+                                <tr>
+                                    <td class="border-4-px" scope="row">
+                                        <a class="team-standings-div-team-info" href="https://www.buffalobills.com/" target="_blank">
+                                            <div class="team-standings-div-team-logo">
+                                                <img class="team-standings-img-team-logo" src="https://static.www.nfl.com/league/api/clubs/logos/BUF.svg" alt="BUF">
+                                            </div>
+                                            <div class="team-standings-div-team-name">
+                                                Buffalo Bills
+                                            </div>
+                                        </a>
+                                    </td>
+                                    <td>13</td>
+                                    <td>3</td>
+                                    <td>0</td>
+                                    <td class="border-1-px">0.813</td>
+                                    <td>455</td>
+                                    <td>286</td>
+                                    <td class="border-1-px">169</td>
+                                    <td class="team-standings-td-record">7 - 1 - 0</td>
+                                    <td class="team-standings-td-record border-1-px">6 - 2 - 0</td>
+                                    <td class="team-standings-td-record">4 - 2 - 0</td>
+                                    <td class="team-standings-td-record">9 - 2 - 0</td>
+                                    <td class="team-standings-td-record border-1-px">4 - 1 - 0</td>
+                                    <td class="team-standings-td-streak">7W</td>
+                                    <td class="team-standings-td-record">5 - 0 - 0</td>
+                                </tr>
+                                <tr>
+                                    <td class="border-4-px" scope="row">
+                                        <a class="team-standings-div-team-info" href="https://www.miamidolphins.com/" target="_blank">
+                                            <div class="team-standings-div-team-logo">
+                                                <img class="team-standings-img-team-logo" src="https://static.www.nfl.com/league/api/clubs/logos/MIA.svg" alt="BUF">
+                                            </div>
+                                            <div class="team-standings-div-team-name">
+                                                Buffalo Bills
+                                            </div>
+                                        </a>
+                                    </td>
+                                    <td>13</td>
+                                    <td>3</td>
+                                    <td>0</td>
+                                    <td class="border-1-px">0.813</td>
+                                    <td>455</td>
+                                    <td>286</td>
+                                    <td class="border-1-px">169</td>
+                                    <td class="team-standings-td-record">7 - 1 - 0</td>
+                                    <td class="team-standings-td-record border-1-px">6 - 2 - 0</td>
+                                    <td class="team-standings-td-record">4 - 2 - 0</td>
+                                    <td class="team-standings-td-record">9 - 2 - 0</td>
+                                    <td class="team-standings-td-record border-1-px">4 - 1 - 0</td>
+                                    <td class="team-standings-td-streak">7W</td>
+                                    <td class="team-standings-td-record">5 - 0 - 0</td>
+                                </tr>
+                                <tr>
+                                    <td class="border-4-px" scope="row">
+                                        <a class="team-standings-div-team-info" href="https://www.patriots.com/" target="_blank">
+                                            <div class="team-standings-div-team-logo">
+                                                <img class="team-standings-img-team-logo" src="https://static.www.nfl.com/league/api/clubs/logos/NE.svg" alt="BUF">
+                                            </div>
+                                            <div class="team-standings-div-team-name">
+                                                Buffalo Bills
+                                            </div>
+                                        </a>
+                                    </td>
+                                    <td>13</td>
+                                    <td>3</td>
+                                    <td>0</td>
+                                    <td class="border-1-px">0.813</td>
+                                    <td>455</td>
+                                    <td>286</td>
+                                    <td class="border-1-px">169</td>
+                                    <td class="team-standings-td-record">7 - 1 - 0</td>
+                                    <td class="team-standings-td-record border-1-px">6 - 2 - 0</td>
+                                    <td class="team-standings-td-record">4 - 2 - 0</td>
+                                    <td class="team-standings-td-record">9 - 2 - 0</td>
+                                    <td class="team-standings-td-record border-1-px">4 - 1 - 0</td>
+                                    <td class="team-standings-td-streak">7W</td>
+                                    <td class="team-standings-td-record">5 - 0 - 0</td>
+                                </tr>
+                                <tr>
+                                    <td class="border-4-px" scope="row">
+                                        <a class="team-standings-div-team-info" href="https://www.newyorkjets.com/" target="_blank">
+                                            <div class="team-standings-div-team-logo">
+                                                <img class="team-standings-img-team-logo" src="https://static.www.nfl.com/league/api/clubs/logos/NYJ.svg" alt="BUF">
+                                            </div>
+                                            <div class="team-standings-div-team-name">
+                                                Buffalo Bills
+                                            </div>
+                                        </a>
+                                    </td>
+                                    <td>13</td>
+                                    <td>3</td>
+                                    <td>0</td>
+                                    <td class="border-1-px">0.813</td>
+                                    <td>455</td>
+                                    <td>286</td>
+                                    <td class="border-1-px">169</td>
+                                    <td class="team-standings-td-record">7 - 1 - 0</td>
+                                    <td class="team-standings-td-record border-1-px">6 - 2 - 0</td>
+                                    <td class="team-standings-td-record">4 - 2 - 0</td>
+                                    <td class="team-standings-td-record">9 - 2 - 0</td>
+                                    <td class="team-standings-td-record border-1-px">4 - 1 - 0</td>
+                                    <td class="team-standings-td-streak">7W</td>
+                                    <td class="team-standings-td-record">5 - 0 - 0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="team-standings-div-header">
+                        <div>
+                            <span>CONFERENCIA NACIONAL</span>
+                        </div>
+                    </div>
+                    <div class="team-standings-div-content">
+                        <table class="team-standings-table" role="table">
+                            <thead>
+                                <tr>
+                                  <th class="team-standings-th border-4-px" scope="col" aria-sort="none">AFC EAST</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">W</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">L</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">T</th>
+                                  <th class="team-standings-th border-1-px" scope="col" aria-sort="none">PCT</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">PF</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">PA</th>
+                                  <th class="team-standings-th border-1-px" scope="col" aria-sort="none">Pts Diff</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">Local</th>
+                                  <th class="team-standings-th border-1-px" scope="col" aria-sort="none">Visitante</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">Div</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">Conf</th>
+                                  <th class="team-standings-th border-1-px" scope="col" aria-sort="none">Non-Conf</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">Strk</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">Últimos 5</th>
+                                </tr>
+                              </thead>                              
+                            <tbody>
+                                <tr>
+                                    <td class="border-4-px" scope="row">
+                                        <a class="team-standings-div-team-info" href="https://www.buffalobills.com/" target="_blank">
+                                            <div class="team-standings-div-team-logo">
+                                                <img class="team-standings-img-team-logo" src="https://static.www.nfl.com/league/api/clubs/logos/BUF.svg" alt="BUF">
+                                            </div>
+                                            <div class="team-standings-div-team-name">
+                                                Buffalo Bills
+                                            </div>
+                                        </a>
+                                    </td>
+                                    <td>13</td>
+                                    <td>3</td>
+                                    <td>0</td>
+                                    <td class="border-1-px">0.813</td>
+                                    <td>455</td>
+                                    <td>286</td>
+                                    <td class="border-1-px">169</td>
+                                    <td class="team-standings-td-record">7 - 1 - 0</td>
+                                    <td class="team-standings-td-record border-1-px">6 - 2 - 0</td>
+                                    <td class="team-standings-td-record">4 - 2 - 0</td>
+                                    <td class="team-standings-td-record">9 - 2 - 0</td>
+                                    <td class="team-standings-td-record border-1-px">4 - 1 - 0</td>
+                                    <td class="team-standings-td-streak">7W</td>
+                                    <td class="team-standings-td-record">5 - 0 - 0</td>
+                                </tr>
+                                <tr>
+                                    <td class="border-4-px" scope="row">
+                                        <a class="team-standings-div-team-info" href="https://www.miamidolphins.com/" target="_blank">
+                                            <div class="team-standings-div-team-logo">
+                                                <img class="team-standings-img-team-logo" src="https://static.www.nfl.com/league/api/clubs/logos/MIA.svg" alt="BUF">
+                                            </div>
+                                            <div class="team-standings-div-team-name">
+                                                Buffalo Bills
+                                            </div>
+                                        </a>
+                                    </td>
+                                    <td>13</td>
+                                    <td>3</td>
+                                    <td>0</td>
+                                    <td class="border-1-px">0.813</td>
+                                    <td>455</td>
+                                    <td>286</td>
+                                    <td class="border-1-px">169</td>
+                                    <td class="team-standings-td-record">7 - 1 - 0</td>
+                                    <td class="team-standings-td-record border-1-px">6 - 2 - 0</td>
+                                    <td class="team-standings-td-record">4 - 2 - 0</td>
+                                    <td class="team-standings-td-record">9 - 2 - 0</td>
+                                    <td class="team-standings-td-record border-1-px">4 - 1 - 0</td>
+                                    <td class="team-standings-td-streak">7W</td>
+                                    <td class="team-standings-td-record">5 - 0 - 0</td>
+                                </tr>
+                                <tr>
+                                    <td class="border-4-px" scope="row">
+                                        <a class="team-standings-div-team-info" href="https://www.patriots.com/" target="_blank">
+                                            <div class="team-standings-div-team-logo">
+                                                <img class="team-standings-img-team-logo" src="https://static.www.nfl.com/league/api/clubs/logos/NE.svg" alt="BUF">
+                                            </div>
+                                            <div class="team-standings-div-team-name">
+                                                Buffalo Bills
+                                            </div>
+                                        </a>
+                                    </td>
+                                    <td>13</td>
+                                    <td>3</td>
+                                    <td>0</td>
+                                    <td class="border-1-px">0.813</td>
+                                    <td>455</td>
+                                    <td>286</td>
+                                    <td class="border-1-px">169</td>
+                                    <td class="team-standings-td-record">7 - 1 - 0</td>
+                                    <td class="team-standings-td-record border-1-px">6 - 2 - 0</td>
+                                    <td class="team-standings-td-record">4 - 2 - 0</td>
+                                    <td class="team-standings-td-record">9 - 2 - 0</td>
+                                    <td class="team-standings-td-record border-1-px">4 - 1 - 0</td>
+                                    <td class="team-standings-td-streak">7W</td>
+                                    <td class="team-standings-td-record">5 - 0 - 0</td>
+                                </tr>
+                                <tr>
+                                    <td class="border-4-px" scope="row">
+                                        <a class="team-standings-div-team-info" href="https://www.newyorkjets.com/" target="_blank">
+                                            <div class="team-standings-div-team-logo">
+                                                <img class="team-standings-img-team-logo" src="https://static.www.nfl.com/league/api/clubs/logos/NYJ.svg" alt="BUF">
+                                            </div>
+                                            <div class="team-standings-div-team-name">
+                                                Buffalo Bills
+                                            </div>
+                                        </a>
+                                    </td>
+                                    <td>13</td>
+                                    <td>3</td>
+                                    <td>0</td>
+                                    <td class="border-1-px">0.813</td>
+                                    <td>455</td>
+                                    <td>286</td>
+                                    <td class="border-1-px">169</td>
+                                    <td class="team-standings-td-record">7 - 1 - 0</td>
+                                    <td class="team-standings-td-record border-1-px">6 - 2 - 0</td>
+                                    <td class="team-standings-td-record">4 - 2 - 0</td>
+                                    <td class="team-standings-td-record">9 - 2 - 0</td>
+                                    <td class="team-standings-td-record border-1-px">4 - 1 - 0</td>
+                                    <td class="team-standings-td-streak">7W</td>
+                                    <td class="team-standings-td-record">5 - 0 - 0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br>
+                    <div class="team-standings-div-content">
+                        <table class="team-standings-table" role="table">
+                            <thead>
+                                <tr>
+                                  <th class="team-standings-th border-4-px" scope="col" aria-sort="none">AFC EAST</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">W</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">L</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">T</th>
+                                  <th class="team-standings-th border-1-px" scope="col" aria-sort="none">PCT</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">PF</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">PA</th>
+                                  <th class="team-standings-th border-1-px" scope="col" aria-sort="none">Pts Diff</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">Local</th>
+                                  <th class="team-standings-th border-1-px" scope="col" aria-sort="none">Visitante</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">Div</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">Conf</th>
+                                  <th class="team-standings-th border-1-px" scope="col" aria-sort="none">Non-Conf</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">Strk</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">Últimos 5</th>
+                                </tr>
+                              </thead>                              
+                            <tbody>
+                                <tr>
+                                    <td class="border-4-px" scope="row">
+                                        <a class="team-standings-div-team-info" href="https://www.buffalobills.com/" target="_blank">
+                                            <div class="team-standings-div-team-logo">
+                                                <img class="team-standings-img-team-logo" src="https://static.www.nfl.com/league/api/clubs/logos/BUF.svg" alt="BUF">
+                                            </div>
+                                            <div class="team-standings-div-team-name">
+                                                Buffalo Bills
+                                            </div>
+                                        </a>
+                                    </td>
+                                    <td>13</td>
+                                    <td>3</td>
+                                    <td>0</td>
+                                    <td class="border-1-px">0.813</td>
+                                    <td>455</td>
+                                    <td>286</td>
+                                    <td class="border-1-px">169</td>
+                                    <td class="team-standings-td-record">7 - 1 - 0</td>
+                                    <td class="team-standings-td-record border-1-px">6 - 2 - 0</td>
+                                    <td class="team-standings-td-record">4 - 2 - 0</td>
+                                    <td class="team-standings-td-record">9 - 2 - 0</td>
+                                    <td class="team-standings-td-record border-1-px">4 - 1 - 0</td>
+                                    <td class="team-standings-td-streak">7W</td>
+                                    <td class="team-standings-td-record">5 - 0 - 0</td>
+                                </tr>
+                                <tr>
+                                    <td class="border-4-px" scope="row">
+                                        <a class="team-standings-div-team-info" href="https://www.miamidolphins.com/" target="_blank">
+                                            <div class="team-standings-div-team-logo">
+                                                <img class="team-standings-img-team-logo" src="https://static.www.nfl.com/league/api/clubs/logos/MIA.svg" alt="BUF">
+                                            </div>
+                                            <div class="team-standings-div-team-name">
+                                                Buffalo Bills
+                                            </div>
+                                        </a>
+                                    </td>
+                                    <td>13</td>
+                                    <td>3</td>
+                                    <td>0</td>
+                                    <td class="border-1-px">0.813</td>
+                                    <td>455</td>
+                                    <td>286</td>
+                                    <td class="border-1-px">169</td>
+                                    <td class="team-standings-td-record">7 - 1 - 0</td>
+                                    <td class="team-standings-td-record border-1-px">6 - 2 - 0</td>
+                                    <td class="team-standings-td-record">4 - 2 - 0</td>
+                                    <td class="team-standings-td-record">9 - 2 - 0</td>
+                                    <td class="team-standings-td-record border-1-px">4 - 1 - 0</td>
+                                    <td class="team-standings-td-streak">7W</td>
+                                    <td class="team-standings-td-record">5 - 0 - 0</td>
+                                </tr>
+                                <tr>
+                                    <td class="border-4-px" scope="row">
+                                        <a class="team-standings-div-team-info" href="https://www.patriots.com/" target="_blank">
+                                            <div class="team-standings-div-team-logo">
+                                                <img class="team-standings-img-team-logo" src="https://static.www.nfl.com/league/api/clubs/logos/NE.svg" alt="BUF">
+                                            </div>
+                                            <div class="team-standings-div-team-name">
+                                                Buffalo Bills
+                                            </div>
+                                        </a>
+                                    </td>
+                                    <td>13</td>
+                                    <td>3</td>
+                                    <td>0</td>
+                                    <td class="border-1-px">0.813</td>
+                                    <td>455</td>
+                                    <td>286</td>
+                                    <td class="border-1-px">169</td>
+                                    <td class="team-standings-td-record">7 - 1 - 0</td>
+                                    <td class="team-standings-td-record border-1-px">6 - 2 - 0</td>
+                                    <td class="team-standings-td-record">4 - 2 - 0</td>
+                                    <td class="team-standings-td-record">9 - 2 - 0</td>
+                                    <td class="team-standings-td-record border-1-px">4 - 1 - 0</td>
+                                    <td class="team-standings-td-streak">7W</td>
+                                    <td class="team-standings-td-record">5 - 0 - 0</td>
+                                </tr>
+                                <tr>
+                                    <td class="border-4-px" scope="row">
+                                        <a class="team-standings-div-team-info" href="https://www.newyorkjets.com/" target="_blank">
+                                            <div class="team-standings-div-team-logo">
+                                                <img class="team-standings-img-team-logo" src="https://static.www.nfl.com/league/api/clubs/logos/NYJ.svg" alt="BUF">
+                                            </div>
+                                            <div class="team-standings-div-team-name">
+                                                Buffalo Bills
+                                            </div>
+                                        </a>
+                                    </td>
+                                    <td>13</td>
+                                    <td>3</td>
+                                    <td>0</td>
+                                    <td class="border-1-px">0.813</td>
+                                    <td>455</td>
+                                    <td>286</td>
+                                    <td class="border-1-px">169</td>
+                                    <td class="team-standings-td-record">7 - 1 - 0</td>
+                                    <td class="team-standings-td-record border-1-px">6 - 2 - 0</td>
+                                    <td class="team-standings-td-record">4 - 2 - 0</td>
+                                    <td class="team-standings-td-record">9 - 2 - 0</td>
+                                    <td class="team-standings-td-record border-1-px">4 - 1 - 0</td>
+                                    <td class="team-standings-td-streak">7W</td>
+                                    <td class="team-standings-td-record">5 - 0 - 0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br>
+                    <div class="team-standings-div-content">
+                        <table class="team-standings-table" role="table">
+                            <thead>
+                                <tr>
+                                  <th class="team-standings-th border-4-px" scope="col" aria-sort="none">AFC EAST</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">W</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">L</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">T</th>
+                                  <th class="team-standings-th border-1-px" scope="col" aria-sort="none">PCT</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">PF</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">PA</th>
+                                  <th class="team-standings-th border-1-px" scope="col" aria-sort="none">Pts Diff</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">Local</th>
+                                  <th class="team-standings-th border-1-px" scope="col" aria-sort="none">Visitante</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">Div</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">Conf</th>
+                                  <th class="team-standings-th border-1-px" scope="col" aria-sort="none">Non-Conf</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">Strk</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">Últimos 5</th>
+                                </tr>
+                              </thead>                              
+                            <tbody>
+                                <tr>
+                                    <td class="border-4-px" scope="row">
+                                        <a class="team-standings-div-team-info" href="https://www.buffalobills.com/" target="_blank">
+                                            <div class="team-standings-div-team-logo">
+                                                <img class="team-standings-img-team-logo" src="https://static.www.nfl.com/league/api/clubs/logos/BUF.svg" alt="BUF">
+                                            </div>
+                                            <div class="team-standings-div-team-name">
+                                                Buffalo Bills
+                                            </div>
+                                        </a>
+                                    </td>
+                                    <td>13</td>
+                                    <td>3</td>
+                                    <td>0</td>
+                                    <td class="border-1-px">0.813</td>
+                                    <td>455</td>
+                                    <td>286</td>
+                                    <td class="border-1-px">169</td>
+                                    <td class="team-standings-td-record">7 - 1 - 0</td>
+                                    <td class="team-standings-td-record border-1-px">6 - 2 - 0</td>
+                                    <td class="team-standings-td-record">4 - 2 - 0</td>
+                                    <td class="team-standings-td-record">9 - 2 - 0</td>
+                                    <td class="team-standings-td-record border-1-px">4 - 1 - 0</td>
+                                    <td class="team-standings-td-streak">7W</td>
+                                    <td class="team-standings-td-record">5 - 0 - 0</td>
+                                </tr>
+                                <tr>
+                                    <td class="border-4-px" scope="row">
+                                        <a class="team-standings-div-team-info" href="https://www.miamidolphins.com/" target="_blank">
+                                            <div class="team-standings-div-team-logo">
+                                                <img class="team-standings-img-team-logo" src="https://static.www.nfl.com/league/api/clubs/logos/MIA.svg" alt="BUF">
+                                            </div>
+                                            <div class="team-standings-div-team-name">
+                                                Buffalo Bills
+                                            </div>
+                                        </a>
+                                    </td>
+                                    <td>13</td>
+                                    <td>3</td>
+                                    <td>0</td>
+                                    <td class="border-1-px">0.813</td>
+                                    <td>455</td>
+                                    <td>286</td>
+                                    <td class="border-1-px">169</td>
+                                    <td class="team-standings-td-record">7 - 1 - 0</td>
+                                    <td class="team-standings-td-record border-1-px">6 - 2 - 0</td>
+                                    <td class="team-standings-td-record">4 - 2 - 0</td>
+                                    <td class="team-standings-td-record">9 - 2 - 0</td>
+                                    <td class="team-standings-td-record border-1-px">4 - 1 - 0</td>
+                                    <td class="team-standings-td-streak">7W</td>
+                                    <td class="team-standings-td-record">5 - 0 - 0</td>
+                                </tr>
+                                <tr>
+                                    <td class="border-4-px" scope="row">
+                                        <a class="team-standings-div-team-info" href="https://www.patriots.com/" target="_blank">
+                                            <div class="team-standings-div-team-logo">
+                                                <img class="team-standings-img-team-logo" src="https://static.www.nfl.com/league/api/clubs/logos/NE.svg" alt="BUF">
+                                            </div>
+                                            <div class="team-standings-div-team-name">
+                                                Buffalo Bills
+                                            </div>
+                                        </a>
+                                    </td>
+                                    <td>13</td>
+                                    <td>3</td>
+                                    <td>0</td>
+                                    <td class="border-1-px">0.813</td>
+                                    <td>455</td>
+                                    <td>286</td>
+                                    <td class="border-1-px">169</td>
+                                    <td class="team-standings-td-record">7 - 1 - 0</td>
+                                    <td class="team-standings-td-record border-1-px">6 - 2 - 0</td>
+                                    <td class="team-standings-td-record">4 - 2 - 0</td>
+                                    <td class="team-standings-td-record">9 - 2 - 0</td>
+                                    <td class="team-standings-td-record border-1-px">4 - 1 - 0</td>
+                                    <td class="team-standings-td-streak">7W</td>
+                                    <td class="team-standings-td-record">5 - 0 - 0</td>
+                                </tr>
+                                <tr>
+                                    <td class="border-4-px" scope="row">
+                                        <a class="team-standings-div-team-info" href="https://www.newyorkjets.com/" target="_blank">
+                                            <div class="team-standings-div-team-logo">
+                                                <img class="team-standings-img-team-logo" src="https://static.www.nfl.com/league/api/clubs/logos/NYJ.svg" alt="BUF">
+                                            </div>
+                                            <div class="team-standings-div-team-name">
+                                                Buffalo Bills
+                                            </div>
+                                        </a>
+                                    </td>
+                                    <td>13</td>
+                                    <td>3</td>
+                                    <td>0</td>
+                                    <td class="border-1-px">0.813</td>
+                                    <td>455</td>
+                                    <td>286</td>
+                                    <td class="border-1-px">169</td>
+                                    <td class="team-standings-td-record">7 - 1 - 0</td>
+                                    <td class="team-standings-td-record border-1-px">6 - 2 - 0</td>
+                                    <td class="team-standings-td-record">4 - 2 - 0</td>
+                                    <td class="team-standings-td-record">9 - 2 - 0</td>
+                                    <td class="team-standings-td-record border-1-px">4 - 1 - 0</td>
+                                    <td class="team-standings-td-streak">7W</td>
+                                    <td class="team-standings-td-record">5 - 0 - 0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br>
+                    <div class="team-standings-div-content">
+                        <table class="team-standings-table" role="table">
+                            <thead>
+                                <tr>
+                                  <th class="team-standings-th border-4-px" scope="col" aria-sort="none">AFC EAST</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">W</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">L</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">T</th>
+                                  <th class="team-standings-th border-1-px" scope="col" aria-sort="none">PCT</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">PF</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">PA</th>
+                                  <th class="team-standings-th border-1-px" scope="col" aria-sort="none">Pts Diff</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">Local</th>
+                                  <th class="team-standings-th border-1-px" scope="col" aria-sort="none">Visitante</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">Div</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">Conf</th>
+                                  <th class="team-standings-th border-1-px" scope="col" aria-sort="none">Non-Conf</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">Strk</th>
+                                  <th class="team-standings-th" scope="col" aria-sort="none">Últimos 5</th>
+                                </tr>
+                              </thead>                              
+                            <tbody>
+                                <tr>
+                                    <td class="border-4-px" scope="row">
+                                        <a class="team-standings-div-team-info" href="https://www.buffalobills.com/" target="_blank">
+                                            <div class="team-standings-div-team-logo">
+                                                <img class="team-standings-img-team-logo" src="https://static.www.nfl.com/league/api/clubs/logos/BUF.svg" alt="BUF">
+                                            </div>
+                                            <div class="team-standings-div-team-name">
+                                                Buffalo Bills
+                                            </div>
+                                        </a>
+                                    </td>
+                                    <td>13</td>
+                                    <td>3</td>
+                                    <td>0</td>
+                                    <td class="border-1-px">0.813</td>
+                                    <td>455</td>
+                                    <td>286</td>
+                                    <td class="border-1-px">169</td>
+                                    <td class="team-standings-td-record">7 - 1 - 0</td>
+                                    <td class="team-standings-td-record border-1-px">6 - 2 - 0</td>
+                                    <td class="team-standings-td-record">4 - 2 - 0</td>
+                                    <td class="team-standings-td-record">9 - 2 - 0</td>
+                                    <td class="team-standings-td-record border-1-px">4 - 1 - 0</td>
+                                    <td class="team-standings-td-streak">7W</td>
+                                    <td class="team-standings-td-record">5 - 0 - 0</td>
+                                </tr>
+                                <tr>
+                                    <td class="border-4-px" scope="row">
+                                        <a class="team-standings-div-team-info" href="https://www.miamidolphins.com/" target="_blank">
+                                            <div class="team-standings-div-team-logo">
+                                                <img class="team-standings-img-team-logo" src="https://static.www.nfl.com/league/api/clubs/logos/MIA.svg" alt="BUF">
+                                            </div>
+                                            <div class="team-standings-div-team-name">
+                                                Buffalo Bills
+                                            </div>
+                                        </a>
+                                    </td>
+                                    <td>13</td>
+                                    <td>3</td>
+                                    <td>0</td>
+                                    <td class="border-1-px">0.813</td>
+                                    <td>455</td>
+                                    <td>286</td>
+                                    <td class="border-1-px">169</td>
+                                    <td class="team-standings-td-record">7 - 1 - 0</td>
+                                    <td class="team-standings-td-record border-1-px">6 - 2 - 0</td>
+                                    <td class="team-standings-td-record">4 - 2 - 0</td>
+                                    <td class="team-standings-td-record">9 - 2 - 0</td>
+                                    <td class="team-standings-td-record border-1-px">4 - 1 - 0</td>
+                                    <td class="team-standings-td-streak">7W</td>
+                                    <td class="team-standings-td-record">5 - 0 - 0</td>
+                                </tr>
+                                <tr>
+                                    <td class="border-4-px" scope="row">
+                                        <a class="team-standings-div-team-info" href="https://www.patriots.com/" target="_blank">
+                                            <div class="team-standings-div-team-logo">
+                                                <img class="team-standings-img-team-logo" src="https://static.www.nfl.com/league/api/clubs/logos/NE.svg" alt="BUF">
+                                            </div>
+                                            <div class="team-standings-div-team-name">
+                                                Buffalo Bills
+                                            </div>
+                                        </a>
+                                    </td>
+                                    <td>13</td>
+                                    <td>3</td>
+                                    <td>0</td>
+                                    <td class="border-1-px">0.813</td>
+                                    <td>455</td>
+                                    <td>286</td>
+                                    <td class="border-1-px">169</td>
+                                    <td class="team-standings-td-record">7 - 1 - 0</td>
+                                    <td class="team-standings-td-record border-1-px">6 - 2 - 0</td>
+                                    <td class="team-standings-td-record">4 - 2 - 0</td>
+                                    <td class="team-standings-td-record">9 - 2 - 0</td>
+                                    <td class="team-standings-td-record border-1-px">4 - 1 - 0</td>
+                                    <td class="team-standings-td-streak">7W</td>
+                                    <td class="team-standings-td-record">5 - 0 - 0</td>
+                                </tr>
+                                <tr>
+                                    <td class="border-4-px" scope="row">
+                                        <a class="team-standings-div-team-info" href="https://www.newyorkjets.com/" target="_blank">
+                                            <div class="team-standings-div-team-logo">
+                                                <img class="team-standings-img-team-logo" src="https://static.www.nfl.com/league/api/clubs/logos/NYJ.svg" alt="BUF">
+                                            </div>
+                                            <div class="team-standings-div-team-name">
+                                                Buffalo Bills
+                                            </div>
+                                        </a>
+                                    </td>
+                                    <td>13</td>
+                                    <td>3</td>
+                                    <td>0</td>
+                                    <td class="border-1-px">0.813</td>
+                                    <td>455</td>
+                                    <td>286</td>
+                                    <td class="border-1-px">169</td>
+                                    <td class="team-standings-td-record">7 - 1 - 0</td>
+                                    <td class="team-standings-td-record border-1-px">6 - 2 - 0</td>
+                                    <td class="team-standings-td-record">4 - 2 - 0</td>
+                                    <td class="team-standings-td-record">9 - 2 - 0</td>
+                                    <td class="team-standings-td-record border-1-px">4 - 1 - 0</td>
+                                    <td class="team-standings-td-streak">7W</td>
+                                    <td class="team-standings-td-record">5 - 0 - 0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- 
+        <div class="bordergroup2">
+            <div class="h1group2">
+                <li class="h1team">
+                    <a href="https://www.baltimoreravens.com/" target="_blank"><img class="logo" src="https://static.www.nfl.com/league/api/clubs/logos/BAL.svg" alt="BAL"></a>
+                    <span class="h1name">BAL</span>
+                    <span class="recordgroup1">0-0-0</span>
+                </li>
+                <li class="h1team">
+                    <a href="https://www.bengals.com/" target="_blank"><img class="logo" src="https://static.www.nfl.com/league/api/clubs/logos/CIN.svg" alt="CIN"></a>
+                    <span class="h1name">CIN</span>
+                    <span class="recordgroup1">0-0-0</span>
+                </li>
+                <li class="h1team">
+                    <a href="https://www.clevelandbrowns.com/" target="_blank"><img class="logo" src="https://static.www.nfl.com/league/api/clubs/logos/CLE.svg" alt="CLE"></a>
+                    <span class="h1name">CLE</span>
+                    <span class="recordgroup1">0-0-0</span>
+                </li>
+                <li class="h1team">
+                    <a href="https://www.steelers.com/" target="_blank"><img class="logo" src="https://static.www.nfl.com/league/api/clubs/logos/PIT.svg" alt="PIT"></a>
+                    <span class="h1name">PIT</span>
+                    <span class="recordgroup1">0-0-0</span>
+                </li>
+            </div>
+        </div>
+
+        <div class="bordergroup3">
+            <div class="h1group3">
+                <li class="h1team">
+                    <a href="https://www.houstontexans.com/" target="_blank"><img class="logo" src="https://static.www.nfl.com/league/api/clubs/logos/HOU.svg" alt="HOU"></a>
+                    <span class="h1name">HOU</span>
+                    <span class="recordgroup1">0-0-0</span>
+                </li>
+                <li class="h1team">
+                    <a href="https://www.colts.com/" target="_blank"><img class="logo" src="https://static.www.nfl.com/league/api/clubs/logos/IND.svg" alt="IND"></a>
+                    <span class="h1name">IND</span>
+                    <span class="recordgroup1">0-0-0</span>
+                </li>
+                <li class="h1team">
+                    <a href="https://www.jaguars.com/" target="_blank"><img class="logo" src="https://static.www.nfl.com/league/api/clubs/logos/JAX.svg" alt="JAX"></a>
+                    <span class="h1name">JAX</span>
+                    <span class="recordgroup1">0-0-0</span>
+                </li>
+                <li class="h1team">
+                    <a href="https://www.tennesseetitans.com/" target="_blank"><img class="logo" src="https://static.www.nfl.com/league/api/clubs/logos/TEN.svg" alt="TEN"></a>
+                    <span class="h1name">TEN</span>
+                    <span class="recordgroup1">0-0-0</span>
+                </li>
+            </div>
+        </div>
+
+        <div class="bordergroup4">
+            <div class="h1group4">
+                <li class="h1team">
+                    <a href="https://www.denverbroncos.com/" target="_blank"><img class="logo" src="https://static.www.nfl.com/league/api/clubs/logos/DEN.svg" alt="DEN"></a>
+                    <span class="h1name">DEN</span>
+                    <span class="recordgroup1">0-0-0</span>
+                </li>
+                <li class="h1team">
+                    <a href="https://www.chiefs.com/" target="_blank"><img class="logo" src="https://static.www.nfl.com/league/api/clubs/logos/KC.svg" alt="KC"></a>
+                    <span class="h1name">KC</span>
+                    <span class="recordgroup1">0-0-0</span>
+                </li>
+                <li class="h1team">
+                    <a href="https://www.raiders.com/" target="_blank"><img class="logo" src="https://static.www.nfl.com/league/api/clubs/logos/LV.svg" alt="LV"></a>
+                    <span class="h1name">LV</span>
+                    <span class="recordgroup1">0-0-0</span>
+                </li>
+                <li class="h1team">
+                    <a href="https://www.chargers.com/" target="_blank"><img class="logo" src="https://static.www.nfl.com/league/api/clubs/logos/LAC.svg" alt="LAC"></a>
+                    <span class="h1name">LAC</span>
+                    <span class="recordgroup1">0-0-0</span>
+                </li>
+            </div>
+        </div>
+
+        <div class="bordergroup5">
+            <div class="h1group5">
+                <li class="h1team">
+                    <a href="https://www.dallascowboys.com/" target="_blank"><img class="logo" src="https://static.www.nfl.com/league/api/clubs/logos/DAL.svg" alt="DAL"></a>
+                    <span class="h1name">DAL</span>
+                    <span class="recordgroup1">0-0-0</span>
+                </li>
+                <li class="h1team">
+                    <a href="https://www.giants.com/" target="_blank"><img class="logo" src="https://static.www.nfl.com/league/api/clubs/logos/NYG.svg" alt="NYG"></a>
+                    <span class="h1name">NYG</span>
+                    <span class="recordgroup1">0-0-0</span>
+                </li>
+                <li class="h1team">
+                    <a href="https://www.philadelphiaeagles.com/" target="_blank"><img class="logo" src="https://static.www.nfl.com/league/api/clubs/logos/PHI.svg" alt="PHI"></a>
+                    <span class="h1name">PHI</span>
+                    <span class="recordgroup1">0-0-0</span>
+                </li>
+                <li class="h1team">
+                    <a href="https://www.commanders.com/" target="_blank"><img class="logo" src="https://static.www.nfl.com/league/api/clubs/logos/WAS.svg" alt="WAS"></a>
+                    <span class="h1name">WAS</span>
+                    <span class="recordgroup1">0-0-0</span>
+                </li>
+            </div>
+        </div>
+
+        <div class="bordergroup6">
+            <div class="h1group6">
+                <li class="h1team">
+                    <a href="https://www.chicagobears.com/" target="_blank"><img class="logo" src="https://static.www.nfl.com/league/api/clubs/logos/CHI.svg" alt="CHI"></a>
+                    <span class="h1name">CHI</span>
+                    <span class="recordgroup1">0-0-0</span>
+                </li>
+                <li class="h1team">
+                    <a href="https://www.detroitlions.com/" target="_blank"><img class="logo" src="https://static.www.nfl.com/league/api/clubs/logos/DET.svg" alt="DET"></a>
+                    <span class="h1name">DET</span>
+                    <span class="recordgroup1">0-0-0</span>
+                </li>
+                <li class="h1team">
+                    <a href="https://www.packers.com/" target="_blank"><img class="logo" src="https://static.www.nfl.com/league/api/clubs/logos/GB.svg" alt="GB"></a>
+                    <span class="h1name">GB</span>
+                    <span class="recordgroup1">0-0-0</span>
+                </li>
+                <li class="h1team">
+                    <a href="https://www.vikings.com/" target="_blank"><img class="logo" src="https://static.www.nfl.com/league/api/clubs/logos/MIN.svg" alt="MIN"></a>
+                    <span class="h1name">MIN</span>
+                    <span class="recordgroup1">0-0-0</span>
+                </li>
+            </div>
+        </div>
+
+        <div class="bordergroup7">
+            <div class="h1group7">
+                <li class="h1team">
+                    <a href="https://www.atlantafalcons.com/" target="_blank"><img class="logo" src="https://static.www.nfl.com/league/api/clubs/logos/ATL.svg" alt="ATL"></a>
+                    <span class="h1name">ATL</span>
+                    <span class="recordgroup1">0-0-0</span>
+                </li>
+                <li class="h1team">
+                    <a href="https://www.panthers.com/" target="_blank"><img class="logo" src="https://static.www.nfl.com/league/api/clubs/logos/CAR.svg" alt="CAR"></a>
+                    <span class="h1name">CAR</span>
+                    <span class="recordgroup1">0-0-0</span>
+                </li>
+                <li class="h1team">
+                    <a href="https://www.neworleanssaints.com/" target="_blank"><img class="logo" src="https://static.www.nfl.com/league/api/clubs/logos/NO.svg" alt="NO"></a>
+                    <span class="h1name">NO</span>
+                    <span class="recordgroup1">0-0-0</span>
+                </li>
+                <li class="h1team">
+                    <a href="https://www.buccaneers.com/" target="_blank"><img class="logo" src="https://static.www.nfl.com/league/api/clubs/logos/TB.svg" alt="TB"></a>
+                    <span class="h1name">TB</span>
+                    <span class="recordgroup1">0-0-0</span>
+                </li>
+            </div>
+        </div>
+
+        <div class="bordergroup4">
+            <div class="h1group8">
+                <li class="h1team">
+                    <a href="https://www.azcardinals.com/" target="_blank"><img class="logo" src="https://static.www.nfl.com/league/api/clubs/logos/ARI.svg" alt="ARI"></a>
+                    <span class="h1name">ARI</span>
+                    <span class="recordgroup1">0-0-0</span>
+                </li>
+                <li class="h1team">
+                    <a href="https://www.therams.com/" target="_blank"><img class="logo" src="https://static.www.nfl.com/league/api/clubs/logos/LA.svg" alt="LA"></a>
+                    <span class="h1name">LA</span>
+                    <span class="recordgroup1">0-0-0</span>
+                </li>
+                <li class="h1team">
+                    <a href="https://www.49ers.com/news/espanol/" target="_blank"><img class="logo" src="https://static.www.nfl.com/league/api/clubs/logos/SF.svg" alt="SF"></a>
+                    <span class="h1name">SF</span>
+                    <span class="recordgroup1">0-0-0</span>
+                </li>
+                <li class="h1team">
+                    <a href="https://www.seahawks.com/" target="_blank"><img class="logo" src="https://static.www.nfl.com/league/api/clubs/logos/SEA.svg" alt="SEA"></a>
+                    <span class="h1name">SEA</span>
+                    <span class="recordgroup1">0-0-0</span>
+                </li>
+            </div>
+        </div>
+    </ul>
+</div>
+<div class="news">
+    <div>
+        <a  class="news_header-link" href="https://www.nfl.com/news/" target="_blank"> <h2 class="newsheader">Ultimas Noticias (Inglés)</h2></a>
+        <a href="https://www.nfl.com/news/" target="_blank"> <img class="newsimg" id="newsimgeng" src="https://static.www.nfl.com/image/private/t_editorial_landscape_3_4_desktop_2x/f_auto/league/ecqgxezkua8olmrobupw.jpg" alt="newsimage"></a>
+        <a href="https://www.nfl.com/news/" target="_blank"> <img class="newsimg" id="newsimgeng" src="https://static.www.nfl.com/image/private/t_editorial_landscape_3_4_desktop_2x/f_auto/league/s16inr3uoor4cr1skf5h.jpg" alt="newsimage"></a>
+    </div>
+    <div>
+        <a class="news_header-link" href="https://www.foxdeportes.com/nfl" target="_blank"> <h2 class="newsheader" id="newsheaderesp">Ultimas Noticias (Español)</h2></a>
+        <a href="https://www.foxdeportes.com/nfl" target="_blank"> <img class="newsimg" id="newsimgesp" src="https://static.www.nfl.com/image/private/t_editorial_landscape_3_4_desktop_2x/f_auto/league/ykykalkhxaqatrncor1v.jpg" alt="newsimage"></a>
+        <a href="https://www.foxdeportes.com/nfl" target="_blank"> <img class="newsimg" id="newsimgesp" src="https://static.www.nfl.com/image/private/t_editorial_landscape_3_4_desktop_2x/f_auto/league/jvggkzo2e5vqc5toycxf.jpg" alt="newsimage"></a>
+    </div>
+</div> -->
+{% endblock %}

@@ -1,0 +1,1443 @@
+{% extends "base.html" %}
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" type="text/css" href="/static/weeks.css">
+{% endblock %}
+{% block title %}WEEK 16{% endblock %}
+
+{% block content %}
+<section class="weeknumber {% if current_datetime > limit_date %}page-opacity{% endif %}">
+    <div class="schedule">
+        <div class="scheduleouter">
+            <div class="contentwide"></div>
+            <div class="scheduleinner">
+                <div class="schedulecol12">
+                    <div class="scheduleheader">
+                        <h1 class="scheduletitle">
+                            <a class="schedulebutton" href="/week1" title="View NFL schedule for current week">NFL CALENDARIO</a>
+                        </h1>
+                        <h2 class="scheduleweek">2022 - week 16</h2>
+                        {% if current_datetime > limit_date %}
+                        <div class="scheduleweek schedule-div-deadline-message">
+                            <p class="gamestitle schedule-p-deadline-message">La fecha límite para hacer picks de esta semana ha expirado.</p>
+                        </div>
+                        {% else %}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<form class="{% if current_datetime > limit_date %}page-opacity{% endif %}" method="POST" action="{{ url_for('views.save_week16_form') }}">
+    <!-- TNF 1 -->
+    <section class="nflgames">
+        <div class="gamesinner">
+            <div class="gamescol12">
+                <h2 class="gamestitle">Jueves, 8 de Septiembre</h2>
+                <div class="gamestrip-pregame">
+                    <div class="gameinfo">
+                        <p class="gamedateinfo">
+                            <span class="gamedatetime"> 7:20 PM </span>
+                            <span class="gamedate_timezone"> CDT </span>
+                        </p>
+                    </div>
+                    <div class="gamestrip_game">
+                        <div class="gamestrip_team gamestrip_team_opponent">
+                            <p class="gamestrip_team-name-opponent">
+                                <span class="gamestrip_team-logo-opponent">
+                                    <picture>                                           
+                                        <a href="https://www.buffalobills.com/" target="_blank"><img alt="Bills logo" class="img-responsive-opponent" data-src="https://static.www.nfl.com/t_q-best/league/api/clubs/logos/BUF" role="presentation" src="https://static.www.nfl.com/t_q-best/league/api/clubs/logos/BUF"></a>
+                                    </picture>
+                                </span>
+                                <span class="gamestrip_team-abbreviation-opponent"> BUF </span>
+                                <span class="gamestrip_team-fullname-opponent"> Bills </span>
+                            </p>
+                            <div class="gamestrip_team-record-opponent">(0-0)</div>
+                        </div>
+                        <div class="game_winner_and_difference-pick">
+                            <div class="game_winner_and_difference-pick-wrapper">
+                                <input class="game_winner_and_difference-pick-input" type="radio" name="week-16_game-1_winner" id="week-16_game-1_winner-away_by-6" value="week-16_game-1_winner-away_by-6"
+                                {% if user.has_pick_for_week_and_game(16,1) and user.get_pick_for__week_and_game(16,1) == 'week-16_game-1_winner-away_by-6' %}checked{% endif %}>
+                                <label class="game_winner_and_difference-pick-label" for="week-16_game-1_winner-away_by-6">
+                                    <div class="game_winner_and_difference-pick-indicator"></div>
+                                    <span class="game_winner_and_difference-pick-text">0-6</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="game_winner_and_difference-pick">
+                            <div class="game_winner_and_difference-pick-wrapper">
+                                <input class="game_winner_and_difference-pick-input" type="radio" name="week-16_game-1_winner" id="week-16_game-1_winner-away_by-7" value="week-16_game-1_winner-away_by-7" 
+                                {% if user.has_pick_for_week_and_game(16,1) and user.get_pick_for__week_and_game(16,1) == 'week-16_game-1_winner-away_by-7' %}checked{% endif %}>
+                                <label class="game_winner_and_difference-pick-label" for="week-16_game-1_winner-away_by-7">
+                                    <div class="game_winner_and_difference-pick-indicator"></div>
+                                    <span class="game_winner_and_difference-pick-text2">7</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="gamestrip_team-separator">
+                            <span class="gamestrip_versus-icon">@</span>
+                        </div>
+                        <div class="radiogroup">
+                            <div class="game_winner_and_difference-pick-wrapper">
+                                <input class="game_winner_and_difference-pick-input" type="radio" name="week-16_game-1_winner" id="week-16_game-1_winner-home_by-6" value="week-16_game-1_winner-home_by-6"
+                                {% if user.has_pick_for_week_and_game(16,1) and user.get_pick_for__week_and_game(16,1) == 'week-16_game-1_winner-home_by-6' %}checked{% endif %}>
+                                <label class="game_winner_and_difference-pick-label" for="week-16_game-1_winner-home_by-6">
+                                    <div class="game_winner_and_difference-pick-indicator"></div>
+                                    <span class="game_winner_and_difference-pick-text">0-6</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="radiogroup">
+                            <div class="game_winner_and_difference-pick-wrapper">
+                                <input class="game_winner_and_difference-pick-input" type="radio" name="week-16_game-1_winner" id="week-16_game-1_winner-home_by-7" value="week-16_game-1_winner-home_by-7"
+                                {% if user.has_pick_for_week_and_game(16,1) and user.get_pick_for__week_and_game(16,1) == 'week-16_game-1_winner-home_by-7' %}checked{% endif %}>
+                                <label class="game_winner_and_difference-pick-label" for="week-16_game-1_winner-home_by-7">
+                                    <div class="game_winner_and_difference-pick-indicator"></div>
+                                    <span class="game_winner_and_difference-pick-text2">7</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="gamestrip_team gamestrip_team-home">
+                            <p class="gamestrip_team-name">
+                                <span class="gamestrip_team-logo">
+                                    <picture>                                           
+                                        <img alt="Rams logo" class="img-responsive" data-src="https://static.www.nfl.com/t_q-best/league/api/clubs/logos/LA" role="presentation" src="https://static.www.nfl.com/t_q-best/league/api/clubs/logos/LA">
+                                    </picture>
+                                </span>
+                                <span class="gamestrip_team-abbreviation"> LA </span>
+                                <span class="gamestrip_team-fullname"> Rams </span>
+                            </p>
+                            <div class="gamestrip_team-record">(0-0)</div>
+                        </div>
+                    </div>
+                    <div class="gamestrip_right-area">
+                        <a class="game_stats-link" href="https://www.nfl.com/games/bills-at-rams-2022-reg-1" target="_blank">
+                            <span>Info/Stats del partido</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+        <!-- Sunday Game 2 -->
+    <section class="nflgames">
+        <div class="gamesinner">
+            <div class="gamescol12">
+                <h2 class="gamestitle">Domingo, 11 de Septiembre</h2>
+                <div class="gamestrip-pregame">
+                    <div class="gameinfo">
+                        <p class="gamedateinfo">
+                            <span class="gamedatetime"> 12:00 PM </span>
+                            <span class="gamedate_timezone"> CDT </span>
+                        </p>
+                    </div>
+                    <div class="gamestrip_game">
+                        <div class="gamestrip_team gamestrip_team_opponent">
+                            <p class="gamestrip_team-name-opponent">
+                                <span class="gamestrip_team-logo-opponent">
+                                    <picture>                                           
+                                        <img alt="Saints logo" class="img-responsive-opponent" data-src="https://static.www.nfl.com/t_q-best/league/api/clubs/logos/NO" role="presentation" src="https://static.www.nfl.com/t_q-best/league/api/clubs/logos/NO">
+                                    </picture>
+                                </span>
+                                <span class="gamestrip_team-abbreviation-opponent"> NO </span>
+                                <span class="gamestrip_team-fullname-opponent"> Saints </span>
+                            </p>
+                            <div class="gamestrip_team-record-opponent">(0-0)</div>
+                        </div>
+                        <div class="game_winner_and_difference-pick">
+                            <div class="game_winner_and_difference-pick-wrapper">
+                                <input class="game_winner_and_difference-pick-input" type="radio" name="week-16_game-2_winner" id="week-16_game-2_winner-away_by-6" value="week-16_game-2_winner-away_by-6"
+                                {% if user.has_pick_for_week_and_game(16,2) and user.get_pick_for__week_and_game(16,2) == 'week-16_game-2_winner-away_by-6' %}checked{% endif %}>
+                                <label class="game_winner_and_difference-pick-label" for="week-16_game-2_winner-away_by-6">
+                                    <div class="game_winner_and_difference-pick-indicator"></div>
+                                    <span class="game_winner_and_difference-pick-text">0-6</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="game_winner_and_difference-pick">
+                            <div class="game_winner_and_difference-pick-wrapper">
+                                <input class="game_winner_and_difference-pick-input" type="radio" name="week-16_game-2_winner" id="week-16_game-2_winner-away_by-7" value="week-16_game-2_winner-away_by-7"
+                                {% if user.has_pick_for_week_and_game(16,2) and user.get_pick_for__week_and_game(16,2) == 'week-16_game-2_winner-away_by-7' %}checked{% endif %}>
+                                <label class="game_winner_and_difference-pick-label" for="week-16_game-2_winner-away_by-7">
+                                    <div class="game_winner_and_difference-pick-indicator"></div>
+                                    <span class="game_winner_and_difference-pick-text2">7</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="gamestrip_team-separator">
+                            <span class="gamestrip_versus-icon">@</span>
+                        </div>
+                        <div class="radiogroup">
+                            <div class="game_winner_and_difference-pick-wrapper">
+                                <input class="game_winner_and_difference-pick-input" type="radio" name="week-16_game-2_winner" id="week-16_game-2_winner-home_by-6" value="week-16_game-2_winner-home_by-6"
+                                {% if user.has_pick_for_week_and_game(16,2) and user.get_pick_for__week_and_game(16,2) == 'week-16_game-2_winner-home_by-6' %}checked{% endif %}>
+                                <label class="game_winner_and_difference-pick-label" for="week-16_game-2_winner-home_by-6">
+                                    <div class="game_winner_and_difference-pick-indicator"></div>
+                                    <span class="game_winner_and_difference-pick-text">0-6</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="radiogroup">
+                            <div class="game_winner_and_difference-pick-wrapper">
+                                <input class="game_winner_and_difference-pick-input" type="radio" name="week-16_game-2_winner" id="week-16_game-2_winner-home_by-7" value="week-16_game-2_winner-home_by-7"
+                                {% if user.has_pick_for_week_and_game(16,2) and user.get_pick_for__week_and_game(16,2) == 'week-16_game-2_winner-home_by-7' %}checked{% endif %}>
+                                <label class="game_winner_and_difference-pick-label" for="week-16_game-2_winner-home_by-7">
+                                    <div class="game_winner_and_difference-pick-indicator"></div>
+                                    <span class="game_winner_and_difference-pick-text2">7</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="gamestrip_team gamestrip_team-home">
+                            <p class="gamestrip_team-name">
+                                <span class="gamestrip_team-logo">
+                                    <picture>                                          
+                                        <img alt="Falcons logo" class="img-responsive" data-src="https://static.www.nfl.com/t_q-best/league/api/clubs/logos/ATL" role="presentation" src="https://static.www.nfl.com/t_q-best/league/api/clubs/logos/ATL">
+                                    </picture>
+                                </span>
+                                <span class="gamestrip_team-abbreviation"> ATL </span>
+                                <span class="gamestrip_team-fullname"> Falcons </span>
+                            </p>
+                            <div class="gamestrip_team-record">(0-0)</div>
+                        </div>
+                    </div>
+                    <div class="gamestrip_right-area">
+                        <a class="game_stats-link" href="https://www.nfl.com/games/saints-at-falcons-2022-reg-1" target="_blank">
+                            <span>Info/Stats del partido</span>
+                        </a>
+                    </div>
+                </div>
+
+                    <!-- Sunday Game 3 -->
+                <br class="in_between_games_space">
+                <div class="gamestrip-pregame">
+                    <div class="gameinfo">
+                        <p class="gamedateinfo">
+                            <span class="gamedatetime"> 12:00 PM </span>
+                            <span class="gamedate_timezone"> CDT </span>
+                        </p>
+                    </div>
+                    <div class="gamestrip_game">
+                        <div class="gamestrip_team gamestrip_team_opponent">
+                            <p class="gamestrip_team-name-opponent">
+                                <span class="gamestrip_team-logo-opponent">
+                                    <picture>                                          
+                                        <img alt="Browns logo" class="img-responsive-opponent" data-src="https://static.www.nfl.com/t_q-best/league/api/clubs/logos/CLE" role="presentation" src="https://static.www.nfl.com/t_q-best/league/api/clubs/logos/CLE">
+                                    </picture>
+                                </span>
+                                <span class="gamestrip_team-abbreviation-opponent"> CLE </span>
+                                <span class="gamestrip_team-fullname-opponent"> Browns </span>
+                            </p>
+                            <div class="gamestrip_team-record-opponent">(0-0)</div>
+                        </div>
+                        <div class="game_winner_and_difference-pick">
+                            <div class="game_winner_and_difference-pick-wrapper">
+                                <input class="game_winner_and_difference-pick-input" type="radio" name="week-16_game-3_winner" id="week-16_game-3_winner-away_by-6" value="week-16_game-3_winner-away_by-6"
+                                {% if user.has_pick_for_week_and_game(16,3) and user.get_pick_for__week_and_game(16,3) == 'week-16_game-3_winner-away_by-6' %}checked{% endif %}>
+                                <label class="game_winner_and_difference-pick-label" for="week-16_game-3_winner-away_by-6">
+                                    <div class="game_winner_and_difference-pick-indicator"></div>
+                                    <span class="game_winner_and_difference-pick-text">0-6</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="game_winner_and_difference-pick">
+                            <div class="game_winner_and_difference-pick-wrapper">
+                                <input class="game_winner_and_difference-pick-input" type="radio" name="week-16_game-3_winner" id="week-16_game-3_winner-away_by-7" value="week-16_game-3_winner-away_by-7"
+                                {% if user.has_pick_for_week_and_game(16,3) and user.get_pick_for__week_and_game(16,3) == 'week-16_game-3_winner-away_by-7' %}checked{% endif %}>
+                                <label class="game_winner_and_difference-pick-label" for="week-16_game-3_winner-away_by-7">
+                                    <div class="game_winner_and_difference-pick-indicator"></div>
+                                    <span class="game_winner_and_difference-pick-text2">7</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="gamestrip_team-separator">
+                            <span class="gamestrip_versus-icon">@</span>
+                        </div>
+                        <div class="radiogroup">
+                            <div class="game_winner_and_difference-pick-wrapper">
+                                <input class="game_winner_and_difference-pick-input" type="radio" name="week-16_game-3_winner" id="week-16_game-3_winner-home_by-6" value="week-16_game-3_winner-home_by-6"
+                                {% if user.has_pick_for_week_and_game(16,3) and user.get_pick_for__week_and_game(16,3) == 'week-16_game-3_winner-home_by-6' %}checked{% endif %}>
+                                <label class="game_winner_and_difference-pick-label" for="week-16_game-3_winner-home_by-6">
+                                    <div class="game_winner_and_difference-pick-indicator"></div>
+                                    <span class="game_winner_and_difference-pick-text">0-6</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="radiogroup">
+                            <div class="game_winner_and_difference-pick-wrapper">
+                                <input class="game_winner_and_difference-pick-input" type="radio" name="week-16_game-3_winner" id="week-16_game-3_winner-home_by-7" value="week-16_game-3_winner-home_by-7"
+                                {% if user.has_pick_for_week_and_game(16,3) and user.get_pick_for__week_and_game(16,3) == 'week-16_game-3_winner-home_by-7' %}checked{% endif %}>
+                                <label class="game_winner_and_difference-pick-label" for="week-16_game-3_winner-home_by-7">
+                                    <div class="game_winner_and_difference-pick-indicator"></div>
+                                    <span class="game_winner_and_difference-pick-text2">7</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="gamestrip_team gamestrip_team-home">
+                            <p class="gamestrip_team-name">
+                                <span class="gamestrip_team-logo">
+                                    <picture>                                           
+                                        <img alt="Panthers logo" class="img-responsive" data-src="https://static.www.nfl.com/t_q-best/league/api/clubs/logos/CAR" role="presentation" src="https://static.www.nfl.com/t_q-best/league/api/clubs/logos/CAR">
+                                    </picture>
+                                </span>
+                                <span class="gamestrip_team-abbreviation"> CAR </span>
+                                <span class="gamestrip_team-fullname"> Panthers </span>
+                            </p>
+                            <div class="gamestrip_team-record">(0-0)</div>
+                        </div>
+                    </div>
+                    <div class="gamestrip_right-area">
+                        <a class="game_stats-link" href="https://www.nfl.com/games/browns-at-panthers-2022-reg-1" target="_blank">
+                            <span>Info/Stats del partido</span>
+                        </a>
+                    </div>
+                </div>
+
+                    <!-- Sunday Game 4 -->
+                <br class="in_between_games_space">
+                <div class="gamestrip-pregame">
+                    <div class="gameinfo">
+                        <p class="gamedateinfo">
+                            <span class="gamedatetime"> 12:00 PM </span>
+                            <span class="gamedate_timezone"> CDT </span>
+                        </p>
+                    </div>
+                    <div class="gamestrip_game">
+                        <div class="gamestrip_team gamestrip_team_opponent">
+                            <p class="gamestrip_team-name-opponent">
+                                <span class="gamestrip_team-logo-opponent">
+                                    <picture>                                           
+                                        <img alt="49ers logo" class="img-responsive-opponent" data-src="https://static.www.nfl.com/t_q-best/league/api/clubs/logos/SF" role="presentation" src="https://static.www.nfl.com/t_q-best/league/api/clubs/logos/SF">
+                                    </picture>
+                                </span>
+                                <span class="gamestrip_team-abbreviation-opponent"> SF </span>
+                                <span class="gamestrip_team-fullname-opponent"> 49ers </span>
+                            </p>
+                            <div class="gamestrip_team-record-opponent">(0-0)</div>
+                        </div>
+                        <div class="game_winner_and_difference-pick">
+                            <div class="game_winner_and_difference-pick-wrapper">
+                                <input class="game_winner_and_difference-pick-input" type="radio" name="week-16_game-4_winner" id="week-16_game-4_winner-away_by-6" value="week-16_game-4_winner-away_by-6"
+                                {% if user.has_pick_for_week_and_game(16,4) and user.get_pick_for__week_and_game(16,4) == 'week-16_game-4_winner-away_by-6' %}checked{% endif %}>
+                                <label class="game_winner_and_difference-pick-label" for="week-16_game-4_winner-away_by-6">
+                                    <div class="game_winner_and_difference-pick-indicator"></div>
+                                    <span class="game_winner_and_difference-pick-text">0-6</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="game_winner_and_difference-pick">
+                            <div class="game_winner_and_difference-pick-wrapper">
+                                <input class="game_winner_and_difference-pick-input" type="radio" name="week-16_game-4_winner" id="week-16_game-4_winner-away_by-7" value="week-16_game-4_winner-away_by-7"
+                                {% if user.has_pick_for_week_and_game(16,4) and user.get_pick_for__week_and_game(16,4) == 'week-16_game-4_winner-away_by-7' %}checked{% endif %}>
+                                <label class="game_winner_and_difference-pick-label" for="week-16_game-4_winner-away_by-7">
+                                    <div class="game_winner_and_difference-pick-indicator"></div>
+                                    <span class="game_winner_and_difference-pick-text2">7</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="gamestrip_team-separator">
+                            <span class="gamestrip_versus-icon">@</span>
+                        </div>
+                        <div class="radiogroup">
+                            <div class="game_winner_and_difference-pick-wrapper">
+                                <input class="game_winner_and_difference-pick-input" type="radio" name="week-16_game-4_winner" id="week-16_game-4_winner-home_by-6" value="week-16_game-4_winner-home_by-6"
+                                {% if user.has_pick_for_week_and_game(16,4) and user.get_pick_for__week_and_game(16,4) == 'week-16_game-4_winner-home_by-6' %}checked{% endif %}>
+                                <label class="game_winner_and_difference-pick-label" for="week-16_game-4_winner-home_by-6">
+                                    <div class="game_winner_and_difference-pick-indicator"></div>
+                                    <span class="game_winner_and_difference-pick-text">0-6</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="radiogroup">
+                            <div class="game_winner_and_difference-pick-wrapper">
+                                <input class="game_winner_and_difference-pick-input" type="radio" name="week-16_game-4_winner" id="week-16_game-4_winner-home_by-7" value="week-16_game-4_winner-home_by-7"
+                                {% if user.has_pick_for_week_and_game(16,4) and user.get_pick_for__week_and_game(16,4) == 'week-16_game-4_winner-home_by-7' %}checked{% endif %}>
+                                <label class="game_winner_and_difference-pick-label" for="week-16_game-4_winner-home_by-7">
+                                    <div class="game_winner_and_difference-pick-indicator"></div>
+                                    <span class="game_winner_and_difference-pick-text2">7</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="gamestrip_team gamestrip_team-home">
+                            <p class="gamestrip_team-name">
+                                <span class="gamestrip_team-logo">
+                                    <picture>                                           
+                                        <img alt="Rams logo" class="img-responsive" data-src="https://static.www.nfl.com/t_q-best/league/api/clubs/logos/CHI" role="presentation" src="https://static.www.nfl.com/t_q-best/league/api/clubs/logos/CHI">
+                                    </picture>
+                                </span>
+                                <span class="gamestrip_team-abbreviation"> CHI </span>
+                                <span class="gamestrip_team-fullname"> Bears </span>
+                            </p>
+                            <div class="gamestrip_team-record">(0-0)</div>
+                        </div>
+                    </div>
+                    <div class="gamestrip_right-area">
+                        <a class="game_stats-link" href="https://www.nfl.com/games/49ers-at-bears-2022-reg-1" target="_blank">
+                            <span>Info/Stats del partido</span>
+                        </a>
+                    </div>
+                </div>
+
+                    <!-- Sunday Game 5 -->
+                <br class="in_between_games_space">
+                <div class="gamestrip-pregame">
+                    <div class="gameinfo">
+                        <p class="gamedateinfo">
+                            <span class="gamedatetime"> 12:00 PM </span>
+                            <span class="gamedate_timezone"> CDT </span>
+                        </p>
+                    </div>
+                    <div class="gamestrip_game">
+                        <div class="gamestrip_team gamestrip_team_opponent">
+                            <p class="gamestrip_team-name-opponent">
+                                <span class="gamestrip_team-logo-opponent">
+                                    <picture>
+                                        <img alt="Bills logo" class="img-responsive-opponent" data-src="https://static.www.nfl.com/t_q-best/league/api/clubs/logos/PIT" role="presentation" src="https://static.www.nfl.com/t_q-best/league/api/clubs/logos/PIT">
+                                    </picture>
+                                </span>
+                                <span class="gamestrip_team-abbreviation-opponent"> PIT </span>
+                                <span class="gamestrip_team-fullname-opponent"> Steelers </span>
+                            </p>
+                            <div class="gamestrip_team-record-opponent">(0-0)</div>
+                        </div>
+                        <div class="game_winner_and_difference-pick">
+                            <div class="game_winner_and_difference-pick-wrapper">
+                                <input class="game_winner_and_difference-pick-input" type="radio" name="week-16_game-5_winner" id="week-16_game-5_winner-away_by-6" value="week-16_game-5_winner-away_by-6"
+                                {% if user.has_pick_for_week_and_game(16,5) and user.get_pick_for__week_and_game(16,5) == 'week-16_game-5_winner-away_by-6' %}checked{% endif %}>
+                                <label class="game_winner_and_difference-pick-label" for="week-16_game-5_winner-away_by-6">
+                                    <div class="game_winner_and_difference-pick-indicator"></div>
+                                    <span class="game_winner_and_difference-pick-text">0-6</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="game_winner_and_difference-pick">
+                            <div class="game_winner_and_difference-pick-wrapper">
+                                <input class="game_winner_and_difference-pick-input" type="radio" name="week-16_game-5_winner" id="week-16_game-5_winner-away_by-7" value="week-16_game-5_winner-away_by-7"
+                                {% if user.has_pick_for_week_and_game(16,5) and user.get_pick_for__week_and_game(16,5) == 'week-16_game-5_winner-away_by-7' %}checked{% endif %}>
+                                <label class="game_winner_and_difference-pick-label" for="week-16_game-5_winner-away_by-7">
+                                    <div class="game_winner_and_difference-pick-indicator"></div>
+                                    <span class="game_winner_and_difference-pick-text2">7</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="gamestrip_team-separator">
+                            <span class="gamestrip_versus-icon">@</span>
+                        </div>
+                        <div class="radiogroup">
+                            <div class="game_winner_and_difference-pick-wrapper">
+                                <input class="game_winner_and_difference-pick-input" type="radio" name="week-16_game-5_winner" id="week-16_game-5_winner-home_by-6" value="week-16_game-5_winner-home_by-6"
+                                {% if user.has_pick_for_week_and_game(16,5) and user.get_pick_for__week_and_game(16,5) == 'week-16_game-5_winner-home_by-6' %}checked{% endif %}>
+                                <label class="game_winner_and_difference-pick-label" for="week-16_game-5_winner-home_by-6">
+                                    <div class="game_winner_and_difference-pick-indicator"></div>
+                                    <span class="game_winner_and_difference-pick-text">0-6</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="radiogroup">
+                            <div class="game_winner_and_difference-pick-wrapper">
+                                <input class="game_winner_and_difference-pick-input" type="radio" name="week-16_game-5_winner" id="week-16_game-5_winner-home_by-7" value="week-16_game-5_winner-home_by-7"
+                                {% if user.has_pick_for_week_and_game(16,5) and user.get_pick_for__week_and_game(16,5) == 'week-16_game-5_winner-home_by-7' %}checked{% endif %}>
+                                <label class="game_winner_and_difference-pick-label" for="week-16_game-5_winner-home_by-7">
+                                    <div class="game_winner_and_difference-pick-indicator"></div>
+                                    <span class="game_winner_and_difference-pick-text2">7</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="gamestrip_team gamestrip_team-home">
+                            <p class="gamestrip_team-name">
+                                <span class="gamestrip_team-logo">
+                                    <picture>                                           
+                                        <img alt="Rams logo" class="img-responsive" data-src="https://static.www.nfl.com/t_q-best/league/api/clubs/logos/CIN" role="presentation" src="https://static.www.nfl.com/t_q-best/league/api/clubs/logos/CIN">
+                                    </picture>
+                                </span>
+                                <span class="gamestrip_team-abbreviation"> CIN </span>
+                                <span class="gamestrip_team-fullname"> Bengals </span>
+                            </p>
+                            <div class="gamestrip_team-record">(0-0)</div>
+                        </div>
+                    </div>
+                    <div class="gamestrip_right-area">
+                        <a class="game_stats-link" href="https://www.nfl.com/games/steelers-at-bengals-2022-reg-1" target="_blank">
+                            <span>Info/Stats del partido</span>
+                        </a>
+                    </div>
+                </div>
+
+                    <!-- Sunday Game 6 -->
+                <br class="in_between_games_space">
+                <div class="gamestrip-pregame">
+                    <div class="gameinfo">
+                        <p class="gamedateinfo">
+                            <span class="gamedatetime"> 12:00 PM </span>
+                            <span class="gamedate_timezone"> CDT </span>
+                        </p>
+                    </div>
+                    <div class="gamestrip_game">
+                        <div class="gamestrip_team gamestrip_team_opponent">
+                            <p class="gamestrip_team-name-opponent">
+                                <span class="gamestrip_team-logo-opponent">
+                                    <picture>                                          
+                                        <img alt="Bills logo" class="img-responsive-opponent" data-src="https://static.www.nfl.com/t_q-best/league/api/clubs/logos/PHI" role="presentation" src="https://static.www.nfl.com/t_q-best/league/api/clubs/logos/PHI">
+                                    </picture>
+                                </span>
+                                <span class="gamestrip_team-abbreviation-opponent"> PHI </span>
+                                <span class="gamestrip_team-fullname-opponent"> Eagles </span>
+                            </p>
+                            <div class="gamestrip_team-record-opponent">(0-0)</div>
+                        </div>
+                        <div class="game_winner_and_difference-pick">
+                            <div class="game_winner_and_difference-pick-wrapper">
+                                <input class="game_winner_and_difference-pick-input" type="radio" name="week-16_game-6_winner" id="week-16_game-6_winner-away_by-6" value="week-16_game-6_winner-away_by-6"
+                                {% if user.has_pick_for_week_and_game(16,6) and user.get_pick_for__week_and_game(16,6) == 'week-16_game-6_winner-away_by-6' %}checked{% endif %}>
+                                <label class="game_winner_and_difference-pick-label" for="week-16_game-6_winner-away_by-6">
+                                    <div class="game_winner_and_difference-pick-indicator"></div>
+                                    <span class="game_winner_and_difference-pick-text">0-6</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="game_winner_and_difference-pick">
+                            <div class="game_winner_and_difference-pick-wrapper">
+                                <input class="game_winner_and_difference-pick-input" type="radio" name="week-16_game-6_winner" id="week-16_game-6_winner-away_by-7" value="week-16_game-6_winner-away_by-7"
+                                {% if user.has_pick_for_week_and_game(16,6) and user.get_pick_for__week_and_game(16,6) == 'week-16_game-6_winner-away_by-7' %}checked{% endif %}>
+                                <label class="game_winner_and_difference-pick-label" for="week-16_game-6_winner-away_by-7">
+                                    <div class="game_winner_and_difference-pick-indicator"></div>
+                                    <span class="game_winner_and_difference-pick-text2">7</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="gamestrip_team-separator">
+                            <span class="gamestrip_versus-icon">@</span>
+                        </div>
+                        <div class="radiogroup">
+                            <div class="game_winner_and_difference-pick-wrapper">
+                                <input class="game_winner_and_difference-pick-input" type="radio" name="week-16_game-6_winner" id="week-16_game-6_winner-home_by-6" value="week-16_game-6_winner-home_by-6"
+                                {% if user.has_pick_for_week_and_game(16,6) and user.get_pick_for__week_and_game(16,6) == 'week-16_game-6_winner-home_by-6' %}checked{% endif %}>
+                                <label class="game_winner_and_difference-pick-label" for="week-16_game-6_winner-home_by-6">
+                                    <div class="game_winner_and_difference-pick-indicator"></div>
+                                    <span class="game_winner_and_difference-pick-text">0-6</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="radiogroup">
+                            <div class="game_winner_and_difference-pick-wrapper">
+                                <input class="game_winner_and_difference-pick-input" type="radio" name="week-16_game-6_winner" id="week-16_game-6_winner-home_by-7" value="week-16_game-6_winner-home_by-7"
+                                {% if user.has_pick_for_week_and_game(16,6) and user.get_pick_for__week_and_game(16,6) == 'week-16_game-6_winner-home_by-7' %}checked{% endif %}>
+                                <label class="game_winner_and_difference-pick-label" for="week-16_game-6_winner-home_by-7">
+                                    <div class="game_winner_and_difference-pick-indicator"></div>
+                                    <span class="game_winner_and_difference-pick-text2">7</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="gamestrip_team gamestrip_team-home">
+                            <p class="gamestrip_team-name">
+                                <span class="gamestrip_team-logo">
+                                    <picture>                                          
+                                        <img alt="Rams logo" class="img-responsive" data-src="https://static.www.nfl.com/t_q-best/league/api/clubs/logos/DET" role="presentation" src="https://static.www.nfl.com/t_q-best/league/api/clubs/logos/DET">
+                                    </picture>
+                                </span>
+                                <span class="gamestrip_team-abbreviation"> DET </span>
+                                <span class="gamestrip_team-fullname"> Lions </span>
+                            </p>
+                            <div class="gamestrip_team-record">(0-0)</div>
+                        </div>
+                    </div>
+                    <div class="gamestrip_right-area">
+                        <a class="game_stats-link" href="https://www.nfl.com/games/eagles-at-lions-2022-reg-1" target="_blank">
+                            <span>Info/Stats del partido</span>
+                        </a>
+                    </div>
+                </div>
+
+                    <!-- Sunday Game 7 -->
+                <br class="in_between_games_space">
+                <div class="gamestrip-pregame">
+                    <div class="gameinfo">
+                        <p class="gamedateinfo">
+                            <span class="gamedatetime"> 12:00 PM </span>
+                            <span class="gamedate_timezone"> CDT </span>
+                        </p>
+                    </div>
+                    <div class="gamestrip_game">
+                        <div class="gamestrip_team gamestrip_team_opponent">
+                            <p class="gamestrip_team-name-opponent">
+                                <span class="gamestrip_team-logo-opponent">
+                                    <picture>                                           
+                                        <img alt="Bills logo" class="img-responsive-opponent" data-src="https://static.www.nfl.com/t_q-best/league/api/clubs/logos/IND" role="presentation" src="https://static.www.nfl.com/t_q-best/league/api/clubs/logos/IND">
+                                    </picture>
+                                </span>
+                                <span class="gamestrip_team-abbreviation-opponent"> IND </span>
+                                <span class="gamestrip_team-fullname-opponent"> Colts </span>
+                            </p>
+                            <div class="gamestrip_team-record-opponent">(0-0)</div>
+                        </div>
+                        <div class="game_winner_and_difference-pick">
+                            <div class="game_winner_and_difference-pick-wrapper">
+                                <input class="game_winner_and_difference-pick-input" type="radio" name="week-16_game-7_winner" id="week-16_game-7_winner-away_by-6" value="week-16_game-7_winner-away_by-6"
+                                {% if user.has_pick_for_week_and_game(16,7) and user.get_pick_for__week_and_game(16,7) == 'week-16_game-7_winner-away_by-6' %}checked{% endif %}>
+                                <label class="game_winner_and_difference-pick-label" for="week-16_game-7_winner-away_by-6">
+                                    <div class="game_winner_and_difference-pick-indicator"></div>
+                                    <span class="game_winner_and_difference-pick-text">0-6</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="game_winner_and_difference-pick">
+                            <div class="game_winner_and_difference-pick-wrapper">
+                                <input class="game_winner_and_difference-pick-input" type="radio" name="week-16_game-7_winner" id="week-16_game-7_winner-away_by-7" value="week-16_game-7_winner-away_by-7"
+                                {% if user.has_pick_for_week_and_game(16,7) and user.get_pick_for__week_and_game(16,7) == 'week-16_game-7_winner-away_by-7' %}checked{% endif %}>
+                                <label class="game_winner_and_difference-pick-label" for="week-16_game-7_winner-away_by-7">
+                                    <div class="game_winner_and_difference-pick-indicator"></div>
+                                    <span class="game_winner_and_difference-pick-text2">7</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="gamestrip_team-separator">
+                            <span class="gamestrip_versus-icon">@</span>
+                        </div>
+                        <div class="radiogroup">
+                            <div class="game_winner_and_difference-pick-wrapper">
+                                <input class="game_winner_and_difference-pick-input" type="radio" name="week-16_game-7_winner" id="week-16_game-7_winner-home_by-6" value="week-16_game-7_winner-home_by-6"
+                                {% if user.has_pick_for_week_and_game(16,7) and user.get_pick_for__week_and_game(16,7) == 'week-16_game-7_winner-home_by-6' %}checked{% endif %}>
+                                <label class="game_winner_and_difference-pick-label" for="week-16_game-7_winner-home_by-6">
+                                    <div class="game_winner_and_difference-pick-indicator"></div>
+                                    <span class="game_winner_and_difference-pick-text">0-6</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="radiogroup">
+                            <div class="game_winner_and_difference-pick-wrapper">
+                                <input class="game_winner_and_difference-pick-input" type="radio" name="week-16_game-7_winner" id="week-16_game-7_winner-home_by-7" value="week-16_game-7_winner-home_by-7"
+                                {% if user.has_pick_for_week_and_game(16,7) and user.get_pick_for__week_and_game(16,7) == 'week-16_game-7_winner-home_by-7' %}checked{% endif %}>
+                                <label class="game_winner_and_difference-pick-label" for="week-16_game-7_winner-home_by-7">
+                                    <div class="game_winner_and_difference-pick-indicator"></div>
+                                    <span class="game_winner_and_difference-pick-text2">7</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="gamestrip_team gamestrip_team-home">
+                            <p class="gamestrip_team-name">
+                                <span class="gamestrip_team-logo">
+                                    <picture>                                           
+                                        <img alt="Rams logo" class="img-responsive" data-src="https://static.www.nfl.com/t_q-best/league/api/clubs/logos/HOU" role="presentation" src="https://static.www.nfl.com/t_q-best/league/api/clubs/logos/HOU">
+                                    </picture>
+                                </span>
+                                <span class="gamestrip_team-abbreviation"> HOU </span>
+                                <span class="gamestrip_team-fullname"> Texans </span>
+                            </p>
+                            <div class="gamestrip_team-record">(0-0)</div>
+                        </div>
+                    </div>
+                    <div class="gamestrip_right-area">
+                        <a class="game_stats-link" href="https://www.nfl.com/games/colts-at-texans-2022-reg-1" target="_blank">
+                            <span>Info/Stats del partido</span>
+                        </a>
+                    </div>
+                </div>
+
+                    <!-- Sunday Game 8 -->
+                <br class="in_between_games_space">
+                <div class="gamestrip-pregame">
+                    <div class="gameinfo">
+                        <p class="gamedateinfo">
+                            <span class="gamedatetime"> 12:00 PM </span>
+                            <span class="gamedate_timezone"> CDT </span>
+                        </p>
+                    </div>
+                    <div class="gamestrip_game">
+                        <div class="gamestrip_team gamestrip_team_opponent">
+                            <p class="gamestrip_team-name-opponent">
+                                <span class="gamestrip_team-logo-opponent">
+                                    <picture>                                           
+                                        <img alt="Bills logo" class="img-responsive-opponent" data-src="https://static.www.nfl.com/t_q-best/league/api/clubs/logos/NE" role="presentation" src="https://static.www.nfl.com/t_q-best/league/api/clubs/logos/NE">
+                                    </picture>
+                                </span>
+                                <span class="gamestrip_team-abbreviation-opponent"> NE </span>
+                                <span class="gamestrip_team-fullname-opponent"> Patriots </span>
+                            </p>
+                            <div class="gamestrip_team-record-opponent">(0-0)</div>
+                        </div>
+                        <div class="game_winner_and_difference-pick">
+                            <div class="game_winner_and_difference-pick-wrapper">
+                                <input class="game_winner_and_difference-pick-input" type="radio" name="week-16_game-8_winner" id="week-16_game-8_winner-away_by-6" value="week-16_game-8_winner-away_by-6"
+                                {% if user.has_pick_for_week_and_game(16,8) and user.get_pick_for__week_and_game(16,8) == 'week-16_game-8_winner-away_by-6' %}checked{% endif %}>
+                                <label class="game_winner_and_difference-pick-label" for="week-16_game-8_winner-away_by-6">
+                                    <div class="game_winner_and_difference-pick-indicator"></div>
+                                    <span class="game_winner_and_difference-pick-text">0-6</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="game_winner_and_difference-pick">
+                            <div class="game_winner_and_difference-pick-wrapper">
+                                <input class="game_winner_and_difference-pick-input" type="radio" name="week-16_game-8_winner" id="week-16_game-8_winner-away_by-7" value="week-16_game-8_winner-away_by-7"
+                                {% if user.has_pick_for_week_and_game(16,8) and user.get_pick_for__week_and_game(16,8) == 'week-16_game-8_winner-away_by-7' %}checked{% endif %}>
+                                <label class="game_winner_and_difference-pick-label" for="week-16_game-8_winner-away_by-7">
+                                    <div class="game_winner_and_difference-pick-indicator"></div>
+                                    <span class="game_winner_and_difference-pick-text2">7</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="gamestrip_team-separator">
+                            <span class="gamestrip_versus-icon">@</span>
+                        </div>
+                        <div class="radiogroup">
+                            <div class="game_winner_and_difference-pick-wrapper">
+                                <input class="game_winner_and_difference-pick-input" type="radio" name="week-16_game-8_winner" id="week-16_game-8_winner-home_by-6" value="week-16_game-8_winner-home_by-6"
+                                {% if user.has_pick_for_week_and_game(16,8) and user.get_pick_for__week_and_game(16,8) == 'week-16_game-8_winner-home_by-6' %}checked{% endif %}>
+                                <label class="game_winner_and_difference-pick-label" for="week-16_game-8_winner-home_by-6">
+                                    <div class="game_winner_and_difference-pick-indicator"></div>
+                                    <span class="game_winner_and_difference-pick-text">0-6</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="radiogroup">
+                            <div class="game_winner_and_difference-pick-wrapper">
+                                <input class="game_winner_and_difference-pick-input" type="radio" name="week-16_game-8_winner" id="week-16_game-8_winner-home_by-7" value="week-16_game-8_winner-home_by-7"
+                                {% if user.has_pick_for_week_and_game(16,8) and user.get_pick_for__week_and_game(16,8) == 'week-16_game-8_winner-home_by-7' %}checked{% endif %}>
+                                <label class="game_winner_and_difference-pick-label" for="week-16_game-8_winner-home_by-7">
+                                    <div class="game_winner_and_difference-pick-indicator"></div>
+                                    <span class="game_winner_and_difference-pick-text2">7</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="gamestrip_team gamestrip_team-home">
+                            <p class="gamestrip_team-name">
+                                <span class="gamestrip_team-logo">
+                                    <picture>                                           
+                                        <img alt="Rams logo" class="img-responsive" data-src="https://static.www.nfl.com/t_q-best/league/api/clubs/logos/MIA" role="presentation" src="https://static.www.nfl.com/t_q-best/league/api/clubs/logos/MIA">
+                                    </picture>
+                                </span>
+                                <span class="gamestrip_team-abbreviation"> MIA </span>
+                                <span class="gamestrip_team-fullname"> Dolphins </span>
+                            </p>
+                            <div class="gamestrip_team-record">(0-0)</div>
+                        </div>
+                    </div>
+                    <div class="gamestrip_right-area">
+                        <a class="game_stats-link" href="https://www.nfl.com/games/patriots-at-dolphins-2022-reg-1" target="_blank">
+                            <span>Info/Stats del partido</span>
+                        </a>
+                    </div>
+                </div>
+
+                    <!-- Sunday Game 9 -->
+                <br class="in_between_games_space">
+                <div class="gamestrip-pregame">
+                    <div class="gameinfo">
+                        <p class="gamedateinfo">
+                            <span class="gamedatetime"> 12:00 PM </span>
+                            <span class="gamedate_timezone"> CDT </span>
+                        </p>
+                    </div>
+                    <div class="gamestrip_game">
+                        <div class="gamestrip_team gamestrip_team_opponent">
+                            <p class="gamestrip_team-name-opponent">
+                                <span class="gamestrip_team-logo-opponent">
+                                    <picture>
+                                        <img alt="Bills logo" class="img-responsive-opponent" data-src="https://static.www.nfl.com/t_q-best/league/api/clubs/logos/BAL" role="presentation" src="https://static.www.nfl.com/t_q-best/league/api/clubs/logos/BAL">
+                                    </picture>
+                                </span>
+                                <span class="gamestrip_team-abbreviation-opponent"> BAL </span>
+                                <span class="gamestrip_team-fullname-opponent"> Ravens </span>
+                            </p>
+                            <div class="gamestrip_team-record-opponent">(0-0)</div>
+                        </div>
+                        <div class="game_winner_and_difference-pick">
+                            <div class="game_winner_and_difference-pick-wrapper">
+                                <input class="game_winner_and_difference-pick-input" type="radio" name="week-16_game-9_winner" id="week-16_game-9_winner-away_by-6" value="week-16_game-9_winner-away_by-6"
+                                {% if user.has_pick_for_week_and_game(16,9) and user.get_pick_for__week_and_game(16,9) == 'week-16_game-9_winner-away_by-6' %}checked{% endif %}>
+                                <label class="game_winner_and_difference-pick-label" for="week-16_game-9_winner-away_by-6">
+                                    <div class="game_winner_and_difference-pick-indicator"></div>
+                                    <span class="game_winner_and_difference-pick-text">0-6</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="game_winner_and_difference-pick">
+                            <div class="game_winner_and_difference-pick-wrapper">
+                                <input class="game_winner_and_difference-pick-input" type="radio" name="week-16_game-9_winner" id="week-16_game-9_winner-away_by-7" value="week-16_game-9_winner-away_by-7"
+                                {% if user.has_pick_for_week_and_game(16,9) and user.get_pick_for__week_and_game(16,9) == 'week-16_game-9_winner-away_by-7' %}checked{% endif %}>
+                                <label class="game_winner_and_difference-pick-label" for="week-16_game-9_winner-away_by-7">
+                                    <div class="game_winner_and_difference-pick-indicator"></div>
+                                    <span class="game_winner_and_difference-pick-text2">7</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="gamestrip_team-separator">
+                            <span class="gamestrip_versus-icon">@</span>
+                        </div>
+                        <div class="radiogroup">
+                            <div class="game_winner_and_difference-pick-wrapper">
+                                <input class="game_winner_and_difference-pick-input" type="radio" name="week-16_game-9_winner" id="week-16_game-9_winner-home_by-6" value="week-16_game-9_winner-home_by-6"
+                                {% if user.has_pick_for_week_and_game(16,9) and user.get_pick_for__week_and_game(16,9) == 'week-16_game-9_winner-home_by-6' %}checked{% endif %}>
+                                <label class="game_winner_and_difference-pick-label" for="week-16_game-9_winner-home_by-6">
+                                    <div class="game_winner_and_difference-pick-indicator"></div>
+                                    <span class="game_winner_and_difference-pick-text">0-6</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="radiogroup">
+                            <div class="game_winner_and_difference-pick-wrapper">
+                                <input class="game_winner_and_difference-pick-input" type="radio" name="week-16_game-9_winner" id="week-16_game-9_winner-home_by-7" value="week-16_game-9_winner-home_by-7"
+                                {% if user.has_pick_for_week_and_game(16,9) and user.get_pick_for__week_and_game(16,9) == 'week-16_game-9_winner-home_by-7' %}checked{% endif %}>
+                                <label class="game_winner_and_difference-pick-label" for="week-16_game-9_winner-home_by-7">
+                                    <div class="game_winner_and_difference-pick-indicator"></div>
+                                    <span class="game_winner_and_difference-pick-text2">7</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="gamestrip_team gamestrip_team-home">
+                            <p class="gamestrip_team-name">
+                                <span class="gamestrip_team-logo">
+                                    <picture>
+                                        <img alt="Rams logo" class="img-responsive" data-src="https://static.www.nfl.com/t_q-best/league/api/clubs/logos/NYJ" role="presentation" src="https://static.www.nfl.com/t_q-best/league/api/clubs/logos/NYJ">
+                                    </picture>
+                                </span>
+                                <span class="gamestrip_team-abbreviation"> NYJ </span>
+                                <span class="gamestrip_team-fullname"> Jets </span>
+                            </p>
+                            <div class="gamestrip_team-record">(0-0)</div>
+                        </div>
+                    </div>
+                    <div class="gamestrip_right-area">
+                        <a class="game_stats-link" href="https://www.nfl.com/games/ravens-at-jets-2022-reg-1" target="_blank">
+                            <span>Info/Stats del partido</span>
+                        </a>
+                    </div>
+                </div>
+
+                    <!-- Sunday Game 10 -->
+                <br class="in_between_games_space">
+                <div class="gamestrip-pregame">
+                    <div class="gameinfo">
+                        <p class="gamedateinfo">
+                            <span class="gamedatetime"> 12:00 PM </span>
+                            <span class="gamedate_timezone"> CDT </span>
+                        </p>
+                    </div>
+                    <div class="gamestrip_game">
+                        <div class="gamestrip_team gamestrip_team_opponent">
+                            <p class="gamestrip_team-name-opponent">
+                                <span class="gamestrip_team-logo-opponent">
+                                    <picture>
+                                        <img alt="Bills logo" class="img-responsive-opponent" data-src="https://static.www.nfl.com/t_q-best/league/api/clubs/logos/JAX" role="presentation" src="https://static.www.nfl.com/t_q-best/league/api/clubs/logos/JAX">
+                                    </picture>
+                                </span>
+                                <span class="gamestrip_team-abbreviation-opponent"> JAX </span>
+                                <span class="gamestrip_team-fullname-opponent"> Jaguars </span>
+                            </p>
+                            <div class="gamestrip_team-record-opponent">(0-0)</div>
+                        </div>
+                        <div class="game_winner_and_difference-pick">
+                            <div class="game_winner_and_difference-pick-wrapper">
+                                <input class="game_winner_and_difference-pick-input" type="radio" name="week-16_game-10_winner" id="week-16_game-10_winner-away_by-6" value="week-16_game-10_winner-away_by-6"
+                                {% if user.has_pick_for_week_and_game(16,10) and user.get_pick_for__week_and_game(16,10) == 'week-16_game-10_winner-away_by-6' %}checked{% endif %}>
+                                <label class="game_winner_and_difference-pick-label" for="week-16_game-10_winner-away_by-6">
+                                    <div class="game_winner_and_difference-pick-indicator"></div>
+                                    <span class="game_winner_and_difference-pick-text">0-6</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="game_winner_and_difference-pick">
+                            <div class="game_winner_and_difference-pick-wrapper">
+                                <input class="game_winner_and_difference-pick-input" type="radio" name="week-16_game-10_winner" id="week-16_game-10_winner-away_by-7" value="week-16_game-10_winner-away_by-7"
+                                {% if user.has_pick_for_week_and_game(16,10) and user.get_pick_for__week_and_game(16,10) == 'week-16_game-10_winner-away_by-7' %}checked{% endif %}>
+                                <label class="game_winner_and_difference-pick-label" for="week-16_game-10_winner-away_by-7">
+                                    <div class="game_winner_and_difference-pick-indicator"></div>
+                                    <span class="game_winner_and_difference-pick-text2">7</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="gamestrip_team-separator">
+                            <span class="gamestrip_versus-icon">@</span>
+                        </div>
+                        <div class="radiogroup">
+                            <div class="game_winner_and_difference-pick-wrapper">
+                                <input class="game_winner_and_difference-pick-input" type="radio" name="week-16_game-10_winner" id="week-16_game-10_winner-home_by-6" value="week-16_game-10_winner-home_by-6"
+                                {% if user.has_pick_for_week_and_game(16,10) and user.get_pick_for__week_and_game(16,10) == 'week-16_game-10_winner-home_by-6' %}checked{% endif %}>
+                                <label class="game_winner_and_difference-pick-label" for="week-16_game-10_winner-home_by-6">
+                                    <div class="game_winner_and_difference-pick-indicator"></div>
+                                    <span class="game_winner_and_difference-pick-text">0-6</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="radiogroup">
+                            <div class="game_winner_and_difference-pick-wrapper">
+                                <input class="game_winner_and_difference-pick-input" type="radio" name="week-16_game-10_winner" id="week-16_game-10_winner-home_by-7" value="week-16_game-10_winner-home_by-7"
+                                {% if user.has_pick_for_week_and_game(16,10) and user.get_pick_for__week_and_game(16,10) == 'week-16_game-10_winner-home_by-7' %}checked{% endif %}>
+                                <label class="game_winner_and_difference-pick-label" for="week-16_game-10_winner-home_by-7">
+                                    <div class="game_winner_and_difference-pick-indicator"></div>
+                                    <span class="game_winner_and_difference-pick-text2">7</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="gamestrip_team gamestrip_team-home">
+                            <p class="gamestrip_team-name">
+                                <span class="gamestrip_team-logo">
+                                    <picture>                                           
+                                        <img alt="Rams logo" class="img-responsive" data-src="https://static.www.nfl.com/t_q-best/league/api/clubs/logos/WAS" role="presentation" src="https://static.www.nfl.com/t_q-best/league/api/clubs/logos/WAS">
+                                    </picture>
+                                </span>
+                                <span class="gamestrip_team-abbreviation"> WAS </span>
+                                <span class="gamestrip_team-fullname"> Commanders </span>
+                            </p>
+                            <div class="gamestrip_team-record">(0-0)</div>
+                        </div>
+                    </div>
+                    <div class="gamestrip_right-area">
+                        <a class="game_stats-link" href="https://www.nfl.com/games/jaguars-at-commanders-2022-reg-1" target="_blank">
+                            <span>Info/Stats del partido</span>
+                        </a>
+                    </div>
+                </div>
+
+                    <!-- Sunday Game 11 -->
+                <br class="in_between_games_space">
+                <div class="gamestrip-pregame">
+                    <div class="gameinfo">
+                        <p class="gamedateinfo">
+                            <span class="gamedatetime"> 3:25 PM </span>
+                            <span class="gamedate_timezone"> CDT </span>
+                        </p>
+                    </div>
+                    <div class="gamestrip_game">
+                        <div class="gamestrip_team gamestrip_team_opponent">
+                            <p class="gamestrip_team-name-opponent">
+                                <span class="gamestrip_team-logo-opponent">
+                                    <picture>                        
+                                        <img alt="Bills logo" class="img-responsive-opponent" data-src="https://static.www.nfl.com/t_q-best/league/api/clubs/logos/NYG" role="presentation" src="https://static.www.nfl.com/t_q-best/league/api/clubs/logos/NYG">
+                                    </picture>
+                                </span>
+                                <span class="gamestrip_team-abbreviation-opponent"> NYG </span>
+                                <span class="gamestrip_team-fullname-opponent"> Giants </span>
+                            </p>
+                            <div class="gamestrip_team-record-opponent">(0-0)</div>
+                        </div>
+                        <div class="game_winner_and_difference-pick">
+                            <div class="game_winner_and_difference-pick-wrapper">
+                                <input class="game_winner_and_difference-pick-input" type="radio" name="week-16_game-11_winner" id="week-16_game-11_winner-away_by-6" value="week-16_game-11_winner-away_by-6"
+                                {% if user.has_pick_for_week_and_game(16,11) and user.get_pick_for__week_and_game(16,11) == 'week-16_game-11_winner-away_by-6' %}checked{% endif %}>
+                                <label class="game_winner_and_difference-pick-label" for="week-16_game-11_winner-away_by-6">
+                                    <div class="game_winner_and_difference-pick-indicator"></div>
+                                    <span class="game_winner_and_difference-pick-text">0-6</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="game_winner_and_difference-pick">
+                            <div class="game_winner_and_difference-pick-wrapper">
+                                <input class="game_winner_and_difference-pick-input" type="radio" name="week-16_game-11_winner" id="week-16_game-11_winner-away_by-7" value="week-16_game-11_winner-away_by-7"
+                                {% if user.has_pick_for_week_and_game(16,11) and user.get_pick_for__week_and_game(16,11) == 'week-16_game-11_winner-away_by-7' %}checked{% endif %}>
+                                <label class="game_winner_and_difference-pick-label" for="week-16_game-11_winner-away_by-7">
+                                    <div class="game_winner_and_difference-pick-indicator"></div>
+                                    <span class="game_winner_and_difference-pick-text2">7</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="gamestrip_team-separator">
+                            <span class="gamestrip_versus-icon">@</span>
+                        </div>
+                        <div class="radiogroup">
+                            <div class="game_winner_and_difference-pick-wrapper">
+                                <input class="game_winner_and_difference-pick-input" type="radio" name="week-16_game-11_winner" id="week-16_game-11_winner-home_by-6" value="week-16_game-11_winner-home_by-6"
+                                {% if user.has_pick_for_week_and_game(16,11) and user.get_pick_for__week_and_game(16,11) == 'week-16_game-11_winner-home_by-6' %}checked{% endif %}>
+                                <label class="game_winner_and_difference-pick-label" for="week-16_game-11_winner-home_by-6">
+                                    <div class="game_winner_and_difference-pick-indicator"></div>
+                                    <span class="game_winner_and_difference-pick-text">0-6</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="radiogroup">
+                            <div class="game_winner_and_difference-pick-wrapper">
+                                <input class="game_winner_and_difference-pick-input" type="radio" name="week-16_game-11_winner" id="week-16_game-11_winner-home_by-7" value="week-16_game-11_winner-home_by-7"
+                                {% if user.has_pick_for_week_and_game(16,11) and user.get_pick_for__week_and_game(16,11) == 'week-16_game-11_winner-home_by-7' %}checked{% endif %}>
+                                <label class="game_winner_and_difference-pick-label" for="week-16_game-11_winner-home_by-7">
+                                    <div class="game_winner_and_difference-pick-indicator"></div>
+                                    <span class="game_winner_and_difference-pick-text2">7</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="gamestrip_team gamestrip_team-home">
+                            <p class="gamestrip_team-name">
+                                <span class="gamestrip_team-logo">
+                                    <picture>                           
+                                        <img alt="Rams logo" class="img-responsive" data-src="https://static.www.nfl.com/t_q-best/league/api/clubs/logos/TEN" role="presentation" src="https://static.www.nfl.com/t_q-best/league/api/clubs/logos/TEN">
+                                    </picture>
+                                </span>
+                                <span class="gamestrip_team-abbreviation"> TEN </span>
+                                <span class="gamestrip_team-fullname"> Titans </span>
+                            </p>
+                            <div class="gamestrip_team-record">(0-0)</div>
+                        </div>
+                    </div>
+                    <div class="gamestrip_right-area">
+                        <a class="game_stats-link" href="https://www.nfl.com/games/giants-at-titans-2022-reg-1" target="_blank">
+                            <span>Info/Stats del partido</span>
+                        </a>
+                    </div>
+                </div>
+
+                    <!-- Sunday Game 12 -->
+                <br class="in_between_games_space">
+                <div class="gamestrip-pregame">
+                    <div class="gameinfo">
+                        <p class="gamedateinfo">
+                            <span class="gamedatetime"> 3:25 PM </span>
+                            <span class="gamedate_timezone"> CDT </span>
+                        </p>
+                    </div>
+                    <div class="gamestrip_game">
+                        <div class="gamestrip_team gamestrip_team_opponent">
+                            <p class="gamestrip_team-name-opponent">
+                                <span class="gamestrip_team-logo-opponent">
+                                    <picture>                                           
+                                        <img alt="Bills logo" class="img-responsive-opponent" data-src="https://static.www.nfl.com/t_q-best/league/api/clubs/logos/KC" role="presentation" src="https://static.www.nfl.com/t_q-best/league/api/clubs/logos/KC">
+                                    </picture>
+                                </span>
+                                <span class="gamestrip_team-abbreviation-opponent"> KC </span>
+                                <span class="gamestrip_team-fullname-opponent"> Chiefs </span>
+                            </p>
+                            <div class="gamestrip_team-record-opponent">(0-0)</div>
+                        </div>
+                        <div class="game_winner_and_difference-pick">
+                            <div class="game_winner_and_difference-pick-wrapper">
+                                <input class="game_winner_and_difference-pick-input" type="radio" name="week-16_game-12_winner" id="week-16_game-12_winner-away_by-6" value="week-16_game-12_winner-away_by-6"
+                                {% if user.has_pick_for_week_and_game(16,12) and user.get_pick_for__week_and_game(16,12) == 'week-16_game-12_winner-away_by-6' %}checked{% endif %}>
+                                <label class="game_winner_and_difference-pick-label" for="week-16_game-12_winner-away_by-6">
+                                    <div class="game_winner_and_difference-pick-indicator"></div>
+                                    <span class="game_winner_and_difference-pick-text">0-6</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="game_winner_and_difference-pick">
+                            <div class="game_winner_and_difference-pick-wrapper">
+                                <input class="game_winner_and_difference-pick-input" type="radio" name="week-16_game-12_winner" id="week-16_game-12_winner-away_by-7" value="week-16_game-12_winner-away_by-7"
+                                {% if user.has_pick_for_week_and_game(16,12) and user.get_pick_for__week_and_game(16,12) == 'week-16_game-12_winner-away_by-7' %}checked{% endif %}>
+                                <label class="game_winner_and_difference-pick-label" for="week-16_game-12_winner-away_by-7">
+                                    <div class="game_winner_and_difference-pick-indicator"></div>
+                                    <span class="game_winner_and_difference-pick-text2">7</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="gamestrip_team-separator">
+                            <span class="gamestrip_versus-icon">@</span>
+                        </div>
+                        <div class="radiogroup">
+                            <div class="game_winner_and_difference-pick-wrapper">
+                                <input class="game_winner_and_difference-pick-input" type="radio" name="week-16_game-12_winner" id="week-16_game-12_winner-home_by-6" value="week-16_game-12_winner-home_by-6"
+                                {% if user.has_pick_for_week_and_game(16,12) and user.get_pick_for__week_and_game(16,12) == 'week-16_game-12_winner-home_by-6' %}checked{% endif %}>
+                                <label class="game_winner_and_difference-pick-label" for="week-16_game-12_winner-home_by-6">
+                                    <div class="game_winner_and_difference-pick-indicator"></div>
+                                    <span class="game_winner_and_difference-pick-text">0-6</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="radiogroup">
+                            <div class="game_winner_and_difference-pick-wrapper">
+                                <input class="game_winner_and_difference-pick-input" type="radio" name="week-16_game-12_winner" id="week-16_game-12_winner-home_by-7" value="week-16_game-12_winner-home_by-7"
+                                {% if user.has_pick_for_week_and_game(16,12) and user.get_pick_for__week_and_game(16,12) == 'week-16_game-12_winner-home_by-7' %}checked{% endif %}>
+                                <label class="game_winner_and_difference-pick-label" for="week-16_game-12_winner-home_by-7">
+                                    <div class="game_winner_and_difference-pick-indicator"></div>
+                                    <span class="game_winner_and_difference-pick-text2">7</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="gamestrip_team gamestrip_team-home">
+                            <p class="gamestrip_team-name">
+                                <span class="gamestrip_team-logo">
+                                    <picture>                                          
+                                        <img alt="Rams logo" class="img-responsive" data-src="https://static.www.nfl.com/t_q-best/league/api/clubs/logos/ARI" role="presentation" src="https://static.www.nfl.com/t_q-best/league/api/clubs/logos/ARI">
+                                    </picture>
+                                </span>
+                                <span class="gamestrip_team-abbreviation"> ARI </span>
+                                <span class="gamestrip_team-fullname"> Cardinals </span>
+                            </p>
+                            <div class="gamestrip_team-record">(0-0)</div>
+                        </div>
+                    </div>
+                    <div class="gamestrip_right-area">
+                        <a class="game_stats-link" href="https://www.nfl.com/games/chiefs-at-cardinals-2022-reg-1" target="_blank">
+                            <span>Info/Stats del partido</span>
+                        </a>
+                    </div>
+                </div>
+
+                    <!-- Sunday Game 13 -->
+                <br class="in_between_games_space">
+                <div class="gamestrip-pregame">
+                    <div class="gameinfo">
+                        <p class="gamedateinfo">
+                            <span class="gamedatetime"> 3:25 PM </span>
+                            <span class="gamedate_timezone"> CDT </span>
+                        </p>
+                    </div>
+                    <div class="gamestrip_game">
+                        <div class="gamestrip_team gamestrip_team_opponent">
+                            <p class="gamestrip_team-name-opponent">
+                                <span class="gamestrip_team-logo-opponent">
+                                    <picture>                                           
+                                        <img alt="Bills logo" class="img-responsive-opponent" data-src="https://static.www.nfl.com/t_q-best/league/api/clubs/logos/LV" role="presentation" src="https://static.www.nfl.com/t_q-best/league/api/clubs/logos/LV">
+                                    </picture>
+                                </span>
+                                <span class="gamestrip_team-abbreviation-opponent"> LV </span>
+                                <span class="gamestrip_team-fullname-opponent"> Raiders </span>
+                            </p>
+                            <div class="gamestrip_team-record-opponent">(0-0)</div>
+                        </div>
+                        <div class="game_winner_and_difference-pick">
+                            <div class="game_winner_and_difference-pick-wrapper">
+                                <input class="game_winner_and_difference-pick-input" type="radio" name="week-16_game-13_winner" id="week-16_game-13_winner-away_by-6" value="week-16_game-13_winner-away_by-6"
+                                {% if user.has_pick_for_week_and_game(16,13) and user.get_pick_for__week_and_game(16,13) == 'week-16_game-13_winner-away_by-6' %}checked{% endif %}>
+                                <label class="game_winner_and_difference-pick-label" for="week-16_game-13_winner-away_by-6">
+                                    <div class="game_winner_and_difference-pick-indicator"></div>
+                                    <span class="game_winner_and_difference-pick-text">0-6</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="game_winner_and_difference-pick">
+                            <div class="game_winner_and_difference-pick-wrapper">
+                                <input class="game_winner_and_difference-pick-input" type="radio" name="week-16_game-13_winner" id="week-16_game-13_winner-away_by-7" value="week-16_game-13_winner-away_by-7"
+                                {% if user.has_pick_for_week_and_game(16,13) and user.get_pick_for__week_and_game(16,13) == 'week-16_game-13_winner-away_by-7' %}checked{% endif %}>
+                                <label class="game_winner_and_difference-pick-label" for="week-16_game-13_winner-away_by-7">
+                                    <div class="game_winner_and_difference-pick-indicator"></div>
+                                    <span class="game_winner_and_difference-pick-text2">7</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="gamestrip_team-separator">
+                            <span class="gamestrip_versus-icon">@</span>
+                        </div>
+                        <div class="radiogroup">
+                            <div class="game_winner_and_difference-pick-wrapper">
+                                <input class="game_winner_and_difference-pick-input" type="radio" name="week-16_game-13_winner" id="week-16_game-13_winner-home_by-6" value="week-16_game-13_winner-home_by-6"
+                                {% if user.has_pick_for_week_and_game(16,13) and user.get_pick_for__week_and_game(16,13) == 'week-16_game-13_winner-home_by-6' %}checked{% endif %}>
+                                <label class="game_winner_and_difference-pick-label" for="week-16_game-13_winner-home_by-6">
+                                    <div class="game_winner_and_difference-pick-indicator"></div>
+                                    <span class="game_winner_and_difference-pick-text">0-6</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="radiogroup">
+                            <div class="game_winner_and_difference-pick-wrapper">
+                                <input class="game_winner_and_difference-pick-input" type="radio" name="week-16_game-13_winner" id="week-16_game-13_winner-home_by-7" value="week-16_game-13_winner-home_by-7"
+                                {% if user.has_pick_for_week_and_game(16,13) and user.get_pick_for__week_and_game(16,13) == 'week-16_game-13_winner-home_by-7' %}checked{% endif %}>
+                                <label class="game_winner_and_difference-pick-label" for="week-16_game-13_winner-home_by-7">
+                                    <div class="game_winner_and_difference-pick-indicator"></div>
+                                    <span class="game_winner_and_difference-pick-text2">7</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="gamestrip_team gamestrip_team-home">
+                            <p class="gamestrip_team-name">
+                                <span class="gamestrip_team-logo">
+                                    <picture>                                           
+                                        <img alt="Rams logo" class="img-responsive" data-src="https://static.www.nfl.com/t_q-best/league/api/clubs/logos/LAC" role="presentation" src="https://static.www.nfl.com/t_q-best/league/api/clubs/logos/LAC">
+                                    </picture>
+                                </span>
+                                <span class="gamestrip_team-abbreviation"> LAC </span>
+                                <span class="gamestrip_team-fullname"> Chargers </span>
+                            </p>
+                            <div class="gamestrip_team-record">(0-0)</div>
+                        </div>
+                    </div>
+                    <div class="gamestrip_right-area">
+                        <a class="game_stats-link" href="https://www.nfl.com/games/raiders-at-chargers-2022-reg-1" target="_blank">
+                            <span>Info/Stats del partido</span>
+                        </a>
+                    </div>
+                </div>
+
+                    <!-- Sunday Game 14 -->
+                <br class="in_between_games_space">
+                <div class="gamestrip-pregame">
+                    <div class="gameinfo">
+                        <p class="gamedateinfo">
+                            <span class="gamedatetime"> 3:25 PM </span>
+                            <span class="gamedate_timezone"> CDT </span>
+                        </p>
+                    </div>
+                    <div class="gamestrip_game">
+                        <div class="gamestrip_team gamestrip_team_opponent">
+                            <p class="gamestrip_team-name-opponent">
+                                <span class="gamestrip_team-logo-opponent">
+                                    <picture>                                        
+                                        <img alt="Bills logo" class="img-responsive-opponent" data-src="https://static.www.nfl.com/t_q-best/league/api/clubs/logos/GB" role="presentation" src="https://static.www.nfl.com/t_q-best/league/api/clubs/logos/GB">
+                                    </picture>
+                                </span>
+                                <span class="gamestrip_team-abbreviation-opponent"> GB </span>
+                                <span class="gamestrip_team-fullname-opponent"> Packers </span>
+                            </p>
+                            <div class="gamestrip_team-record-opponent">(0-0)</div>
+                        </div>
+                        <div class="game_winner_and_difference-pick">
+                            <div class="game_winner_and_difference-pick-wrapper">
+                                <input class="game_winner_and_difference-pick-input" type="radio" name="week-16_game-14_winner" id="week-16_game-14_winner-away_by-6" value="week-16_game-14_winner-away_by-6"
+                                {% if user.has_pick_for_week_and_game(16,14) and user.get_pick_for__week_and_game(16,14) == 'week-16_game-14_winner-away_by-6' %}checked{% endif %}>
+                                <label class="game_winner_and_difference-pick-label" for="week-16_game-14_winner-away_by-6">
+                                    <div class="game_winner_and_difference-pick-indicator"></div>
+                                    <span class="game_winner_and_difference-pick-text">0-6</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="game_winner_and_difference-pick">
+                            <div class="game_winner_and_difference-pick-wrapper">
+                                <input class="game_winner_and_difference-pick-input" type="radio" name="week-16_game-14_winner" id="week-16_game-14_winner-away_by-7" value="week-16_game-14_winner-away_by-7"
+                                {% if user.has_pick_for_week_and_game(16,14) and user.get_pick_for__week_and_game(16,14) == 'week-16_game-14_winner-away_by-7' %}checked{% endif %}>
+                                <label class="game_winner_and_difference-pick-label" for="week-16_game-14_winner-away_by-7">
+                                    <div class="game_winner_and_difference-pick-indicator"></div>
+                                    <span class="game_winner_and_difference-pick-text2">7</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="gamestrip_team-separator">
+                            <span class="gamestrip_versus-icon">@</span>
+                        </div>
+                        <div class="radiogroup">
+                            <div class="game_winner_and_difference-pick-wrapper">
+                                <input class="game_winner_and_difference-pick-input" type="radio" name="week-16_game-14_winner" id="week-16_game-14_winner-home_by-6" value="week-16_game-14_winner-home_by-6"
+                                {% if user.has_pick_for_week_and_game(16,14) and user.get_pick_for__week_and_game(16,14) == 'week-16_game-14_winner-home_by-6' %}checked{% endif %}>
+                                <label class="game_winner_and_difference-pick-label" for="week-16_game-14_winner-home_by-6">
+                                    <div class="game_winner_and_difference-pick-indicator"></div>
+                                    <span class="game_winner_and_difference-pick-text">0-6</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="radiogroup">
+                            <div class="game_winner_and_difference-pick-wrapper">
+                                <input class="game_winner_and_difference-pick-input" type="radio" name="week-16_game-14_winner" id="week-16_game-14_winner-home_by-7" value="week-16_game-14_winner-home_by-7"
+                                {% if user.has_pick_for_week_and_game(16,14) and user.get_pick_for__week_and_game(16,14) == 'week-16_game-14_winner-home_by-7' %}checked{% endif %}>
+                                <label class="game_winner_and_difference-pick-label" for="week-16_game-14_winner-home_by-7">
+                                    <div class="game_winner_and_difference-pick-indicator"></div>
+                                    <span class="game_winner_and_difference-pick-text2">7</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="gamestrip_team gamestrip_team-home">
+                            <p class="gamestrip_team-name">
+                                <span class="gamestrip_team-logo">
+                                    <picture>                                          
+                                        <img alt="Rams logo" class="img-responsive" data-src="https://static.www.nfl.com/t_q-best/league/api/clubs/logos/MIN" role="presentation" src="https://static.www.nfl.com/t_q-best/league/api/clubs/logos/MIN">
+                                    </picture>
+                                </span>
+                                <span class="gamestrip_team-abbreviation"> MIN </span>
+                                <span class="gamestrip_team-fullname"> Vikings </span>
+                            </p>
+                            <div class="gamestrip_team-record">(0-0)</div>
+                        </div>
+                    </div>
+                    <div class="gamestrip_right-area">
+                        <a class="game_stats-link" href="https://www.nfl.com/games/packers-at-vikings-2022-reg-1" target="_blank">
+                            <span>Info/Stats del partido</span>
+                        </a>
+                    </div>
+                </div>
+
+                    <!-- SNF 15 -->
+                <br class="in_between_games_space">
+                <div class="gamestrip-pregame">
+                    <div class="gameinfo">
+                        <p class="gamedateinfo">
+                            <span class="gamedatetime"> 7:20 PM </span>
+                            <span class="gamedate_timezone"> CDT </span>
+                        </p>
+                    </div>
+                    <div class="gamestrip_game">
+                        <div class="gamestrip_team gamestrip_team_opponent">
+                            <p class="gamestrip_team-name-opponent">
+                                <span class="gamestrip_team-logo-opponent">
+                                    <picture>                                           
+                                        <img alt="Bills logo" class="img-responsive-opponent" data-src="https://static.www.nfl.com/t_q-best/league/api/clubs/logos/TB" role="presentation" src="https://static.www.nfl.com/t_q-best/league/api/clubs/logos/TB">
+                                    </picture>
+                                </span>
+                                <span class="gamestrip_team-abbreviation-opponent"> TB </span>
+                                <span class="gamestrip_team-fullname-opponent"> Buccaneers </span>
+                            </p>
+                            <div class="gamestrip_team-record-opponent">(0-0)</div>
+                        </div>
+                        <div class="game_winner_and_difference-pick">
+                            <div class="game_winner_and_difference-pick-wrapper">
+                                <input class="game_winner_and_difference-pick-input" type="radio" name="week-16_game-15_winner" id="week-16_game-15_winner-away_by-6" value="week-16_game-15_winner-away_by-6"
+                                {% if user.has_pick_for_week_and_game(16,15) and user.get_pick_for__week_and_game(16,15) == 'week-16_game-15_winner-away_by-6' %}checked{% endif %}>
+                                <label class="game_winner_and_difference-pick-label" for="week-16_game-15_winner-away_by-6">
+                                    <div class="game_winner_and_difference-pick-indicator"></div>
+                                    <span class="game_winner_and_difference-pick-text">0-6</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="game_winner_and_difference-pick">
+                            <div class="game_winner_and_difference-pick-wrapper">
+                                <input class="game_winner_and_difference-pick-input" type="radio" name="week-16_game-15_winner" id="week-16_game-15_winner-away_by-7" value="week-16_game-15_winner-away_by-7"
+                                {% if user.has_pick_for_week_and_game(16,15) and user.get_pick_for__week_and_game(16,15) == 'week-16_game-15_winner-away_by-7' %}checked{% endif %}>
+                                <label class="game_winner_and_difference-pick-label" for="week-16_game-15_winner-away_by-7">
+                                    <div class="game_winner_and_difference-pick-indicator"></div>
+                                    <span class="game_winner_and_difference-pick-text2">7</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="gamestrip_team-separator">
+                            <span class="gamestrip_versus-icon">@</span>
+                        </div>
+                        <div class="radiogroup">
+                            <div class="game_winner_and_difference-pick-wrapper">
+                                <input class="game_winner_and_difference-pick-input" type="radio" name="week-16_game-15_winner" id="week-16_game-15_winner-home_by-6" value="week-16_game-15_winner-home_by-6"
+                                {% if user.has_pick_for_week_and_game(16,15) and user.get_pick_for__week_and_game(16,15) == 'week-16_game-15_winner-home_by-6' %}checked{% endif %}>
+                                <label class="game_winner_and_difference-pick-label" for="week-16_game-15_winner-home_by-6">
+                                    <div class="game_winner_and_difference-pick-indicator"></div>
+                                    <span class="game_winner_and_difference-pick-text">0-6</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="radiogroup">
+                            <div class="game_winner_and_difference-pick-wrapper">
+                                <input class="game_winner_and_difference-pick-input" type="radio" name="week-16_game-15_winner" id="week-16_game-15_winner-home_by-7" value="week-16_game-15_winner-home_by-7"
+                                {% if user.has_pick_for_week_and_game(16,15) and user.get_pick_for__week_and_game(16,15) == 'week-16_game-15_winner-home_by-7' %}checked{% endif %}>
+                                <label class="game_winner_and_difference-pick-label" for="week-16_game-15_winner-home_by-7">
+                                    <div class="game_winner_and_difference-pick-indicator"></div>
+                                    <span class="game_winner_and_difference-pick-text2">7</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="gamestrip_team gamestrip_team-home">
+                            <p class="gamestrip_team-name">
+                                <span class="gamestrip_team-logo">
+                                    <picture>                                          
+                                        <img alt="Rams logo" class="img-responsive" data-src="https://static.www.nfl.com/t_q-best/league/api/clubs/logos/DAL" role="presentation" src="https://static.www.nfl.com/t_q-best/league/api/clubs/logos/DAL">
+                                    </picture>
+                                </span>
+                                <span class="gamestrip_team-abbreviation"> DAL </span>
+                                <span class="gamestrip_team-fullname"> Cowboys </span>
+                            </p>
+                            <div class="gamestrip_team-record">(0-0)</div>
+                        </div>
+                    </div>
+                    <div class="gamestrip_right-area">
+                        <a class="game_stats-link" href="https://www.nfl.com/games/buccaneers-at-cowboys-2022-reg-1" target="_blank">
+                            <span>Info/Stats del partido</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- MNF 16 -->
+    <section class="nflgames">
+        <div class="gamesinner">
+            <div class="gamescol12">
+                <h2 class="gamestitle">Lunes, 12 de Septiembre</h2>
+                <div class="gamestrip-pregame">
+                    <div class="gameinfo">
+                        <p class="gamedateinfo">
+                            <span class="gamedatetime"> 7:20 PM </span>
+                            <span class="gamedate_timezone"> CDT </span>
+                        </p>
+                    </div>
+                    <div class="gamestrip_game">
+                        <div class="gamestrip_team gamestrip_team_opponent">
+                            <p class="gamestrip_team-name-opponent">
+                                <span class="gamestrip_team-logo-opponent">
+                                    <picture>                                            
+                                        <img alt="Bills logo" class="img-responsive-opponent" data-src="https://static.www.nfl.com/t_q-best/league/api/clubs/logos/DEN" role="presentation" src="https://static.www.nfl.com/t_q-best/league/api/clubs/logos/DEN">
+                                    </picture>
+                                </span>
+                                <span class="gamestrip_team-abbreviation-opponent"> DEN </span>
+                                <span class="gamestrip_team-fullname-opponent"> Broncos </span>
+                            </p>
+                            <div class="gamestrip_team-record-opponent">(0-0)</div>
+                        </div>
+                        <div class="game_winner_and_difference-pick">
+                            <div class="game_winner_and_difference-pick-wrapper">
+                                <input class="game_winner_and_difference-pick-input" type="radio" name="week-16_game-16_winner" id="week-16_game-16_winner-away_by-6" value="week-16_game-16_winner-away_by-6"
+                                {% if user.has_pick_for_week_and_game(16,16) and user.get_pick_for__week_and_game(16,16) == 'week-16_game-16_winner-away_by-6' %}checked{% endif %}>
+                                <label class="game_winner_and_difference-pick-label" for="week-16_game-16_winner-away_by-6">
+                                    <div class="game_winner_and_difference-pick-indicator"></div>
+                                    <span class="game_winner_and_difference-pick-text">0-6</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="game_winner_and_difference-pick">
+                            <div class="game_winner_and_difference-pick-wrapper">
+                                <input class="game_winner_and_difference-pick-input" type="radio" name="week-16_game-16_winner" id="week-16_game-16_winner-away_by-7" value="week-16_game-16_winner-away_by-7"
+                                {% if user.has_pick_for_week_and_game(16,16) and user.get_pick_for__week_and_game(16,16) == 'week-16_game-16_winner-away_by-7' %}checked{% endif %}>
+                                <label class="game_winner_and_difference-pick-label" for="week-16_game-16_winner-away_by-7">
+                                    <div class="game_winner_and_difference-pick-indicator"></div>
+                                    <span class="game_winner_and_difference-pick-text2">7</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="gamestrip_team-separator">
+                            <span class="gamestrip_versus-icon">@</span>
+                        </div>
+                        <div class="radiogroup">
+                            <div class="game_winner_and_difference-pick-wrapper">
+                                <input class="game_winner_and_difference-pick-input" type="radio" name="week-16_game-16_winner" id="week-16_game-16_winner-home_by-6" value="week-16_game-16_winner-home_by-6"
+                                {% if user.has_pick_for_week_and_game(16,16) and user.get_pick_for__week_and_game(16,16) == 'week-16_game-16_winner-home_by-6' %}checked{% endif %}>
+                                <label class="game_winner_and_difference-pick-label" for="week-16_game-16_winner-home_by-6">
+                                    <div class="game_winner_and_difference-pick-indicator"></div>
+                                    <span class="game_winner_and_difference-pick-text">0-6</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="radiogroup">
+                            <div class="game_winner_and_difference-pick-wrapper">
+                                <input class="game_winner_and_difference-pick-input" type="radio" name="week-16_game-16_winner" id="week-16_game-16_winner-home_by-7" value="week-16_game-16_winner-home_by-7"
+                                {% if user.has_pick_for_week_and_game(16,16) and user.get_pick_for__week_and_game(16,16) == 'week-16_game-16_winner-home_by-7' %}checked{% endif %}>
+                                <label class="game_winner_and_difference-pick-label" for="week-16_game-16_winner-home_by-7">
+                                    <div class="game_winner_and_difference-pick-indicator"></div>
+                                    <span class="game_winner_and_difference-pick-text2">7</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="gamestrip_team gamestrip_team-home">
+                            <p class="gamestrip_team-name">
+                                <span class="gamestrip_team-logo">
+                                    <picture>
+                                        <img alt="Rams logo" class="img-responsive" data-src="https://static.www.nfl.com/t_q-best/league/api/clubs/logos/SEA" role="presentation" src="https://static.www.nfl.com/t_q-best/league/api/clubs/logos/SEA">
+                                    </picture>
+                                </span>
+                                <span class="gamestrip_team-abbreviation"> SEA </span>
+                                <span class="gamestrip_team-fullname"> Seahawks </span>
+                            </p>
+                            <div class="gamestrip_team-record">(0-0)</div>
+                        </div>
+                    </div>
+                    <div class="gamestrip_right-area">
+                        <a class="game_stats-link"  href="https://www.nfl.com/games/broncos-at-seahawks-2022-reg-1" target="_blank">
+                            <span>Info/Stats del partido</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        window.addEventListener('DOMContentLoaded', function() {
+            if (window.innerWidth <= 767) {
+                var gamestripTeam = document.querySelector('.gamestrip_team_home');
+                var radiogroups = document.querySelectorAll('.radiogroup');
+                var firstRadiogroup = radiogroups[0];
+                firstRadiogroup.parentNode.insertBefore(gamestripTeam, firstRadiogroup);
+            }
+        });
+    </script>
+    <div class="picks-save-div">
+        <div class="picks-buttons-div">
+            <button type="submit" class="btn btn-primary picks-buttons picks-save-button">Guardar cambios</button>
+            <button type="reset" class="btn btn-primary picks-buttons picks-reset-button">Resetear cambios</button>
+        </div>
+    </div>
+</form>
+<!-- Bye week teams -->
+<section class="bye_week {% if current_datetime > limit_date %}page-opacity{% endif %}">
+    <div class="bye_week-inner">
+        <div class="bye_week-col12">
+            <div class="bye_week-teams">
+                <h2 class="bye_week-title">TEAMS ON BYE</h2>
+                <ul class="bye_week-list">
+                    <li class="bye_week-list-item">No teams have bye on this week</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

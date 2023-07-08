@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" type="text/css" href="/static/leaderboard.css">
+    <script src="/static/leaderboard.js"></script>
+{% endblock %}
+{% block title %}Leaderboard{% endblock %}
+
+{% block content %}
+<section class="title-team-leaderboard-section">
+    <div class="title-team-leaderboard-div-1">
+        <div class="title-team-leaderboard-div-2">
+            <div class="title-team-leaderboard-div-3">
+                <h2 class="title-team-leaderboard-h2-header">
+                    <span>Tabla General</span>
+                </h2>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="team-leaderboard-section">
+    <div class="team-leaderboard-div-1">
+        <div class="team-leaderboard-div-2">
+            <div class="team-leaderboard-div-3">
+                <div class="team-leaderboard-div-fulltable">
+                    <div class="team-leaderboard-div-content">
+                        <table id="team-leaderboard-table" class="team-leaderboard-table" role="table">
+                            <thead>
+                              <tr>
+                                <th onclick="sortTablePos(0)" class="team-leaderboard-th border-4-px font-weight-bold border-4-px-bottom cursor-pointer" scope="col" aria-sort="none">POSICIÓN</th>
+                                <th onclick="sortTableAlphabetically(1)" class="team-leaderboard-th border-4-px font-weight-bold border-4-px-bottom cursor-pointer" scope="col" aria-sort="none">NOMBRE</th>
+                                <th colspan="19" class="team-leaderboard-th team-leaderboard-th-puntos font-weight-bold border-4-px-bottom" scope="col" aria-sort="none">PUNTOS</th>
+                              </tr>
+                              <tr>
+                                <th class="team-leaderboard-th border-4-px border-2-px-bottom" scope="col" aria-sort="none"></th>
+                                <th class="team-leaderboard-th border-4-px border-2-px-bottom" scope="col" aria-sort="none"></th>
+                                <th onclick="sortTable(2)" class="team-leaderboard-th border-1-px text-align-center cursor-pointer border-2-px-bottom" scope="col" aria-sort="none">W1</th>
+                                <th onclick="sortTable(3)" class="team-leaderboard-th border-1-px text-align-center cursor-pointer border-2-px-bottom" scope="col" aria-sort="none">W2</th>
+                                <th onclick="sortTable(4)" class="team-leaderboard-th border-1-px text-align-center cursor-pointer border-2-px-bottom" scope="col" aria-sort="none">W3</th>
+                                <th onclick="sortTable(5)" class="team-leaderboard-th border-1-px text-align-center cursor-pointer border-2-px-bottom" scope="col" aria-sort="none">W4</th>
+                                <th onclick="sortTable(6)" class="team-leaderboard-th border-1-px text-align-center cursor-pointer border-2-px-bottom" scope="col" aria-sort="none">W5</th>
+                                <th onclick="sortTable(7)" class="team-leaderboard-th border-1-px text-align-center cursor-pointer border-2-px-bottom" scope="col" aria-sort="none">W6</th>
+                                <th onclick="sortTable(8)" class="team-leaderboard-th border-1-px text-align-center cursor-pointer border-2-px-bottom" scope="col" aria-sort="none">W7</th>
+                                <th onclick="sortTable(9)" class="team-leaderboard-th border-1-px text-align-center cursor-pointer border-2-px-bottom" scope="col" aria-sort="none">W8</th>
+                                <th onclick="sortTable(10)" class="team-leaderboard-th border-1-px text-align-center cursor-pointer border-2-px-bottom" scope="col" aria-sort="none">W9</th>
+                                <th onclick="sortTable(11)" class="team-leaderboard-th border-1-px text-align-center cursor-pointer border-2-px-bottom" scope="col" aria-sort="none">W10</th>
+                                <th onclick="sortTable(12)" class="team-leaderboard-th border-1-px text-align-center cursor-pointer border-2-px-bottom" scope="col" aria-sort="none">W11</th>
+                                <th onclick="sortTable(13)" class="team-leaderboard-th border-1-px text-align-center cursor-pointer border-2-px-bottom" scope="col" aria-sort="none">W12</th>
+                                <th onclick="sortTable(14)" class="team-leaderboard-th border-1-px text-align-center cursor-pointer border-2-px-bottom" scope="col" aria-sort="none">W13</th>
+                                <th onclick="sortTable(15)" class="team-leaderboard-th border-1-px text-align-center cursor-pointer border-2-px-bottom" scope="col" aria-sort="none">W14</th>
+                                <th onclick="sortTable(16)" class="team-leaderboard-th border-1-px text-align-center cursor-pointer border-2-px-bottom" scope="col" aria-sort="none">W15</th>
+                                <th onclick="sortTable(17)" class="team-leaderboard-th border-1-px text-align-center cursor-pointer border-2-px-bottom" scope="col" aria-sort="none">W16</th>
+                                <th onclick="sortTable(18)" class="team-leaderboard-th border-1-px text-align-center cursor-pointer border-2-px-bottom" scope="col" aria-sort="none">W17</th>
+                                <th onclick="sortTable(19)" class="team-leaderboard-th border-4-px text-align-center cursor-pointer border-2-px-bottom" scope="col" aria-sort="none">W18</th>
+                                <th onclick="sortTable(20)" class="team-leaderboard-th text-align-center font-weight-bold border-4-px-left cursor-pointer border-2-px-bottom" scope="col" aria-sort="none">TOTAL</th>
+                              </tr>
+                              </thead>                              
+                            <tbody>
+                                {% for row in leaderboard_data %}
+                                <tr>
+                                  <td class="border-4-px" scope="row">
+                                    <div class="team-leaderboard-div-team-name team-leaderboard-div-position">
+                                      {{ row.position }}
+                                    </div>
+                                  </td>
+                                  <td class="border-4-px" scope="row">
+                                    <div class="team-leaderboard-div-team-name">
+                                      {{ row.user_name }}
+                                    </div>
+                                  </td>
+                                  <!-- Use default filter to handle None values -->
+                                  {% for week in range(1, 19) %}
+                                  {% set points = row['week' ~ week ~ '_points'] %}
+                                  <td class="border-1-px">{{ points if points is not none else 0 }}</td>
+                                  {% endfor %}
+                                  <td class="border-4-px-left">{{ row.total_points }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Add the following script tag before the closing </body> tag -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Call the setHighestValueBackgroundColor function for each desired column
+    setHighestValueBackgroundColor(2,1);
+    setHighestValueBackgroundColor(3,1);
+    setHighestValueBackgroundColor(4,1);
+    setHighestValueBackgroundColor(5,1);
+    setHighestValueBackgroundColor(6,1);
+    setHighestValueBackgroundColor(7,1);
+    setHighestValueBackgroundColor(8,1);
+    setHighestValueBackgroundColor(9,1);
+    setHighestValueBackgroundColor(10,1);
+    setHighestValueBackgroundColor(11,1);
+    setHighestValueBackgroundColor(12,1);
+    setHighestValueBackgroundColor(13,1);
+    setHighestValueBackgroundColor(14,1);
+    setHighestValueBackgroundColor(15,1);
+    setHighestValueBackgroundColor(16,1);
+    setHighestValueBackgroundColor(17,1);
+    setHighestValueBackgroundColor(18,1);
+    setHighestValueBackgroundColor(19,1);
+    setHighestValueBackgroundColorTotal(20,1);
+  });
+</script>
+{% endblock %}

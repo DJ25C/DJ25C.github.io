@@ -1,0 +1,322 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(240, 240, 240);
+    box-sizing: inherit;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+li {
+    list-style-type: none;
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: 0;
+    cursor: pointer;
+}
+
+h1 { 
+    font-size: 20px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 10px;
+    margin-top: 5px;
+    margin-bottom: -5px;
+}
+h2 {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 25px;
+}
+
+.logo {
+    width: 20px;
+    height: 25px;
+}
+.scores-nav {
+    display: grid;
+    overflow: scroll;
+}
+.scores-div-general {
+    grid-template: [row] 1fr/repeat(16,[col] minmax(0,100%));
+    display: grid;
+}
+.scores-div-fulltable {
+    grid-column: span 16;
+}
+.scores-list {
+    margin: 0;
+    grid-template: [row] 1fr / repeat(16, [col] minmax(90px, 1fr));
+    display: grid;
+    font-size: 10px;
+    font-weight: 600;
+    padding-inline-start: 0px;
+}
+.base-navbar-1-list-items-scores {
+    display: block !important;
+    padding: 4px 4px;
+    background-color: #fff;
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,.26);
+    color: #333;
+    grid-column: span 1;
+}
+.scores-gamedatetime {
+    font-size: 10px;
+    font-weight: 700;
+    box-sizing: inherit;
+    margin: 2px 5px;
+}
+.scores-span {
+    display: flex;
+    margin: 0px 5px;
+    align-items: center;
+}
+.base-navbar-1-div-scores {
+    display: flex;
+    justify-content: space-between;
+}
+.scores-span:nth-child(2) {
+    margin-left: auto;
+}
+
+.base-header {
+    width: 100%;
+    background-color: #013369;
+}
+
+.base-header-div {
+    color: #fafafa;
+    background-color: #013369;
+    align-items: stretch;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.47);
+    display: flex;
+    height: 65px;
+    overflow-y: auto;
+}
+@media (min-width: 1366px) {
+    .base-navbar-1-list-items {
+        white-space: nowrap;
+    }
+    .base-navbar-1-list {
+        display: flex;
+    }
+    .base-weeks-button {
+        display: none;
+    }
+    .base-navbar-2-list {
+        display: flex;
+    }
+}
+@media (max-width: 1365px) {
+    .base-header-div {
+        height: auto;
+    }
+    .base-navbar-1-list {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+    }
+    .base-navbar-1-list-items {
+        white-space: nowrap;
+    }
+    .base-weeks-button {
+        display: none;
+    }
+    .base-navbar-2 {
+        position: relative;
+    }
+    .base-navbar-2-list {
+        display: flex;
+        white-space: nowrap;
+    }
+    .base-navbar-2-list.show {
+        display: block;
+        margin: 10px 5px
+    }
+}
+@media (max-width: 767px) {
+    .base-header-div {
+        height: auto;
+    }
+    .base-navbar-1-list {
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    }
+    .base-navbar-1-list-items {
+        white-space: nowrap;
+    }
+    .base-navbar-1-list.show {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        opacity: 1;
+        color: #fafafa;
+        background-color: #013369;
+        align-items: stretch;
+        max-height: 100%;
+    }
+    .base-weeks-button {
+        background-color: #013369;
+        color: #fafafa;
+        border: none;
+        font-size: 26px;
+        font-weight: bolder;
+        display: block;
+    }
+    .base-navbar-2 {
+        position: relative;
+    }
+    .base-navbar-2-list {
+        display: flex;
+        white-space: nowrap;
+        margin-inline-start: -50px;
+    }
+    .base-navbar-2-list.show {
+        display: block;
+        margin: 10px 5px
+    }
+}
+
+.base-nfl-logo {
+    margin: 0;
+    padding: 0;
+    display: block;
+    max-width: 32px;
+    height: 35px;
+}
+.base-nfl-logo-a {
+    margin: 15px 2px;
+    position: relative;
+    transition: none;
+    z-index: 10;
+    margin-left: 10px;
+}
+.base-navbar-1 {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+.base-navbar-1-list {
+    vertical-align: baseline;
+    list-style: none;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-end: 0px;
+    padding-inline-start: 0px;
+}
+/* .base-navbar-1-list-2nd {
+    display: none;
+}
+.base-navbar-1-list-2nd.show {
+    display: grid;
+} */
+.base-navbar-1-list-items {
+    display: flex;
+    align-items: center;
+}
+.base-navbar-1-list-items:first-child a {
+    margin-left: 0;
+    margin: 0 8px;
+}
+.base-navbar-1-list-items a {
+    margin: 0 8px;
+    font-size: 13px;
+    text-align: center;
+}
+.base-weeks-button:focus {
+    outline: none;
+}
+.base-weeks-button-div {
+    display: flex;
+    flex-direction: column; 
+}
+.base-weeks-button-span-text {
+    font-size: 10px;
+    position: relative; /* Set positioning context */
+    z-index: 2; /* Ensure the text appears above the icon */
+    margin: 0;
+}
+.base-weeks-button-span-icon{
+    content: '\25BE';
+    position: relative; /* Set positioning context */
+    z-index: 1; /* Ensure the icon appears behind the text */
+    margin: -10px;
+}
+.three_dots_a {
+    content: "\2026";
+}
+.base-navbar-2 {
+    display: flex;
+    align-items: center;
+    margin-right: 2%;
+}
+.base-navbar-2-list {
+    display: flex;
+    white-space: nowrap;
+    vertical-align: baseline;
+    list-style: none;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-end: 0px;
+    padding-inline-start: 0px;
+}
+.base-navbar-2-list {
+    display: flex;
+    white-space: nowrap;
+}
+.base-navbar-2-list.show {
+    display: block;
+    margin: 10px 5px
+}
+.base-menu-2-button {
+    background-color: #013369;
+    color: #fafafa;
+    border: none;
+    font-weight: bolder;
+    display: block;
+    outline: none;
+    height: 20px;
+}
+.base-menu-2-button:focus {
+    outline: none;
+}
+.base-navbar-dots-list {
+    display: flex;
+    align-items: flex-start;
+}
+.base-navbar-1-dots {
+    position: relative;
+    font-size: 20px;
+    top: -9px;
+}
+#base-menu-2-div {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  }
+#base-menu-2-div.show {
+    opacity: 1;
+    color: #fafafa;
+    background-color: #013369;
+    align-items: stretch;
+    box-shadow: inset 0 10px 8px -10px rgba(7, 7, 7, 0.7);
+    display: flex;
+    max-height: 65px;
+    overflow-y: auto;
+}
+.base-navbar-menu-2-open-ul {
+    padding: 16px 16px 16px 45px;
+}
+.lower-score {
+    color: #6c6d6f !important;
+}

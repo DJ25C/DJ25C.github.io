@@ -1,0 +1,829 @@
+body {
+    background-color: rgb(240, 240, 240);
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+@media (min-width: 1366px) {
+    .nflgames {
+        grid-template-columns: [viewport-start] 1fr [content-start] minmax(0,1248px) [content-end] 1fr [viewport-end];
+        grid-template-rows: [row] 1fr;
+        grid-gap: 24px;
+        display: grid;
+    }
+    .gamesinner {
+        grid-column: content-start/content-end;
+        grid-template: [row] 1fr/repeat(12,[col] minmax(0,82px));
+        grid-gap: 24px;
+        display: grid;
+    }
+    .gamescol12 {
+        grid-column: span 12;
+    }
+    .gamestrip-pregame {
+        height: 56px;
+    }
+    .gameinfo {
+        width: 175px;
+        padding-left: 16px;
+    }
+    .gamestrip_game {
+        margin-right: 12.5px;
+        display: flex;
+        padding-left: 5px;
+        justify-content: flex-start;
+    }
+    .gamestrip_team-fullname {
+        padding-left: 16px;
+        padding-right: 0;
+        font-size: 16px;
+        box-sizing: inherit;
+    }
+    .gamestrip_team-fullname-opponent {
+        padding-left: 0;
+        padding-right: 16px;
+    }
+    .gamestrip_team_opponent {
+        flex-direction: row-reverse;
+    }
+    .gamestrip_team-name-opponent {
+        margin-left: 10px;
+        margin-right: 5px;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        flex-direction: row-reverse;
+    }
+    .gamestrip_team-name {
+        margin-right: 10px;
+        margin-left: 15px;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+    }
+    .gamestrip_team-separator {
+        margin-right: 0px;
+        margin-left: 20px;
+    }
+    .game_winner_and_difference-pick-label {
+        margin: 0px 7.5px;
+    }
+    .gamedateinfo {
+        margin-block-end: 1em;
+    }
+    .gamestrip_right-area {
+        width: 175px;
+    }
+    .picks-save-div {
+        grid-template-columns: [viewport-start] 1fr [content-start] minmax(0,1248px) [content-end] 1fr [viewport-end];
+        grid-template-rows: [row] 1fr;
+        grid-gap: 24px;
+        display: grid;
+        justify-items: end;
+        margin-top: 40px;
+    }
+    .picks-buttons-div {
+        grid-column: content-start / span 1;
+        display: flex;
+    }
+    .picks-buttons {
+        padding: 20px;
+    }
+    .picks-reset-button {
+        margin-left: 10px;
+    }    
+}
+@media (min-width: 768px) and (max-width: 1365px) {
+    .nflgames {
+        grid-template-columns: [viewport-start] 1fr [content-start] minmax(0,1248px) [content-end] 1fr [viewport-end];
+        grid-template-rows: [row] 1fr;
+        grid-gap: 24px;
+        display: grid;
+    }
+    .gamesinner {
+        grid-column: content-start/content-end;
+        grid-template: [row] 1fr/repeat(12,[col] minmax(0,82px));
+        grid-gap: 24px;
+        display: grid;
+    }
+    .gamescol12 {
+        grid-column: span 12;
+    }
+    .gamestrip-pregame {
+        height: 56px;
+    }
+    .gameinfo {
+        width: 12%;
+        padding-left: 9px;
+    }
+    .gamestrip_game {
+        display: flex;
+        padding-inline-end: 20px;
+    }
+    .gamestrip_team-fullname {
+        padding-left: 16px;
+        padding-right: 0;
+        font-size: 16px;
+        box-sizing: inherit;
+    }
+    .gamestrip_team-fullname-opponent, .gamestrip_team-fullname {
+        padding: 0px 5px;
+    }
+    .gamestrip_team_opponent {
+        flex-direction: row-reverse;
+    }
+    .gamestrip_team-name-opponent {
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        flex-direction: row-reverse;
+    }
+    .gamestrip_team-name {
+        margin-left: 10px;
+        margin-right: 0px;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+    }
+    .gamestrip_team-separator {
+        margin-right: -10px;
+        margin-left: 10px;
+    }
+    .gamedateinfo {
+        margin-block-end: 1em;
+    }
+    .gamestrip_right-area {
+        width: 75px;
+        margin-right: 9px;
+    }
+    .picks-save-div {
+        grid-template-columns: [viewport-start] 1fr [content-start] minmax(0,1248px) [content-end] 1fr [viewport-end];
+        grid-template-rows: [row] 1fr;
+        grid-gap: 24px;
+        display: grid;
+        justify-items: end;
+        margin-top: 40px;
+    }
+    .picks-buttons-div {
+        grid-column: content-start / span 1; /* Set grid-column to span the second span */
+        display: flex;
+        font-size: 30px;
+    }
+    .picks-buttons {
+        padding: 15px;
+    }
+    .picks-save-button {
+    }
+    .picks-reset-button {
+        margin-left: 10px;
+    } 
+}
+@media (max-width: 767px) {
+    .nflgames {
+        margin: 0px 15px
+    }
+    .gamestrip-pregame {
+        align-items: stretch;
+        border: 0px solid black;
+        flex-direction: column;
+        position: relative;
+    }
+    .gamestrip_game {
+        grid-template: [row] 1fr/repeat(10,[col] minmax(0,50px));
+        grid-gap: 2px;
+        display: grid;
+        margin: 10px 0px;
+    }
+    .gamestrip_team-fullname-opponent, .gamestrip_team-fullname {
+        margin: 0px 10px;
+    }
+    .gamestrip_team-record-opponent, .gamestrip_team-record {
+        font-size: 14px;
+        box-sizing: inherit;
+        display: flex;
+    }
+    .gamestrip_team-name-opponent, .gamestrip_team-name {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .gamestrip_team {
+        grid-column: span 6;
+        justify-content: start;
+        padding: 10px 5px;
+        margin-left: 8px;
+    }
+    .gamestrip_team-separator {
+        grid-column: span 6;
+        order: 1;
+        justify-content: start;
+        margin: 2% 12%;
+    }
+    .gamestrip_team-home {
+        order: 2;
+    }
+    .radiogroup {
+        grid-column: span 2;
+        display: flex;
+        justify-content: start;
+        order: 3;
+    }
+    .game_winner_and_difference-pick {
+        grid-column: span 2;
+        display: flex;
+        justify-content: start;
+    }
+    .gamestrip_versus-icon {
+        display: flex;
+        align-items: end;
+    }
+    .gamestrip_right-area {
+        margin: 15px 15px;
+        margin-top: 5px;
+    }
+    .gamedateinfo {
+        margin-block-end: 0;
+    }
+    .gameinfo {
+        padding-left: 16px;
+    }
+    .picks-save-div {
+        margin: 40px 15px;
+    }
+    .picks-buttons {
+        padding: 15px;
+    }
+}
+
+/* SCHEDULE */
+
+.weeknumber {
+    margin-top: 40px;
+    display: block;
+    color: #151515;
+    font-size: 14px;
+    line-height: 1.4;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.schedule {
+    padding: 24px 7px;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    margin-left: -7px;
+    width: 100%;
+    display: block;
+}
+
+.scheduleouter {
+    grid-template-columns: [viewport-start] 1fr [content-start] minmax(0,1248px) [content-end] 1fr [viewport-end];
+    grid-template-rows: [row] 1fr;
+    grid-gap: 24px;
+    display: grid;
+}
+
+.contentwide {
+    outline: none;
+    background-color: #fff;
+    grid-row: row 1/row -1;
+    grid-column: 1/-1;
+    display: block;
+}
+
+.scheduleinner {
+    grid-row: row 1/row -1;
+    grid-column: content-start/content-end;
+    grid-template: [row] 1fr/repeat(12,[col] minmax(0,82px));
+    grid-gap: 24px;
+    display: grid;
+}
+
+.schedulecol12 {
+    grid-column: span 12;
+    grid-column-start: span 12;
+    grid-column-end: auto;
+    width: auto;
+    -webkit-box-align: stretch;
+    align-items: stretch;
+    display: flex;
+    min-height: 1px;
+}
+
+.scheduleheader {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: -10px;
+    margin-bottom: -30px;
+}
+
+.scheduletitle {
+    text-align: justify;
+    margin-top: 10px;
+    color: #757575;
+    font-size: 12px;
+    margin-bottom: -15px;
+    text-transform: uppercase;
+    width: 100%;
+    font-weight: 700;
+    line-height: inherit;
+    display: block;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+} 
+
+.schedulebutton {
+    text-decoration: none;
+    text-decoration-line: none;
+    text-decoration-thickness: initial;
+    text-decoration-style: initial;
+    text-decoration-color: initial;
+    color: inherit;
+    transition: .3s;
+    transition-property: all;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+    cursor: pointer;
+    color: #757575;
+    font-size: 12px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    width: 100%;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+.scheduleweek {
+    font-size: 28px;
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: inherit;
+    margin: 0;
+    display: block;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+
+
+/* GAMES */
+
+.nflgames {
+    margin-top: 24px;
+    box-sizing: border-box;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #151515;
+    font-family: Helvetica,Arial,sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.gamesinner {
+    box-sizing: inherit;
+}
+
+.gamescol12 {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    width: auto;
+    -webkit-box-align: stretch;
+    align-items: stretch;
+    display: flex;
+    min-height: 1px;
+    box-sizing: inherit;
+}
+
+.gamestitle {
+    border-bottom: none;
+    font-size: 16px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    font-weight: 700;
+    min-height: 34px;
+    line-height: inherit;
+    margin: 0;
+    box-sizing: inherit;
+    display: block;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.gamestrip-pregame {
+    background-color: #fff;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 2px 2px 0 rgb(0 0 0 / 10%);
+    box-shadow: 0 2px 2px 0rgba(0,0,0,.1);
+    color: #333;
+    display: flex;
+}
+
+.gameinfo {
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+}
+
+.gamedateinfo {
+    display: flex;
+    margin-block-start: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.gamedatetime {
+    font-size: 12px;
+    font-weight: 700;
+    box-sizing: inherit;
+}
+
+.gamedate_timezone {
+    color: #757575;
+    font-size: 10px;
+    margin-left: 4px;
+    box-sizing: inherit;
+}
+
+.gamestrip_game {
+    flex-grow: 1;
+    align-items: center;
+}
+
+.gamestrip_team-name-opponent {
+    align-items: center;
+    display: flex;
+}
+
+.gamestrip_team-logo-opponent {
+    width: 40px;
+    height: auto;
+    box-sizing: inherit;
+    margin-top: 5px;
+}
+
+.img-responsive-opponent {
+    border: 0;
+    height: auto;
+    max-width: 100%;
+    box-sizing: inherit;
+}
+
+.gamestrip_team-abbreviation-opponent {
+    display: none;
+    font-size: 14px;
+    text-transform: uppercase;
+    box-sizing: inherit;
+}
+
+.gamestrip_team-fullname-opponent {
+    font-size: 16px;
+}
+
+.gamestrip_team-record-opponent {
+    font-size: 14px;
+    box-sizing: inherit;
+    display: block;
+    width: 30px;
+}
+
+.gamestrip_team-separator {
+    color: #555;
+    display: flex;
+    padding: 0 0px;
+    box-sizing: inherit;
+    margin-top: 5px;
+}
+
+.gamestrip_versus-icon {
+    fill: currentColor;
+    height: 24px;
+    width: 24px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.gamestrip_team {
+    width: 100%;
+    align-items: center;
+    display: flex;
+}
+
+.gamestrip_team-name {
+    align-items: center;
+    display: flex;
+}
+
+.gamestrip_team-logo {
+    width: 40px;
+    height: auto;
+    box-sizing: inherit;
+    margin-top: 5px;
+}
+
+.img-responsive {
+    border: 0;
+    height: auto;
+    max-width: 100%;
+    box-sizing: inherit;
+}
+
+.gamestrip_team-abbreviation {
+    display: none;
+    font-size: 14px;
+    text-transform: uppercase;
+    box-sizing: inherit;
+}
+
+.gamestrip_team-fullname {
+    font-size: 16px;
+}
+
+.gamestrip_team-record {
+    font-size: 14px;
+    box-sizing: inherit;
+    display: block;
+    width: 30px;
+}
+
+.gamestrip_right-area {
+    -webkit-box-align: center;
+    display: -webkit-box;
+    box-sizing: inherit;
+}
+
+.game_stats-link {
+    -webkit-box-align: center;
+    display: flex;
+    font-size: 14px;
+    padding: unset;
+    text-transform: unset;
+    font-weight: 700;
+    color: #1B48E0;
+    text-decoration: none;
+    transition: .3s;
+    box-sizing: inherit;
+    cursor: pointer;
+}
+
+.game_stats-link2 {
+    margin-left: 24px;
+}
+
+.in_between_games_space {
+    content: "";
+    margin: 1.5em;
+    display: block;
+    font-size: 24%;
+}
+
+.schedule-div-deadline-message {
+    padding-left: 25px;
+}
+.schedule-p-deadline-message {
+    font-size: 18px;
+    font-weight: bold;
+    color: #A30000;
+}
+
+
+/* WINNER AND PTS. DIFFERENCE */
+
+.game_winner_and_difference-pick {
+    background: #ecf0f3;
+    box-shadow: 4px 4px 4px 0px #d1d9e6 inset, -4px -4px 4px 0px #ffffff inset;
+    box-sizing: border-box;
+    display: block;
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+}
+
+.game_winner_and_difference-pick-wrapper {
+    height: 0vh;
+    display: flex;
+    align-items: center;
+    background-color: #ecf0f3;
+}
+
+.game_winner_and_difference-pick-input {
+    position: fixed;
+    top: 0;
+    right: 0;
+    opacity: 1e-5;
+    pointer-events: none;
+    box-sizing: border-box;
+    padding: 0;
+    font-family: sans-serif;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0;
+    overflow: visible;
+}
+
+.game_winner_and_difference-pick-label {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    box-sizing: inherit;
+}
+
+.game_winner_and_difference-pick-text {
+    position: absolute;
+    margin-left: 14px;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 14px;
+}
+
+.game_winner_and_difference-pick-text2 {
+    position: absolute;
+    margin-left: 21px;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 14px;
+}
+
+.game_winner_and_difference-pick-indicator {
+    position: relative;
+    border-radius: 50%;
+    margin-left: 10px;
+    height: 30px;
+    width: 30px;
+    box-shadow:
+    -8px -4px 8px 0px #ffffff,
+    8px 4px 12px 0px #d1d9e6;
+    overflow: hidden;
+}
+
+.game_winner_and_difference-pick-indicator::before,
+.game_winner_and_difference-pick-indicator::after {
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    height: 80%;
+    width: 80%;
+    border-radius: 50%;
+}
+
+.game_winner_and_difference-pick-indicator::before {
+    background-color: rgb(228, 236, 255);
+    box-shadow:
+    -4px -2px 4px 0px rgb(158, 41, 41),
+    4px 2px 8px 0px #154593;
+}
+
+
+.game_winner_and_difference-pick-indicator::after {
+    background-color: #ecf0f3;
+    box-shadow:
+    -12px -12px 12px 12px #fff,
+    12px 12px 12px 12px #d1d9e6;
+    transform: scale3d(1, 1, 1);
+    transition: opacity .25s ease-in-out, transform .25s ease-in-out;
+}
+
+.game_winner_and_difference-pick-input:checked ~ .game_winner_and_difference-pick-label .game_winner_and_difference-pick-indicator::after {
+    background-color: #ecf0f3;
+    box-shadow:
+    -4px -2px 4px 0px #fff,
+    4px 2px 8px 0px #d1d9e6;
+    transform: scale3d(.975, .975, 1) translate3d(0, 10%, 0);
+    opacity: 0;
+}
+
+.game_winner_and_difference-pick-input:focus ~ .game_winner_and_difference-pick-label .game_winner_and_difference-pick-indicator {
+    transform: translate3d(8px, 0, 0);
+    opacity: 1;
+    background-color: rgb(228, 236, 255);
+    box-shadow:
+    -4px -2px 4px 0px #fff,
+    4px 2px 8px 0px #d1d9e6;
+    transform: scale3d(1, 1, 1);
+    transition: opacity .25s ease-in-out, transform .25s ease-in-out;
+}
+
+.game_winner_and_difference-pick-label:hover .game_winner_and_difference-pick-indicator {
+    background-color: rgb(228, 236, 255);
+    opacity: 1;
+    box-shadow:
+    -4px -2px 4px 0px rgb(158, 41, 41),
+    4px 2px 8px 0px #154593;
+}
+
+
+
+
+
+/* TEAMS ON BYE WEEK */
+
+.bye_week {
+    margin-top: 40px;
+    margin-bottom: 24px;
+    grid-template-columns: [viewport-start] 1fr [content-start] minmax(0,1248px) [content-end] 1fr [viewport-end];
+    grid-template-rows: [row] 1fr;
+    grid-gap: 24px;
+    display: grid;
+    box-sizing: inherit;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #151515;
+    font-family: Arial, Helvetica, sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    box-sizing: border-box;
+}
+
+.bye_week-inner {
+    grid-column: content-start/content-end;
+    grid-template: [row] 1fr/repeat(12,[col] minmax(0,82px));
+    grid-gap: 24px;
+    display: grid;
+    box-sizing: inherit;
+}
+
+.bye_week-col12 {
+    grid-column: span 12;
+    width: auto;
+    -webkit-box-align: stretch;
+    align-items: stretch;
+    display: flex;
+    min-height: 1px;
+    box-sizing: inherit;
+}
+
+.bye_week-teams {
+    width: 100%;
+    box-sizing: inherit;
+    display: block;
+}
+
+.bye_week-title {
+    border-bottom: none;
+    color: #757575;
+    font-size: 14px;
+    min-height: 34px;
+    line-height: inherit;
+    margin: 0;
+    display: block;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+.bye_week-list {
+    -webkit-box-align: center;
+    align-items: center;
+    border: 1px solid #ccc;
+    min-height: 56px;
+    flex-wrap: wrap;
+    display: flex;
+    padding: 8px;
+    font: inherit;
+    list-style: none;
+    margin: 0;
+    vertical-align: baseline;
+    box-sizing: inherit;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 10px;
+}
+
+.bye_week-list-item {
+    color: #333;
+    font-size: 14px;
+    font-weight: 600;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+    display: list-item;
+    list-style: none;
+}
+.picks-save-div {
+    text-align: right;
+}
+.picks-buttons {
+    background-color: #013369;
+    border: none;
+    border-radius: 7px;
+}
+.picks-reset-button {
+    background-color: #A30000;
+}
+.page-opacity {
+    opacity: .5;
+    pointer-events: none;
+}

@@ -1,0 +1,515 @@
+{% extends "base.html" %}
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" type="text/css" href="/static/home.css">
+    <script src="/static/home.js"></script>
+{% endblock %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<section class="section-1">
+    <div class="section-1-div-general">
+        <div class="section-1-news-div-general">
+            <div class="section-1-news-div-fulltable">
+                <div class="section-3-highlights-div-heading-fulltable">
+                    <div class="section-3-highlights-div-heading">
+                        <h2 class="section-3-highlights-h2-heading">
+                            <span>Ultimas Noticias</span>
+                        </h2>
+                    </div>
+                </div>
+                {% for news in news %}
+                    <a href="{{ news.news_1_link }}" target="_blank" class="section-1-news-a">
+                        <div class="section-1-news-div-image">
+                            <figure class="section-1-news-figure-image">
+                                <img class="section-1-news-img-image" src="{{ news.news_1_img }}">
+                            </figure>
+                            <div class="section-1-news-div-footer">
+                                <div class="section-1-news-div-content-footer-heading">NOTICIA</div>
+                                <h3 class="section-1-news-h3-footer-heading">
+                                    <p>{{ news.news_1_heading }}</p>
+                                </h3>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://www.nfl.com{{ news.news_2_link }}" target="_blank" class="section-1-news-a">
+                        <div class="section-1-news-div-image">
+                            <figure class="section-1-news-figure-image">
+                                <img class="section-1-news-img-image" src="{{ news.news_2_img }}">
+                            </figure>
+                            <div class="section-1-news-div-footer">
+                                <div class="section-1-news-div-content-footer-heading">NOTICIA</div>
+                                <h3 class="section-1-news-h3-footer-heading">
+                                    <p>{{ news.news_2_heading }}</p>
+                                </h3>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://www.nfl.com{{ news.news_3_link }}" target="_blank" class="section-1-news-a">
+                        <div class="section-1-news-div-image">
+                            <figure class="section-1-news-figure-image">
+                                <img class="section-1-news-img-image" src="{{ news.news_3_img }}">
+                            </figure>
+                            <div class="section-1-news-div-footer">
+                                <div class="section-1-news-div-content-footer-heading">NOTICIA</div>
+                                <h3 class="section-1-news-h3-footer-heading">
+                                    <p>{{ news.news_3_heading }}</p>
+                                </h3>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://www.nfl.com{{ news.news_4_link }}" target="_blank" class="section-1-news-a">
+                        <div class="section-1-news-div-image">
+                            <figure class="section-1-news-figure-image">
+                                <img class="section-1-news-img-image" src="{{ news.news_4_img }}">
+                            </figure>
+                            <div class="section-1-news-div-footer">
+                                <div class="section-1-news-div-content-footer-heading">NOTICIA</div>
+                                <h3 class="section-1-news-h3-footer-heading">
+                                    <p>{{ news.news_4_heading }}</p>
+                                </h3>
+                            </div>
+                        </div>
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="section-1-scores-and-toNFL-div-general">
+            <div class="section-3-highlights-div-heading-fulltable">
+                <div class="section-3-highlights-div-heading">
+                    <h2 class="section-3-highlights-h2-heading section-3-scores-h2-heading">
+                        <span>Resultados Semana 1</span>
+                    </h2>
+                </div>
+            </div>
+            <div class="section-1-scores-div-fulltable">
+                <ul class="section-1-scores-ul-content">
+                    <li>
+                        <div class="section-1-scores-div-content">
+                            <ol class="section-1-scores-ol-content-list">
+                                <li class="section-1-scores-li-content-list-item">
+                                    <div class="section-1-scores-div-content-list-item">
+                                        <span class="section-1-scores-span-content-list-item-text">Resultado 1</span>
+                                    </div>
+                                </li>
+                                <li class="section-1-scores-li-content-list-item">
+                                    <div class="section-1-scores-div-content-list-item">
+                                        <span class="section-1-scores-span-content-list-item-text">Resultado 2</span>
+                                    </div>
+                                </li>
+                                <li class="section-1-scores-li-content-list-item">
+                                    <div class="section-1-scores-div-content-list-item">
+                                        <span class="section-1-scores-span-content-list-item-text">Resultado 3</span>
+                                    </div>
+                                </li>
+                                <li class="section-1-scores-li-content-list-item">
+                                    <div class="section-1-scores-div-content-list-item">
+                                        <span class="section-1-scores-span-content-list-item-text">Resultado 4</span>
+                                    </div>
+                                </li>
+                                <li class="section-1-scores-li-content-list-item">
+                                    <div class="section-1-scores-div-content-list-item">
+                                        <span class="section-1-scores-span-content-list-item-text">Resultado 5</span>
+                                    </div>
+                                </li>
+                                <li class="section-1-scores-li-content-list-item">
+                                    <div class="section-1-scores-div-content-list-item">
+                                        <span class="section-1-scores-span-content-list-item-text">Resultado 6</span>
+                                    </div>
+                                </li>
+                                <li class="section-1-scores-li-content-list-item">
+                                    <div class="section-1-scores-div-content-list-item">
+                                        <span class="section-1-scores-span-content-list-item-text">Resultado 7</span>
+                                    </div>
+                                </li>
+                                <li class="section-1-scores-li-content-list-item">
+                                    <div class="section-1-scores-div-content-list-item">
+                                        <span class="section-1-scores-span-content-list-item-text">Resultado 8</span>
+                                    </div>
+                                </li>
+                                <li class="section-1-scores-li-content-list-item">
+                                    <div class="section-1-scores-div-content-list-item">
+                                        <span class="section-1-scores-span-content-list-item-text">Resultado 9</span>
+                                    </div>
+                                </li>
+                                <li class="section-1-scores-li-content-list-item">
+                                    <div class="section-1-scores-div-content-list-item">
+                                        <span class="section-1-scores-span-content-list-item-text">Resultado 10</span>
+                                    </div>
+                                </li>
+                                <li class="section-1-scores-li-content-list-item">
+                                    <div class="section-1-scores-div-content-list-item">
+                                        <span class="section-1-scores-span-content-list-item-text">Resultado 11</span>
+                                    </div>
+                                </li>
+                                <li class="section-1-scores-li-content-list-item">
+                                    <div class="section-1-scores-div-content-list-item">
+                                        <span class="section-1-scores-span-content-list-item-text">Resultado 12</span>
+                                    </div>
+                                </li>
+                                <li class="section-1-scores-li-content-list-item">
+                                    <div class="section-1-scores-div-content-list-item">
+                                        <span class="section-1-scores-span-content-list-item-text">Resultado 13</span>
+                                    </div>
+                                </li>
+                                <li class="section-1-scores-li-content-list-item">
+                                    <div class="section-1-scores-div-content-list-item">
+                                        <span class="section-1-scores-span-content-list-item-text">Resultado 14</span>
+                                    </div>
+                                </li>
+                                <li class="section-1-scores-li-content-list-item">
+                                    <div class="section-1-scores-div-content-list-item">
+                                        <span class="section-1-scores-span-content-list-item-text">Resultado 15</span>
+                                    </div>
+                                </li>
+                                <li class="section-1-scores-li-content-list-item">
+                                    <div class="section-1-scores-div-content-list-item">
+                                        <span class="section-1-scores-span-content-list-item-text">Resultado 16</span>
+                                    </div>
+                                </li>
+                            </ol>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="section-1-toNFL-div-fulltable">
+                <ul class="section-1-toNFL-ul-heading">
+                    <li>
+                        LINKS NFL
+                    </li>
+                </ul>
+                <ul class="section-1-toNFL-ul-content">
+                    <li>
+                        <div class="section-1-toNFL-div-content">
+                            <ol class="section-1-toNFL-ol-content-list">
+                                <li class="section-1-toNFL-li-content-list-item">
+                                    <div class="section-1-toNFL-div-content-list-item">
+                                        <a href="https://www.nfl.com/news/" target="_blank">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-plus-fill" viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zm6.5-11a.5.5 0 0 0-1 0V6H6a.5.5 0 0 0 0 1h1.5v1.5a.5.5 0 0 0 1 0V7H10a.5.5 0 0 0 0-1H8.5V4.5z"/>
+                                            </svg>
+                                            <span class="section-1-toNFL-span-content-list-item-text">Noticias</span>
+                                        </a>
+                                    </div>
+                                </li>
+                                <li class="section-1-toNFL-li-content-list-item">
+                                    <div class="section-1-toNFL-div-content-list-item">
+                                        <a href="https://www.nfl.com/scores" target="_blank">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-plus-fill" viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zm6.5-11a.5.5 0 0 0-1 0V6H6a.5.5 0 0 0 0 1h1.5v1.5a.5.5 0 0 0 1 0V7H10a.5.5 0 0 0 0-1H8.5V4.5z"/>
+                                            </svg>
+                                            <span class="section-1-toNFL-span-content-list-item-text">Resultados</span>
+                                        </a>
+                                    </div>
+                                </li>
+                                <li class="section-1-toNFL-li-content-list-item">
+                                    <div class="section-1-toNFL-div-content-list-item">
+                                        <a href="https://www.nfl.com/scores" target="_blank">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-plus-fill" viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zm6.5-11a.5.5 0 0 0-1 0V6H6a.5.5 0 0 0 0 1h1.5v1.5a.5.5 0 0 0 1 0V7H10a.5.5 0 0 0 0-1H8.5V4.5z"/>
+                                            </svg>
+                                            <span class="section-1-toNFL-span-content-list-item-text">Calendario</span>
+                                        </a>
+                                    </div>
+                                </li>
+                                <li class="section-1-toNFL-li-content-list-item">
+                                    <div class="section-1-toNFL-div-content-list-item">
+                                        <a href="https://www.nfl.com/videos" target="_blank">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-plus-fill" viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zm6.5-11a.5.5 0 0 0-1 0V6H6a.5.5 0 0 0 0 1h1.5v1.5a.5.5 0 0 0 1 0V7H10a.5.5 0 0 0 0-1H8.5V4.5z"/>
+                                            </svg>
+                                            <span class="section-1-toNFL-span-content-list-item-text">Videos</span>
+                                        </a>
+                                    </div>
+                                </li>
+                                <li class="section-1-toNFL-li-content-list-item">
+                                    <div class="section-1-toNFL-div-content-list-item">
+                                        <a href="https://www.nfl.com/teams" target="_blank">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-plus-fill" viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zm6.5-11a.5.5 0 0 0-1 0V6H6a.5.5 0 0 0 0 1h1.5v1.5a.5.5 0 0 0 1 0V7H10a.5.5 0 0 0 0-1H8.5V4.5z"/>
+                                            </svg>
+                                            <span class="section-1-toNFL-span-content-list-item-text">Equipos</span>
+                                        </a>
+                                    </div>
+                                </li>
+                                <li class="section-1-toNFL-li-content-list-item">
+                                    <div class="section-1-toNFL-div-content-list-item">
+                                        <a href="https://www.nfl.com/players" target="_blank">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-plus-fill" viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zm6.5-11a.5.5 0 0 0-1 0V6H6a.5.5 0 0 0 0 1h1.5v1.5a.5.5 0 0 0 1 0V7H10a.5.5 0 0 0 0-1H8.5V4.5z"/>
+                                            </svg>
+                                            <span class="section-1-toNFL-span-content-list-item-text">Jugadores</span>
+                                        </a>
+                                    </div>
+                                </li>
+                                <li class="section-1-toNFL-li-content-list-item">
+                                    <div class="section-1-toNFL-div-content-list-item">
+                                        <a href="https://www.nfl.com/stats" target="_blank">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-plus-fill" viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zm6.5-11a.5.5 0 0 0-1 0V6H6a.5.5 0 0 0 0 1h1.5v1.5a.5.5 0 0 0 1 0V7H10a.5.5 0 0 0 0-1H8.5V4.5z"/>
+                                            </svg>
+                                            <span class="section-1-toNFL-span-content-list-item-text">Estadísticas</span>
+                                        </a>
+                                    </div>
+                                </li>
+                                <li class="section-1-toNFL-li-content-list-item">
+                                    <div class="section-1-toNFL-div-content-list-item">
+                                        <a href="https://www.nfl.com/standings" target="_blank">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-plus-fill" viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zm6.5-11a.5.5 0 0 0-1 0V6H6a.5.5 0 0 0 0 1h1.5v1.5a.5.5 0 0 0 1 0V7H10a.5.5 0 0 0 0-1H8.5V4.5z"/>
+                                            </svg>
+                                            <span class="section-1-toNFL-span-content-list-item-text">Posiciones</span>
+                                        </a>
+                                    </div>
+                                </li>
+                            </ol>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+            <!-- <div class="section-1-publicity-div-fulltable">
+                <a href="https://instagram.com/rod.lovera?igshid=MzRlODBiNWFlZA==" target="_blank"><img class="section-1-publicity-img-image" src="static/lovera.jpg"></a>
+            </div> -->
+        </div>
+    </div>
+</section>
+<section class="section-3-highlights-and-standings">
+    <div class="section-3-highlights-and-standings-div-general">
+        <div class="section-3-standings">
+            <div class="section-3-standings-div-general">
+                <div class="section-3-standings-div-heading-fulltable">
+                    <div class="section-3-highlights-div-heading">
+                        <h2 class="section-3-highlights-h2-heading">
+                            <span>Tabla de Posiciones</span>
+                        </h2>
+                    </div>
+                </div>
+                <iframe class="section-3-standings-iframe" id="sofa-standings-embed-108947-51361" src="https://widgets.sofascore.com/embed/tournament/108947/season/51361/standings/NFL%2023%2F24%2C%20AFC%20East?widgetTitle=NFL 23/24, AFC East&showCompetitionLogo=true" style=height:346px!important;max-width:620px!important;width:100%!important; frameborder="0" scrolling="no"></iframe>
+                <div class="section-3-standings-div-blank" style="font-size:12px;font-family:Arial,sans-serif;text-align:left">
+                    <a target="_blank" href="https://www.sofascore.com/"></a>
+                </div>
+                <iframe class="section-3-standings-iframe" id="sofa-standings-embed-108947-51361" src="https://widgets.sofascore.com/embed/tournament/108947/season/51361/standings/NFL%2023%2F24%2C%20AFC%20North?widgetTitle=NFL 23/24, AFC North&showCompetitionLogo=true" style=height:346px!important;max-width:620px!important;width:100%!important; frameborder="0" scrolling="no"></iframe>
+                <div class="section-3-standings-div-blank" style="font-size:12px;font-family:Arial,sans-serif;text-align:left">
+                    <a target="_blank" href="https://www.sofascore.com/"></a>
+                </div>
+                <iframe class="section-3-standings-iframe" id="sofa-standings-embed-108947-51361" src="https://widgets.sofascore.com/embed/tournament/108947/season/51361/standings/NFL%2023%2F24%2C%20AFC%20South?widgetTitle=NFL 23/24, AFC South&showCompetitionLogo=true" style=height:346px!important;max-width:620px!important;width:100%!important; frameborder="0" scrolling="no"></iframe>
+                <div class="section-3-standings-div-blank" style="font-size:12px;font-family:Arial,sans-serif;text-align:left">
+                    <a target="_blank" href="https://www.sofascore.com/"></a>
+                </div>
+                <iframe class="section-3-standings-iframe" id="sofa-standings-embed-108947-51361" src="https://widgets.sofascore.com/embed/tournament/108947/season/51361/standings/NFL%2023%2F24%2C%20AFC%20West?widgetTitle=NFL 23/24, AFC West&showCompetitionLogo=true" style=height:346px!important;max-width:620px!important;width:100%!important; frameborder="0" scrolling="no"></iframe>
+                <div class="section-3-standings-div-blank" style="font-size:12px;font-family:Arial,sans-serif;text-align:left">
+                    <a target="_blank" href="https://www.sofascore.com/"></a>
+                </div>
+                <iframe class="section-3-standings-iframe" id="sofa-standings-embed-108947-51361" src="https://widgets.sofascore.com/embed/tournament/108947/season/51361/standings/NFL%2023%2F24%2C%20NFC%20East?widgetTitle=NFL 23/24, NFC East&showCompetitionLogo=true" style=height:346px!important;max-width:620px!important;width:100%!important; frameborder="0" scrolling="no"></iframe>
+                <div class="section-3-standings-div-blank" style="font-size:12px;font-family:Arial,sans-serif;text-align:left">
+                    <a target="_blank" href="https://www.sofascore.com/"></a>
+                </div>
+                <iframe class="section-3-standings-iframe" id="sofa-standings-embed-108947-51361" src="https://widgets.sofascore.com/embed/tournament/108947/season/51361/standings/NFL%2023%2F24%2C%20NFC%20South?widgetTitle=NFL 23/24, NFC South&showCompetitionLogo=true" style=height:346px!important;max-width:620px!important;width:100%!important; frameborder="0" scrolling="no"></iframe>
+                <div class="section-3-standings-div-blank" style="font-size:12px;font-family:Arial,sans-serif;text-align:left">
+                    <a target="_blank" href="https://www.sofascore.com/"></a>
+                </div>
+                <iframe class="section-3-standings-iframe" id="sofa-standings-embed-114913-51361" src="https://widgets.sofascore.com/embed/tournament/114913/season/51361/standings/NFL%2023%2F24%2C%20NFC%20North?widgetTitle=NFL 23/24, NFC North&showCompetitionLogo=true" style=height:346px!important;max-width:620px!important;width:100%!important; frameborder="0" scrolling="no"></iframe>
+                <div class="section-3-standings-div-blank" style="font-size:12px;font-family:Arial,sans-serif;text-align:left">
+                    <a target="_blank" href="https://www.sofascore.com/"></a>
+                </div>
+                <iframe class="section-3-standings-iframe" id="sofa-standings-embed-114914-51361" src="https://widgets.sofascore.com/embed/tournament/114914/season/51361/standings/NFL%2023%2F24%2C%20NFC%20West?widgetTitle=NFL 23/24, NFC West&showCompetitionLogo=true" style=height:346px!important;max-width:620px!important;width:100%!important; frameborder="0" scrolling="no"></iframe>
+                <div class="section-3-standings-div-blank" style="font-size:12px;font-family:Arial,sans-serif;text-align:left">
+                    <a target="_blank" href="https://www.sofascore.com/"></a>
+                </div>
+            </div>
+        </div>
+        <div class="section-3-highlights">
+            <div class="section-3-highlights-div-general">
+                <div class="section-3-highlights-div-heading-fulltable">
+                    <div class="section-3-highlights-div-heading">
+                        <h2 class="section-3-highlights-h2-heading">
+                            <span>Highlights Juegos Semana 1</span>
+                        </h2>
+                    </div>
+                </div>
+                <div class="section-3-highlights-div-content">
+                    <div class="section-3-highlights-div-content-2">
+                        <a class="section-3-highlights-a-content" href="https://youtu.be/BWkt79xkd00" target="_blank">
+                            <img class="section-3-highlights-img-content" src="https://img.youtube.com/vi/BWkt79xkd00/maxresdefault.jpg"></img>
+                            <div class="section-3-highlights-div-content-footer">
+                                <div class="section-3-highlights-div-content-footer-heading">HIGHLIGHTS</div>
+                                <h3 class="section-3-highlights-h3-content-footer-heading">Kansas City Chiefs vs <br> Philadelphia Eagles</h3>
+<!--                                 <div class="section-3-highlights-div-content-footer-description">
+                                    <p>Duelo espectacular entre dos de las mejores ofensivas de la liga, una comandado por el ya MVP, SB MVP y dos veces ganador del Super Bowl 
+                                    Patrick Mahomes y la otra por Jalen Hurts, uno de los Quarterbacks con mayor mejora en esta temporada.
+                                    </p>
+                                </div> -->
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="section-3-highlights-div-content">
+                    <div class="section-3-highlights-div-content-2">
+                        <a class="section-3-highlights-a-content" href="https://www.youtube.com/watch?v=W1X-tap7B6c&pp=ygUXbmZsIHBsYXlvZmZzIGhpZ2hsaWdodHM%3D" target="_blank">
+                            <img class="section-3-highlights-img-content" src="https://img.youtube.com/vi/W1X-tap7B6c/maxresdefault.jpg"></img>
+                            <div class="section-3-highlights-div-content-footer">
+                                <div class="section-3-highlights-div-content-footer-heading">HIGHLIGHTS</div>
+                                <h3 class="section-3-highlights-h3-content-footer-heading">Kansas City Chiefs vs <br> Cincinnati Bengals</h3>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="section-3-highlights-div-content">
+                    <div class="section-3-highlights-div-content-2">
+                        <a class="section-3-highlights-a-content" href="https://www.youtube.com/watch?v=haJM-KD849k&pp=ygUfbmZsIGhpZ2hsaWdodHMgZWFnbGVzIHZzIDQ5ZXJzIA%3D%3D" target="_blank">
+                            <img class="section-3-highlights-img-content" src="https://img.youtube.com/vi/haJM-KD849k/maxresdefault.jpg"></img>
+                            <div class="section-3-highlights-div-content-footer">
+                                <div class="section-3-highlights-div-content-footer-heading">HIGHLIGHTS</div>
+                                <h3 class="section-3-highlights-h3-content-footer-heading">San Francisco 49ers vs <br> Philadelphia Eagles</h3>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="section-3-highlights-div-content">
+                    <div class="section-3-highlights-div-content-2">
+                        <a class="section-3-highlights-a-content" href="https://youtu.be/5S1t4dkGDbU" target="_blank">
+                            <img class="section-3-highlights-img-content" src="https://i.ytimg.com/vi/5S1t4dkGDbU/maxresdefault.jpg"></img>
+                            <div class="section-3-highlights-div-content-footer">
+                                <div class="section-3-highlights-div-content-footer-heading">HIGHLIGHTS</div>
+                                <h3 class="section-3-highlights-h3-content-footer-heading">Jacksonville Jaguars vs <br> Kansas City Chiefs</h3>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="section-3-highlights-div-content">
+                    <div class="section-3-highlights-div-content-2">
+                        <a class="section-3-highlights-a-content" href="https://youtu.be/idKC616WnmE" target="_blank">
+                            <img class="section-3-highlights-img-content" src="https://i.ytimg.com/vi/idKC616WnmE/maxresdefault.jpg"></img>
+                            <div class="section-3-highlights-div-content-footer">
+                                <div class="section-3-highlights-div-content-footer-heading">HIGHLIGHTS</div>
+                                <h3 class="section-3-highlights-h3-content-footer-heading">New York Giants vs <br> Philadelphia Eagles</h3>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="section-3-highlights-div-content">
+                    <div class="section-3-highlights-div-content-2">
+                        <a class="section-3-highlights-a-content" href="https://youtu.be/BDPOZjNE8iI" target="_blank">
+                            <img class="section-3-highlights-img-content" src="https://i.ytimg.com/vi/BDPOZjNE8iI/maxresdefault.jpg"></img>
+                            <div class="section-3-highlights-div-content-footer">
+                                <div class="section-3-highlights-div-content-footer-heading">HIGHLIGHTS</div>
+                                <h3 class="section-3-highlights-h3-content-footer-heading">Cincinnati Bengals vs <br> Buffalo Bills</h3>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="section-3-highlights-div-content">
+                    <div class="section-3-highlights-div-content-2">
+                        <a class="section-3-highlights-a-content" href="https://youtu.be/CwaKooHmJOM" target="_blank">
+                            <img class="section-3-highlights-img-content" src="https://i.ytimg.com/vi/CwaKooHmJOM/maxresdefault.jpg"></img>
+                            <div class="section-3-highlights-div-content-footer">
+                                <div class="section-3-highlights-div-content-footer-heading">HIGHLIGHTS</div>
+                                <h3 class="section-3-highlights-h3-content-footer-heading">Dallas Cowboys vs <br> San Francisco 49ers</h3>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="section-3-highlights-div-content">
+                    <div class="section-3-highlights-div-content-2">
+                        <a class="section-3-highlights-a-content" href="https://youtu.be/2fuIZDlbV_g" target="_blank">
+                            <img class="section-3-highlights-img-content" src="https://i.ytimg.com/vi/2fuIZDlbV_g/maxresdefault.jpg"></img>
+                            <div class="section-3-highlights-div-content-footer">
+                                <div class="section-3-highlights-div-content-footer-heading">HIGHLIGHTS</div>
+                                <h3 class="section-3-highlights-h3-content-footer-heading">Seattle Seahawks vs <br> San Francisco 49ers</h3>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="section-3-highlights-div-content">
+                    <div class="section-3-highlights-div-content-2">
+                        <a class="section-3-highlights-a-content" href="https://youtu.be/RQ0m99laOMQ" target="_blank">
+                            <img class="section-3-highlights-img-content" src="https://i.ytimg.com/vi/RQ0m99laOMQ/maxresdefault.jpg"></img>
+                            <div class="section-3-highlights-div-content-footer">
+                                <div class="section-3-highlights-div-content-footer-heading">HIGHLIGHTS</div>
+                                <h3 class="section-3-highlights-h3-content-footer-heading">Los Angeles Chargers vs <br> Jacksonville Jaguars</h3>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="section-3-highlights-div-content">
+                    <div class="section-3-highlights-div-content-2">
+                        <a class="section-3-highlights-a-content" href="https://youtu.be/wBxAMoJw_Rw" target="_blank">
+                            <img class="section-3-highlights-img-content" src="https://i.ytimg.com/vi/wBxAMoJw_Rw/maxresdefault.jpg"></img>
+                            <div class="section-3-highlights-div-content-footer">
+                                <div class="section-3-highlights-div-content-footer-heading">HIGHLIGHTS</div>
+                                <h3 class="section-3-highlights-h3-content-footer-heading">Miami Dolphins vs <br> Buffalo Bills</h3>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="section-3-highlights-div-content">
+                    <div class="section-3-highlights-div-content-2">
+                        <a class="section-3-highlights-a-content" href="https://youtu.be/xU_G-l9IKg8" target="_blank">
+                            <img class="section-3-highlights-img-content" src="https://i.ytimg.com/vi/xU_G-l9IKg8/maxresdefault.jpg"></img>
+                            <div class="section-3-highlights-div-content-footer">
+                                <div class="section-3-highlights-div-content-footer-heading">HIGHLIGHTS</div>
+                                <h3 class="section-3-highlights-h3-content-footer-heading">New York Giants vs <br> Minnesota Vikings</h3>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="section-3-highlights-div-content">
+                    <div class="section-3-highlights-div-content-2">
+                        <a class="section-3-highlights-a-content" href="https://youtu.be/N2KhR0fxxP4" target="_blank">
+                            <img class="section-3-highlights-img-content" src="https://i.ytimg.com/vi/N2KhR0fxxP4/maxresdefault.jpg"></img>
+                            <div class="section-3-highlights-div-content-footer">
+                                <div class="section-3-highlights-div-content-footer-heading">HIGHLIGHTS</div>
+                                <h3 class="section-3-highlights-h3-content-footer-heading">Baltimore Ravens vs <br> Cincinnati Bengals</h3>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="section-3-highlights-div-content">
+                    <div class="section-3-highlights-div-content-2">
+                        <a class="section-3-highlights-a-content" href="https://youtu.be/fOfvRG0zlFs" target="_blank">
+                            <img class="section-3-highlights-img-content" src="https://i.ytimg.com/vi/fOfvRG0zlFs/maxresdefault.jpg"></img>
+                            <div class="section-3-highlights-div-content-footer">
+                                <div class="section-3-highlights-div-content-footer-heading">HIGHLIGHTS</div>
+                                <h3 class="section-3-highlights-h3-content-footer-heading">Dallas Cowboys vs <br> Tampa Bay Buccaneers</h3>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="section-3-highlights-div-content">
+                    <div class="section-3-highlights-div-content-2">
+                        <a class="section-3-highlights-a-content" href="https://youtu.be/EgNunih29ag" target="_blank">
+                            <img class="section-3-highlights-img-content" src="https://i.ytimg.com/vi/EgNunih29ag/maxresdefault.jpg"></img>
+                            <div class="section-3-highlights-div-content-footer">
+                                <div class="section-3-highlights-div-content-footer-heading">HIGHLIGHTS</div>
+                                <h3 class="section-3-highlights-h3-content-footer-heading">Tennessee Titans vs <br> Jacksonville Jaguars</h3>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="section-3-highlights-div-content">
+                    <div class="section-3-highlights-div-content-2">
+                        <a class="section-3-highlights-a-content" href="https://youtu.be/etNZ1fqfuSE" target="_blank">
+                            <img class="section-3-highlights-img-content" src="https://i.ytimg.com/vi/etNZ1fqfuSE/maxresdefault.jpg"></img>
+                            <div class="section-3-highlights-div-content-footer">
+                                <div class="section-3-highlights-div-content-footer-heading">HIGHLIGHTS</div>
+                                <h3 class="section-3-highlights-h3-content-footer-heading">Minnesota Vikings vs <br> Chicago Bears</h3>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="section-3-highlights-div-content">
+                    <div class="section-3-highlights-div-content-2">
+                        <a class="section-3-highlights-a-content" href="https://youtu.be/6rpz_InKGAs" target="_blank">
+                            <img class="section-3-highlights-img-content" src="https://i.ytimg.com/vi/6rpz_InKGAs/maxresdefault.jpg"></img>
+                            <div class="section-3-highlights-div-content-footer">
+                                <div class="section-3-highlights-div-content-footer-heading">HIGHLIGHTS</div>
+                                <h3 class="section-3-highlights-h3-content-footer-heading">New York Jets vs <br> Miami Dolphins</h3>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+{% endblock %}

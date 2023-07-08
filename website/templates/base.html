@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% block head %}
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous" />
+      <link rel="stylesheet" type="text/css" href="/static/base.css">
+      <meta name="viewport" content="initial-scale=1, width=device-width">      
+    {% endblock %}
+    <title>{% block title %}Base{% endblock %}</title>
+  </head>
+  <body>
+    <nav class="base-navbar-1 scores-nav">
+      <div class="scores-div-general">
+        <div class="scores-div-fulltable">
+          <ul class="scores-list">
+            {% for result in base_results %}
+              {% set home_team = teams | selectattr('team_name', 'equalto', result.home_team_name) | first %}
+              {% set away_team = teams | selectattr('team_name', 'equalto', result.away_team_name) | first %}
+              {% set home_score = base_scores | selectattr('team_name', 'equalto', home_team.team_name) | first %}
+              {% set away_score = base_scores | selectattr('team_name', 'equalto', away_team.team_name) | first %}
+              {% set lower_score = home_score.team_score if home_score.team_score < away_score.team_score else away_score.team_score %}
+              <li class="base-navbar-1-list-items base-navbar-1-list-items-scores">
+                <div class="base-navbar-1-div-scores">
+                  <span class="scores-gamedatetime">{{ result.game_day }} - {{ result.game_time }}</span>
+                </div>
+                <div class="base-navbar-1-div-scores">
+                  <span class="scores-span {% if away_score.team_score == lower_score %}lower-score{% endif %}"><img class="logo" src="{{ away_team.team_logo }}">&nbsp;{{ away_team.team_abbr }}</span>
+                  <span class="scores-span {% if away_score.team_score == lower_score %}lower-score{% endif %}">{{ away_score.team_score }}</span>
+                </div>
+                <div class="base-navbar-1-div-scores">
+                  <span class="scores-span {% if home_score.team_score == lower_score %}lower-score{% endif %}"><img class="logo" src="{{ home_team.team_logo }}">&nbsp;{{ home_team.team_abbr}}</span>
+                  <span class="scores-span {% if home_score.team_score == lower_score %}lower-score{% endif %}">{{ home_score.team_score }}</span>
+                </div>
+              </li>
+            {% endfor %}
+            {% set remaining_teams = [] %}
+            {% for team in teams %}
+              {% set team_score = base_scores | selectattr('team_name', 'equalto', team.team_name) | first %}
+              {% if not team_score %}
+                {% set _ = remaining_teams.append(team) %}
+              {% endif %}
+            {% endfor %}
+            {% if remaining_teams %}
+              {% for team in remaining_teams|batch(2) %}
+                <li class="base-navbar-1-list-items base-navbar-1-list-items-scores">
+                  <div class="base-navbar-1-div-scores">
+                    <span class="scores-gamedatetime">Descansan</span>
+                  </div>
+                  {% for team_item in team %}
+                    <div class="base-navbar-1-div-scores">
+                      <span class="scores-span"><img class="logo" src="{{ team_item.team_logo }}">&nbsp;{{ team_item.team_abbr }}</span>
+                    </div>
+                  {% endfor %}
+                </li>
+              {% endfor %}
+            {% endif %}          
+          </ul>
+        </div>
+      </div>
+    </nav>            
+    <header class="base-header">
+      <div class="base-header-div">
+        <a class="base-nfl-logo-a" href="/" title="Link to homepage" data-event_name="click action" data-link_module="Header" data-link_type="Nav Logo" data-link_name="Nav Logo">
+          <img alt=" logo" class="base-nfl-logo" data-src="https://static.www.nfl.com/image/upload/v1554321393/league/nvfr7ogywskqrfaiu38m.svg" src="https://static.www.nfl.com/image/upload/v1554321393/league/nvfr7ogywskqrfaiu38m.svg">
+        </a>
+        <button id="toggleButton" class="base-weeks-button" aria-label="More menu choices" aria-expanded="false" aria-controls="mobile-expanded-menu">
+          <div class="base-weeks-button-div">
+            <span class="base-weeks-button-span-text">Weeks</span>
+            <span class="base-weeks-button-span-icon">&#9662;</span>
+          </div>
+        </button>
+        <nav class="base-navbar-1">
+          <ul class="base-navbar-1-list">
+            <li class="base-navbar-1-list-items">
+              <a href="/week1">
+                <span>Week 1</span>
+              </a>
+            </li>
+            <li class="base-navbar-1-list-items">
+              <a href="/week2">
+                <span>Week 2</span>
+              </a>
+            </li>
+            <li class="base-navbar-1-list-items">
+              <a href="/week3">
+                <span>Week 3</span>
+              </a>
+            </li>
+            <li class="base-navbar-1-list-items">
+              <a href="/week4">
+                <span>Week 4</span>
+              </a>
+            </li>
+            <li class="base-navbar-1-list-items">
+              <a href="/week5">
+                <span>Week 5</span>
+              </a>
+            </li>
+            <li class="base-navbar-1-list-items">
+              <a href="/week6">
+                <span>Week 6</span>
+              </a>
+            </li>
+            <li class="base-navbar-1-list-items">
+              <a href="/week7">
+                <span>Week 7</span>
+              </a>
+            </li>
+            <li class="base-navbar-1-list-items">
+              <a href="/week8">
+                <span>Week 8</span>
+              </a>
+            </li>
+            <li class="base-navbar-1-list-items">
+              <a href="/week9">
+                <span>Week 9</span>
+              </a>
+            </li>
+            <li class="base-navbar-1-list-items">
+              <a href="/week10">
+                <span>Week 10</span>
+              </a>
+            </li>
+            <li class="base-navbar-1-list-items">
+              <a href="/week11">
+                <span>Week 11</span>
+              </a>
+            </li>
+            <li class="base-navbar-1-list-items">
+              <a href="/week12">
+                <span>Week 12</span>
+              </a>
+            </li>
+            <li class="base-navbar-1-list-items">
+              <a href="/week13">
+                <span>Week 13</span>
+              </a>
+            </li>
+            <li class="base-navbar-1-list-items">
+              <a href="/week14">
+                <span>Week 14</span>
+              </a>
+            </li>
+            <li class="base-navbar-1-list-items">
+              <a href="/week15">
+                <span>Week 15</span>
+              </a>
+            </li>
+            <li class="base-navbar-1-list-items">
+              <a href="/week16">
+                <span>Week 16</span>
+              </a>
+            </li>
+            <li class="base-navbar-1-list-items">
+              <a href="/week17">
+                <span>Week 17</span>
+              </a>
+            </li>
+            <li class="base-navbar-1-list-items">
+              <a href="/week18">
+                <span>Week 18</span>
+              </a>
+            </li>
+            <li class="base-navbar-1-list-items base-navbar-dots-list">
+              <button id="menu-2-button" class="base-menu-2-button" aria-label="More menu choices" aria-expanded="false" aria-controls="mobile-expanded-menu">
+                <span class="base-navbar-1-span-dots">
+                  <span class="base-navbar-1-dots">
+                    ...
+                  </span>
+                </span>
+              </button>
+            </li>
+          </ul>
+        </nav>
+        <nav class="base-navbar-2">
+            <ul class="base-navbar-2-list">
+              {% if user.is_authenticated %}
+                <li>
+                  <a class="nav-item nav-link" id="home" href="/">Home</a>
+                </li>
+                <li>
+                  <a class="nav-item nav-link" id="logout" href="/logout">Logout</a>
+                </li>
+              {% else %}
+                <li>
+                  <a class="nav-item nav-link" id="login" href="/login">Login</a>
+                </li>
+                <li>
+                  <a class="nav-item nav-link" id="signUp" href="/sign-up">Sign Up</a>
+                </li>
+              {% endif %}
+            </ul>
+        </nav>
+        <script>
+          document.addEventListener('DOMContentLoaded', function() {
+            var toggleButton = document.getElementById('toggleButton');
+            var lists = document.querySelectorAll('.base-navbar-1-list, .base-navbar-2-list, .base-navbar-1-list-2nd');
+            toggleButton.addEventListener('click', function() {
+              lists.forEach(function(list) {
+                list.classList.toggle('show');
+              });
+            });
+          });
+        </script>
+      </div>
+      <div id="base-menu-2-div" class="base-header-div">
+        <ul id="base-menu-2" class="base-navbar-1-list base-navbar-menu-2-open-ul">
+          <!-- <li class="base-navbar-1-list-items base-navbar-menu-2-open-li">
+            <a href="/week1-simulator">
+              <span>Simulador Semanal</span>
+            </a>
+          </li> -->
+          <li class="base-navbar-1-list-items base-navbar-menu-2-open-li">
+            <a href="/week1-leaderboard">
+              <span>Tabla Semanal</span>
+            </a>
+          </li>
+          <li class="base-navbar-1-list-items base-navbar-menu-2-open-li">
+            <a href="/leaderboard">
+              <span>Tabla General</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          var toggleButton = document.getElementById('menu-2-button');
+          var lists = document.querySelectorAll('#base-menu-2-div');
+          toggleButton.addEventListener('click', function() {
+            lists.forEach(function(list) {
+              list.classList.toggle('show');
+            });
+          });
+        });
+      </script>
+    </header>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          {% if category == 'error' %}
+            <div class="alert alert-danger alter-dismissable fade show" role="alert">
+              {{ message }}
+              <button type="button" class="close" data-dismiss="alert">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            {% else %}
+            <div class="alert alert-success alter-dismissable fade show" role="alert">
+              {{ message }}
+              <button type="button" class="close" data-dismiss="alert">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <div>{% block content %} {% endblock %}</div>
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"
+    ></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"
+    ></script>
+    <script
+        src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='index.js')}}">
+    </script>
+  </body>
+</html>
